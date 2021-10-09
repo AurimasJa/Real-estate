@@ -9,7 +9,10 @@
     <string name="skelbimaitext">Skelbimai:</string>
     <string name="Prisijungimas">Prisijungimas</string>
 
-    <string name="Jungtis">Jungtis</string>
+    <string name="LoginPageButton">Prisijungti</string>
     <string name="Registracija">Registracija</string>
     <string name="Registruotis">Registruotis</string>
+
+    <string name="LoginPageUsernameInput">El. pašto adresas</string>
+    <string name="LoginPagePasswordInput">Slaptažodis</string>
 </resources>

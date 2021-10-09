@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="100dp"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:gravity="center"
+        android:hint="@string/LoginPageUsernameInput"
+        android:inputType="textPersonName"/>
 
     <EditText
         android:id="@+id/editTextTextPassword2"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="100dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:gravity="center"
+        android:hint="@string/LoginPagePasswordInput"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/login_login_enter"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="@string/Jungtis" />
+        android:layout_margin="150dp"
+        android:gravity="center"
+        android:text="@string/LoginPageButton"
+        android:textAllCaps="false"
+        android:textStyle="bold" />
 </LinearLayout>
