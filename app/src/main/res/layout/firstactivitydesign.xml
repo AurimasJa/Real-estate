@@ -5,28 +5,28 @@
 
     <Button
         android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginRight="100dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
         android:text="@string/Namo_skelbimai" />
 
     <Button
         android:id="@+id/secondActivityButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="100dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
         android:text="@string/second_activity_button" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/textview" />
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/textview1" />
-
-
-
 
 </LinearLayout>

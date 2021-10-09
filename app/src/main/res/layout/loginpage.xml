@@ -31,6 +31,8 @@
 
     <Button
         android:id="@+id/login_login_enter"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@color/colorPrimary"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_margin="150dp"

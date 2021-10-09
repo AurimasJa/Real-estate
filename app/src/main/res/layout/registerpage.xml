@@ -8,20 +8,36 @@
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="100dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:gravity="center"
+        android:hint="@string/LoginPageUsernameInput"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="100dp"
         android:ems="10"
+        android:gravity="center"
+        android:hint="@string/LoginPagePasswordInput"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/button_register_enter"
-        android:layout_width="match_parent"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="@string/Registruotis" />
+        android:layout_margin="130dp"
+        android:gravity="center"
+        android:text="@string/Registruotis"
+        android:textAllCaps="false"
+        android:textStyle="bold" />
+
 </LinearLayout>
