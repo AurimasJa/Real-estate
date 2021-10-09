@@ -27,7 +27,7 @@ public class SecondActivity extends AppCompatActivity {
             items.add(new ListItem("Jane", R.drawable.baseline_announcement_black_48dp, "Physics, Informatics"));
             items.add(new ListItem("Bob", R.drawable.baseline_alarm_black_48dp, "Geography, Chemistry"));
             items.add(new ListItem("Clara", R.drawable.baseline_account_box_black_48dp, "Geography, Chemistry"));
-            items.add(new ListItem("Sam", R.drawable.baseline_accessibility_black_48dp, "Mathematics, Physics"));
+            items.add(new ListItem("Sam", R.drawable.baseline_accessibility_black_48dp, "Mathematics, ABCD"));
         } else {
             items.add(new ListItem(
                     "Mathematics",
