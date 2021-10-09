@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class FirstActivity extends AppCompatActivity {
 
     private Button myButton;
+    private Button skelbimai;
     private TextView myTextView;
     private Button secondActivityButton;
     private Context context = this;
@@ -21,22 +22,38 @@ public class FirstActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.firstactivitydesign);
 
-        myButton = (Button) findViewById(R.id.button);
+        skelbimai = (Button) findViewById(R.id.button);
         secondActivityButton = (Button) findViewById(R.id.secondActivityButton);
-        myTextView = (TextView) findViewById(R.id.textView);
+  //      myTextView = (TextView) findViewById(R.id.textView);
 
-        myButton.setOnClickListener(myButtonClick);
+        skelbimai.setOnClickListener(skelbimaiClick);
         secondActivityButton.setOnClickListener(startSecondActivity);
         secondActivityButton.setOnLongClickListener(startSecondActivityLong);
     }
 
-    View.OnClickListener myButtonClick = new View.OnClickListener() {
+  /*  View.OnClickListener myButtonClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             String text = myTextView.getText() + "\n" + "Next line";
             myTextView.setText(text);
         }
+    };*/
+    View.OnClickListener skelbimaiClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            runSkelbimaiActivity(true);
+        }
     };
+    public void runSkelbimaiActivity(boolean flag) {
+        Intent intent = new Intent(context, Skelbimai.class);
+        intent.putExtra("flag", flag);
+        context.startActivity(intent);
+    }
+
+
+
+
+
 
     public void runSecondActivity(boolean flag) {
         Intent intent = new Intent(context, SecondActivity.class);
@@ -50,7 +67,7 @@ public class FirstActivity extends AppCompatActivity {
             runSecondActivity(true);
         }
     };
-
+// Laikant mygtuka suveikia po 1 sec, del LONGclick
     View.OnLongClickListener startSecondActivityLong = new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View view) {
