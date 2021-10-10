@@ -86,7 +86,7 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         };*/
-        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -97,6 +97,6 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        });
+        });*/
     }
 }
