@@ -1,6 +1,8 @@
 package edu.ktu.myfirstapplication;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,8 +39,9 @@ public class ListAdapter extends ArrayAdapter<ListItem> {
 
         title.setText(item.getTitle());
         description.setText(item.getDescription());
-        image.setImageResource(item.getImageId());
+        image.setImageBitmap(item.getImageId());
 
         return view;
     }
+
 }
