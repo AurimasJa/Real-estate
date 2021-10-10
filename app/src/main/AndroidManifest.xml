@@ -17,7 +17,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".FirstActivity" />
+        <activity android:name=".FirstActivity"
+            android:label="Child activity"
+            android:parentActivityName=".MainPageLoginRegister" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainPageLoginRegister" />
+        </activity>
         <activity android:name=".RegisterPage" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".Skelbimai" />

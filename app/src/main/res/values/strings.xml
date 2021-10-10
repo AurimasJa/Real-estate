@@ -15,4 +15,7 @@
 
     <string name="LoginPageUsernameInput">El. pašto adresas</string>
     <string name="LoginPagePasswordInput">Slaptažodis</string>
+
+    <string name="action_settings">Nustatymai</string>
+    <string name="action_favorite">Įsiminti</string>
 </resources>
