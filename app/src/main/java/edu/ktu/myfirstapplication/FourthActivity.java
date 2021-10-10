@@ -39,7 +39,7 @@ public class FourthActivity extends AppCompatActivity {
         kamb.setText(room+"");
 
         //enable back Button
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+     //   getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     //getting back to listview
     @Override
