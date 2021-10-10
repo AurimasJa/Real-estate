@@ -6,9 +6,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +26,7 @@ public class Skelbimai extends AppCompatActivity {
         setContentView(R.layout.skelbimaidesign);
         myListView = (ListView) findViewById(R.id.skelbimulistas);
 
-        List<SkelbimaiList> items = new ArrayList<>();
+        final List<SkelbimaiList> items = new ArrayList<>();
 
         Intent intent = getIntent();
         if (intent.getBooleanExtra("flag", true)) {
@@ -78,6 +80,31 @@ public class Skelbimai extends AppCompatActivity {
         }
         adapter = new SkelbimaiListAdapter(this, items);
         myListView.setAdapter(adapter);
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                int index = position;
+                Toast.makeText(getApplicationContext(),"Selected content " + items.get(index), Toast.LENGTH_LONG).show();
+            }
+        });
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                List<ListItem> things = new ArrayList<>();
+//                Toast.makeText(getApplicationContext(),fruitNames[i],Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getApplicationContext(),FourthActivity.class);
+                intent.putExtra("pavadinimas", items.get(i).getTitle());
+                intent.putExtra("kaina", items.get(i).getPrice());
+                intent.putExtra("descriptionas", items.get(i).getDescription());
+                intent.putExtra("nuotrauka", items.get(i).getImageId());
+                intent.putExtra("kambariai", items.get(i).getRoom_count());
+                startActivity(intent);
+
+            }
+        });
     }
 
 

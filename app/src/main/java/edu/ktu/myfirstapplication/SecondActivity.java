@@ -93,7 +93,7 @@ public class SecondActivity extends AppCompatActivity {
                 List<ListItem> things = new ArrayList<>();
 //                Toast.makeText(getApplicationContext(),fruitNames[i],Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(),FourthActivity.class);
-                intent.putExtra("name",(Parcelable) items.get(i));
+                intent.putExtra("name", items.get(i).getTitle());
                 startActivity(intent);
 
             }
