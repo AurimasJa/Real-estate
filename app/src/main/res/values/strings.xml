@@ -18,4 +18,8 @@
 
     <string name="action_settings">Nustatymai</string>
     <string name="action_favorite">Įsiminti</string>
+    <string name="action_search">Paieška</string>
+    <string name="action_share">Dalintis</string>
+    <string name="appbarMainPage">Pagrindinis puslapis</string>
+    <string name="appbarSkelbimai">Skelbimai</string>
 </resources>

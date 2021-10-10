@@ -40,4 +40,19 @@
         android:textStyle="bold"
         android:text="@string/second_activity_button" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="italic"
+            android:padding="15dp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:text="TextView" />
+    </RelativeLayout>
+
 </LinearLayout>
