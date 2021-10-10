@@ -17,24 +17,60 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textSize="@android:dimen/app_icon_size"
         android:text="TextViewasd" />
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textViewkaina"
+            android:ellipsize="end"
+            android:padding="10dp"
+            android:text="Kaina"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewkaina"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:padding="10dp"
+            android:text="Kaina:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewkamb"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:ellipsize="end"
+            android:padding="10dp"
+            android:text="Kambarių skaičius:"
+            android:textStyle="bold" />
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kaina" />
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:layout_toRightOf="@id/textViewkamb"
+        android:text="kambarys" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:text="Description" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="kambarys" />
-
 </LinearLayout>
