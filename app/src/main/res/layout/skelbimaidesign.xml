@@ -7,10 +7,10 @@
     <include
         layout="@layout/toolbar"/>
 
-    <TextView
-        android:id="@+id/textView2"
+
+    <ListView
+        android:id="@+id/skelbimulistas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/skelbimaitext" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>
