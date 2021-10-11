@@ -7,15 +7,20 @@ public class SkelbimaiList {
     private float price;
     private int room_count;
 
+    //uzd
+    private boolean favorite;
+
     public SkelbimaiList() {
     }
 
-    public SkelbimaiList(String title, int imageId, String description, float price, int room_count) {
+    public SkelbimaiList(String title, int imageId, String description, float price, int room_count, boolean favorite) {
         this.title = title;
         this.imageId = imageId;
         this.description = description;
         this.price = price;
         this.room_count = room_count;
+        //uzd
+        this.favorite = false;
     }
 
     public String getTitle() { return title; }
@@ -54,5 +59,11 @@ public class SkelbimaiList {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    //uzd
+    public boolean getFavorite(){return favorite;}
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
     }
 }

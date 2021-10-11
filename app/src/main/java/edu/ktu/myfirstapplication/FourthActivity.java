@@ -42,6 +42,7 @@ public class FourthActivity extends AppCompatActivity {
         int room = intent.getIntExtra("kambariai",0);
         kamb.setText(room+"");
 
+        //uzd
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
@@ -74,6 +75,8 @@ public class FourthActivity extends AppCompatActivity {
             case R.id.action_favorite:
                 // User chose the "Favorite" action, mark the current item
                 // as a favorite...
+                Intent intent = getIntent();
+
                 return true;
 
             case R.id.action_search:
