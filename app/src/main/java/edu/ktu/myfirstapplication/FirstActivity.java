@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.view.MenuItem;
 
+//skelbimai isiminti, filtruoti, paieska
+
 public class FirstActivity extends AppCompatActivity {
 
     private Button myButton;
