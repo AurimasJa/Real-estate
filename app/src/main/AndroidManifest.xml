@@ -37,6 +37,7 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainPageLoginRegister" />
         </activity>
+
         <activity android:name=".LoginPage" />
         <activity android:name=".FourthActivity" />
 
