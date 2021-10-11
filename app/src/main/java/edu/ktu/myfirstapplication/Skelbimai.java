@@ -131,6 +131,10 @@ public class Skelbimai extends AppCompatActivity {
                 // as a favorite...
                 return true;
 
+            case R.id.action_search:
+
+                return true;
+
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
