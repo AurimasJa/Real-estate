@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/emailRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
@@ -17,7 +17,19 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/usernameRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="100dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Vartotojo vardas"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/passwordRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
@@ -27,14 +39,25 @@
         android:gravity="center"
         android:hint="@string/LoginPagePasswordInput"
         android:inputType="textPassword" />
+    <EditText
+        android:id="@+id/registerPasswordRepeat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="100dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Pakartoti slaptažodį"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/button_register_enter"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="91dp"
         android:layout_margin="130dp"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:gravity="center"
         android:text="@string/Registruotis"
         android:textAllCaps="false"
