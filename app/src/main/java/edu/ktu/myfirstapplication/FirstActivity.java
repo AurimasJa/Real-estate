@@ -21,7 +21,7 @@ public class FirstActivity extends AppCompatActivity {
     private Button myButton;
     private Button skelbimai;
     private Toolbar myToolbar;
-    private TextView link;
+    private TextView link, username;
     private Button secondActivityButton;
     private Context context = this;
 
@@ -29,12 +29,13 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.firstactivitydesign);
-
+        Intent intent = getIntent();
         skelbimai = (Button) findViewById(R.id.button);
         secondActivityButton = (Button) findViewById(R.id.secondActivityButton);
         myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-
+        username = (TextView) findViewById(R.id.usernameCall);
+        username.setText("Sveiki, " + intent.getStringExtra("usernameAS") + "!");
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
         link = (TextView) findViewById(R.id.link);

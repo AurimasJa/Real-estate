@@ -75,8 +75,8 @@ public class LoginPage extends AppCompatActivity{
                             String emailDB = snapshot.child(userEdUsername).child("email").getValue(String.class);
                             //Toast.makeText(LoginPage.this, "Sitas " + userEdPassw + " " + userEdUsername, Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), FirstActivity.class);
-                            intent.putExtra("username", usernameDB);
-                            intent.putExtra("email", emailDB);
+                            intent.putExtra("usernameAS", usernameDB);
+                            intent.putExtra("emailAS", emailDB);
 
                             Toast.makeText(LoginPage.this, "Sėkmingai prisijungėte", Toast.LENGTH_SHORT).show();
 
