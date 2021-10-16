@@ -34,7 +34,7 @@ public class FourthActivity extends AppCompatActivity {
         price = findViewById(R.id.textView4);
         desc = findViewById(R.id.textView5);
         kamb = findViewById(R.id.textView6);
-        img = findViewById(R.id.imageView2);
+        //img = findViewById(R.id.imageView2);
 
         num = findViewById(R.id.textViewNum);
         myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -49,7 +49,7 @@ public class FourthActivity extends AppCompatActivity {
         price.setText(kaina+"");
         String descr = intent.getStringExtra("descriptionas");
         desc.setText(descr);
-        img.setImageResource(intent.getIntExtra("nuotrauka", 0));
+        //img.setImageResource(intent.getIntExtra("nuotrauka", 0));
         int room = intent.getIntExtra("kambariai",0);
         kamb.setText(room+"");
         String numb = intent.getStringExtra("numeris");
