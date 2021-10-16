@@ -50,21 +50,41 @@
             android:id="@+id/textViewkamb"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:ellipsize="end"
             android:padding="10dp"
+            android:layout_below="@id/textViewkaina"
             android:text="Kambarių skaičius:"
             android:textStyle="bold" />
     <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:textStyle="bold"
         android:padding="10dp"
         android:layout_toRightOf="@id/textViewkamb"
+        android:layout_below="@id/textViewkaina"
         android:text="kambarys" />
 
+        <TextView
+            android:id="@+id/textViewNumeris"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:padding="10dp"
+            android:text="Skambinti pardavėjui:"
+            android:autoLink="phone"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textViewNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/textViewNumeris"
+            android:padding="10dp"
+            android:text="Numeris"
+            android:autoLink="phone"
+            android:gravity="left"/>
     </RelativeLayout>
 
     <TextView
@@ -73,4 +93,5 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="Description" />
+
 </LinearLayout>

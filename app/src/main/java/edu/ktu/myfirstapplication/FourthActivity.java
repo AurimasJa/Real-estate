@@ -18,6 +18,7 @@ public class FourthActivity extends AppCompatActivity {
     TextView desc;
     TextView kamb;
     ImageView img;
+    TextView num;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,7 @@ public class FourthActivity extends AppCompatActivity {
         desc = findViewById(R.id.textView5);
         kamb = findViewById(R.id.textView6);
         img = findViewById(R.id.imageView2);
+        num = findViewById(R.id.textViewNum);
         Intent intent = getIntent();
         String receivedName = intent.getStringExtra("pavadinimas");
         name.setText(receivedName);
@@ -37,6 +39,8 @@ public class FourthActivity extends AppCompatActivity {
         img.setImageResource(intent.getIntExtra("nuotrauka", 0));
         int room = intent.getIntExtra("kambariai",0);
         kamb.setText(room+"");
+        String numb = intent.getStringExtra("numeris");
+        num.setText(numb);
 
         //enable back Button
      //   getSupportActionBar().setDisplayHomeAsUpEnabled(true);
