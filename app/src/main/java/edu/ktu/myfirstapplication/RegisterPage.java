@@ -47,12 +47,12 @@ public class RegisterPage extends AppCompatActivity{
         Register.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                addDatatoFirebase();
+                checkIdCounter();
                 String email = etEmail.getText().toString().trim();
                 String username = etUsername.getText().toString().trim();
                 String password = etPassword.getText().toString().trim();
                 String repeatPsv = etRepeatPsw.getText().toString().trim();
-                if(!validateUsername(username, password, repeatPsv)){
+                if(!validate(username, password, repeatPsv,email)){
                     return;
                 }else {
                     user.setId(id+1);
@@ -64,7 +64,8 @@ public class RegisterPage extends AppCompatActivity{
                     //reff.child(String.valueOf(id+1)).setValue(user); //kiekviena karta suras kiek yra child parent klasei ir prides + 1 ir prides duomenis....
                     reff.child(username).setValue(user); //kiekviena karta suras kiek yra child parent klasei ir prides + 1 ir prides duomenis....
 
-                    Intent intent = new Intent(context, FirstActivity.class);
+                    Toast.makeText(RegisterPage.this, "Sėkmingai užsiregistravote, dabar galite prisijungti.", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, LoginPage.class);
                     intent.putExtra("flag", true);
                     context.startActivity(intent);
                 }
@@ -74,7 +75,7 @@ public class RegisterPage extends AppCompatActivity{
 
     }
 
-    private void addDatatoFirebase() {
+    private void checkIdCounter() {
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -83,7 +84,6 @@ public class RegisterPage extends AppCompatActivity{
                 {
                     id = (snapshot.getChildrenCount());
                 }
-
             }
 
             @Override
@@ -94,7 +94,7 @@ public class RegisterPage extends AppCompatActivity{
         });
     }
 
-    private Boolean validateUsername(String username, String password, String repeatedPassword){
+    private Boolean validate(String username, String password, String repeatedPassword, String email){
         if(username.isEmpty()){
             etUsername.setError("Laukelis negali būti tuščias.");
             return false;
@@ -104,11 +104,18 @@ public class RegisterPage extends AppCompatActivity{
         }else if(password.isEmpty()){
             etPassword.setError("Laukelis negali būti tuščias.");
             return false;
-        }else if (password.length() >= 15 && password.length() <= 4){
-            etPassword.setError("Vartotojo vardas negali būti ilgesnis nei 15 simbolių ir trumpesnis nei 4 simbolių.");
+        }else if (password.length() >= 25 && password.length() <= 4){
+            etPassword.setError("Slaptažodis negali būti ilgesnis nei 15 simbolių ir trumpesnis nei 4 simbolių.");
             return false;
         }else if(password.compareTo(repeatedPassword) != 0){
             etPassword.setError("Slaptažodžiai nesutampa.");
+            etRepeatPsw.setError("Slaptažodžiai nesutampa.");
+            return false;
+        }else if (email.isEmpty()){
+            etEmail.setError("El. paštas negali būti tuščias.");
+            return false;
+        }else if (!email.contains("@")){
+            etEmail.setError("El. paštas neteisingas.");
             return false;
         }else{
             return true;

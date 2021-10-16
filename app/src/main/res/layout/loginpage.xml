@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editUsernameLogin"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
@@ -18,7 +18,7 @@
         android:inputType="textPersonName"/>
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/editPasswordLogin"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"

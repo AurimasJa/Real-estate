@@ -13,7 +13,7 @@
     <string name="Registracija">Registracija</string>
     <string name="Registruotis">Registruotis</string>
 
-    <string name="LoginPageUsernameInput">El. pašto adresas</string>
+    <string name="LoginPageUsernameInput">Vartotojo vardas</string>
     <string name="LoginPagePasswordInput">Slaptažodis</string>
 
     <string name="action_settings">Nustatymai</string>
