@@ -1,6 +1,7 @@
 package edu.ktu.myfirstapplication;
 
 public class User {
+    private long id;
     private String email;
     private String password;
     private String repeatPassword;
@@ -9,7 +10,8 @@ public class User {
     public String getRepeatPassword() {
         return repeatPassword;
     }
-
+    public User() {
+    }
     public void setRepeatPassword(String repeatPassword) {
         this.repeatPassword = repeatPassword;
     }
@@ -22,7 +24,12 @@ public class User {
         this.username = username;
     }
 
-    public User() {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getEmail() {

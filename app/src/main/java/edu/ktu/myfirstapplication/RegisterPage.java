@@ -36,8 +36,8 @@ public class RegisterPage extends AppCompatActivity{
         //surandam id pagal .xml sio failo
         etEmail=(EditText) findViewById(R.id.emailRegister);
         etPassword=(EditText) findViewById(R.id.passwordRegister);
-        etUsername=(EditText) findViewById(R.id.registerPasswordRepeat);
-        etRepeatPsw=(EditText) findViewById(R.id.usernameRegister);
+        etRepeatPsw=(EditText) findViewById(R.id.registerPasswordRepeat);
+        etUsername=(EditText) findViewById(R.id.usernameRegister);
         //surandam id pagal .xml sio failo
         Register = (Button) findViewById(R.id.button_register_enter);
         // database...
@@ -49,18 +49,26 @@ public class RegisterPage extends AppCompatActivity{
             public void onClick(View view){
                 addDatatoFirebase();
                 String email = etEmail.getText().toString().trim();
+                String username = etUsername.getText().toString().trim();
                 String password = etPassword.getText().toString().trim();
-                String repeatPsv = etUsername.getText().toString().trim();
-                String username = etRepeatPsw.getText().toString().trim();
-                user.setEmail(email);
-                user.setPassword(password);
-                user.setUsername(username);
-                user.setRepeatPassword(repeatPsv);
-                reff.child(String.valueOf(id+1)).setValue(user); //kiekviena karta suras kiek yra child parent klasei ir prides + 1 ir prides duomenis....
+                String repeatPsv = etRepeatPsw.getText().toString().trim();
+                if(!validateUsername(username, password, repeatPsv)){
+                    return;
+                }else {
+                    user.setId(id+1);
+                    user.setEmail(email);
+                    user.setPassword(password);
+                    user.setUsername(username);
+                    user.setRepeatPassword(repeatPsv);
+                    //TODO: change into ID from username
+                    //reff.child(String.valueOf(id+1)).setValue(user); //kiekviena karta suras kiek yra child parent klasei ir prides + 1 ir prides duomenis....
+                    reff.child(username).setValue(user); //kiekviena karta suras kiek yra child parent klasei ir prides + 1 ir prides duomenis....
 
-                Intent intent = new Intent(context, FirstActivity.class);
-                intent.putExtra("flag", true);
-                context.startActivity(intent);
+                    Intent intent = new Intent(context, FirstActivity.class);
+                    intent.putExtra("flag", true);
+                    context.startActivity(intent);
+                }
+
             }
         });
 
@@ -72,7 +80,10 @@ public class RegisterPage extends AppCompatActivity{
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 //pridedam i firebase database, kuria nurodem auksciau
                 if(snapshot.exists())
+                {
                     id = (snapshot.getChildrenCount());
+                }
+
             }
 
             @Override
@@ -83,5 +94,24 @@ public class RegisterPage extends AppCompatActivity{
         });
     }
 
-
+    private Boolean validateUsername(String username, String password, String repeatedPassword){
+        if(username.isEmpty()){
+            etUsername.setError("Laukelis negali būti tuščias.");
+            return false;
+        }else if (username.length() >= 15){
+            etUsername.setError("Vartotojo vardas negali būti ilgesnis nei 15 simbolių.");
+            return false;
+        }else if(password.isEmpty()){
+            etPassword.setError("Laukelis negali būti tuščias.");
+            return false;
+        }else if (password.length() >= 15 && password.length() <= 4){
+            etPassword.setError("Vartotojo vardas negali būti ilgesnis nei 15 simbolių ir trumpesnis nei 4 simbolių.");
+            return false;
+        }else if(password.compareTo(repeatedPassword) != 0){
+            etPassword.setError("Slaptažodžiai nesutampa.");
+            return false;
+        }else{
+            return true;
+        }
+    }
 }
