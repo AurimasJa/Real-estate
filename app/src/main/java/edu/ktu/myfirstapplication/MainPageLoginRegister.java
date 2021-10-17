@@ -15,6 +15,8 @@ public class MainPageLoginRegister extends AppCompatActivity{
     private Button RegisterButton;
     private Context context = this;
 
+    private Button SkelbimaiButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +24,11 @@ public class MainPageLoginRegister extends AppCompatActivity{
 
         LoginButton = (Button) findViewById(R.id.button_login_main);
         RegisterButton = (Button) findViewById(R.id.button_register_main);
+        SkelbimaiButton = (Button) findViewById(R.id.button_skelbimai_main);
 
         LoginButton.setOnClickListener(Loginonclick);
         RegisterButton.setOnClickListener(Registeronclick);
+        SkelbimaiButton.setOnClickListener(Skelbimaionclick);
     }
 
     View.OnClickListener Loginonclick = new View.OnClickListener() {
@@ -39,9 +43,6 @@ public class MainPageLoginRegister extends AppCompatActivity{
         context.startActivity(intent);
     }
 
-
-
-
     View.OnClickListener Registeronclick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -54,6 +55,15 @@ public class MainPageLoginRegister extends AppCompatActivity{
         context.startActivity(intent);
     }
 
-
-
+    View.OnClickListener Skelbimaionclick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            runSkelbimaiActivity(true);
+        }
+    };
+    public void runSkelbimaiActivity(boolean flag) {
+        Intent intent = new Intent(context, SkelbimaiListView.class);
+        intent.putExtra("flag", flag);
+        context.startActivity(intent);
+    }
 }

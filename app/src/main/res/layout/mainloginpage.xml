@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="180dp"
         android:layout_marginRight="100dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:background="@drawable/rounded_corner"
@@ -30,6 +30,20 @@
         android:backgroundTint="@color/colorAccent"
         android:background="@drawable/rounded_corner"
         android:text="@string/Registracija"
+        android:textAllCaps="false"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_skelbimai_main"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="100dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/rounded_corner"
+        android:text="Skelbimai"
         android:textAllCaps="false"
         android:textStyle="bold" />
 

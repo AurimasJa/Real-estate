@@ -9,19 +9,29 @@ public class SkelbimaiList {
     private float price;
     private int room_count;
     private String phoneNum;
+    private String createdBy;
     //private ImageView[] images;
 
     public SkelbimaiList() {
     }
 
-    public SkelbimaiList(String title, int imageId, String description, float price, int room_count, String phoneNum) {
+    public SkelbimaiList(String title, int imageId, String description, float price, int room_count, String phoneNum, String createdBy) {
         this.title = title;
         this.imageId = imageId;
         this.description = description;
         this.price = price;
         this.room_count = room_count;
         this.phoneNum = phoneNum;
+        this.createdBy = createdBy;
         //this.images = images;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
     }
 
     public String getTitle() { return title; }

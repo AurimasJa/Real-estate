@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,14 +23,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Skelbimai extends AppCompatActivity {
+public class Skelbimai extends AppCompatActivity{
     private ListView myListView;
     private SkelbimaiListAdapter adapter;
-
     private Toolbar myToolbar;
+    private Context context = this;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.skelbimaidesign);
         myListView = (ListView) findViewById(R.id.skelbimulistas);
@@ -48,17 +49,17 @@ public class Skelbimai extends AppCompatActivity {
 
         Intent intent = getIntent();
         if (intent.getBooleanExtra("flag", true)) {
-            items.add(new SkelbimaiList("Dviaukstis", R.drawable.baseline_3d_rotation_black_48dp, "Dviaukstis namas su visais patogumais", 50000, 3, "+37000000000"));
+            items.add(new SkelbimaiList("Dviaukstis", R.drawable.baseline_3d_rotation_black_48dp, "Dviaukstis namas su visais patogumais", 50000, 3, "+37000000000",""));
             //items.add(new SkelbimaiList("Dviaukstis", R.drawable.house, "Dviaukstis namas su visais patogumais", 50000, 3));
-            items.add(new SkelbimaiList("Butas", R.drawable.baseline_announcement_black_48dp, "Butas Kauno centre", 4312312, 6, "+37000000001"));
-            items.add(new SkelbimaiList("Butas", R.drawable.baseline_alarm_black_48dp, "Butas Kauno centre",233123,143, "+37000000002"));
-            items.add(new SkelbimaiList("Butassubalkonu", R.drawable.baseline_account_box_black_48dp, "Butas su balkonu tiesiog",1231231,123, "+37000000003"));
-            items.add(new SkelbimaiList("Namasprieuros", R.drawable.baseline_accessibility_black_48dp, "Namas prie juros su visais patogumais",9999999, 2, "+37000000004"));
-            items.add(new SkelbimaiList("Dviaukstisnuosavasnamas", R.drawable.baseline_3d_rotation_black_48dp, "Dviaukstis nuosavas namas uz Kauno",77726,99, "+37000000005"));
-            items.add(new SkelbimaiList("Butasbebalkono", R.drawable.baseline_announcement_black_48dp, "Butas be balkono",21322,1, "+37000000006"));
-            items.add(new SkelbimaiList("Butassunuosavugarazu", R.drawable.baseline_alarm_black_48dp, "Didelis butas su garazo",312113,32, "+37000000007"));
-            items.add(new SkelbimaiList("Butassubalkonu", R.drawable.baseline_account_box_black_48dp, "Didelis butas prie juros be garazo", 1000000, 7, "+37000000008"));
-            items.add(new SkelbimaiList("Namaspriejurosbegarazo", R.drawable.baseline_accessibility_black_48dp, "Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo ", 123123, 4, "+37000000000"));
+            items.add(new SkelbimaiList("Butas", R.drawable.baseline_announcement_black_48dp, "Butas Kauno centre", 4312312, 6, "+37000000001",""));
+            items.add(new SkelbimaiList("Butas", R.drawable.baseline_alarm_black_48dp, "Butas Kauno centre",233123,143, "+37000000002",""));
+            items.add(new SkelbimaiList("Butassubalkonu", R.drawable.baseline_account_box_black_48dp, "Butas su balkonu tiesiog",1231231,123, "+37000000003",""));
+            items.add(new SkelbimaiList("Namasprieuros", R.drawable.baseline_accessibility_black_48dp, "Namas prie juros su visais patogumais",9999999, 2, "+37000000004",""));
+            items.add(new SkelbimaiList("Dviaukstisnuosavasnamas", R.drawable.baseline_3d_rotation_black_48dp, "Dviaukstis nuosavas namas uz Kauno",77726,99, "+37000000005",""));
+            items.add(new SkelbimaiList("Butasbebalkono", R.drawable.baseline_announcement_black_48dp, "Butas be balkono",21322,1, "+37000000006",""));
+            items.add(new SkelbimaiList("Butassunuosavugarazu", R.drawable.baseline_alarm_black_48dp, "Didelis butas su garazo",312113,32, "+37000000007",""));
+            items.add(new SkelbimaiList("Butassubalkonu", R.drawable.baseline_account_box_black_48dp, "Didelis butas prie juros be garazo", 1000000, 7, "+37000000008",""));
+            items.add(new SkelbimaiList("Namaspriejurosbegarazo", R.drawable.baseline_accessibility_black_48dp, "Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo ", 123123, 4, "+37000000000",""));
         } else {
             return;
             /*items.add(new SkelbimaiList(
@@ -131,12 +132,12 @@ public class Skelbimai extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                // User chose the "Settings" item, show the app settings UI...
+                Intent intent = new Intent(context, Settings.class);
+                startActivity(intent);
                 return true;
 
-            case R.id.action_favorite:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
+            case android.R.id.home:
+                finish();
                 return true;
 
             default:
@@ -152,11 +153,38 @@ public class Skelbimai extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.appbarmenu, menu);
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView =
-                (SearchView) searchItem.getActionView();
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setIconified(false);
 
+        /*searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // Toast like print
+                //UserFeedback.show( "SearchOnQueryTextSubmit: " + query);
+                if( ! searchView.isIconified()) {
+                    searchView.setIconified(true);
+                }
+                searchItem.collapseActionView();
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String s) {
+                // UserFeedback.show( "SearchOnQueryTextChanged: " + s);
+                return false;
+            }
+        });*/
+        /*SearchManager searchManager = (SearchManager) Skelbimai.this.getSystemService(Context.SEARCH_SERVICE);
+
+        SearchView searchView = null;
+        if (searchItem != null) {
+            searchView = (SearchView) searchItem.getActionView();
+        }
+        if (searchView != null) {
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(Skelbimai.this.getComponentName()));
+        }*/
         // Configure the search info and add any event listeners...
 
-        return super.onCreateOptionsMenu(menu);
+        return true;
+        //return super.onCreateOptionsMenu(menu);
     }
 }
