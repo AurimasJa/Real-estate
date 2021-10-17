@@ -46,7 +46,6 @@ public class LoginPage extends AppCompatActivity{
         public void onClick(View view) {
             userIsCorrect();
             //runLoginEnterActivity(true);
-
         }
     };
     public void runLoginEnterActivity(boolean flag) {

@@ -6,35 +6,56 @@
 
     <include layout="@layout/toolbar" />
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sorttext"
+            android:text="Rikiavimas"/>
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/sorttext"
         android:text="Pavadinimas A-Z" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/button3"
+        android:layout_below="@id/sorttext"
         android:text="Pavadinimas Z-A" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/button6"
+        android:layout_below="@id/button3"
         android:text="KAINA 9-0" />
     <Button
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/button3"
         android:text="KAINA 0-9" />
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/filtertext"
+            android:layout_below="@id/button6"
+            android:text="Filtravimas:"/>
     <EditText
         android:id="@+id/editFilterPrice1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:layout_below="@id/filtertext"
         android:inputType="numberDecimal|numberSigned"
         android:hint="Kainos minimumas"/>
 
@@ -43,6 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:layout_below="@id/editFilterPrice1"
         android:inputType="numberDecimal|numberSigned"
         android:hint="Kainos maximumas"/>
 
@@ -50,7 +72,9 @@
         android:id="@+id/button7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_below="@id/editFilterPrice2"
+        android:text="Filtruoti" />
+    </RelativeLayout>
     <ListView
         android:id="@+id/skelbimulistview"
         android:layout_width="match_parent"
