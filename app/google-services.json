@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "247979715358",
+    "firebase_url": "https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "real-estate-f6875",
+    "storage_bucket": "real-estate-f6875.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247979715358:android:96c4ee29cf3d1ece1a770f",
+        "android_client_info": {
+          "package_name": "edu.ktu.myfirstapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247979715358-nc6tp0rer9mb8dfr9colrn3ln1hbf8fq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqEynRaw6HLkiNhpa1qO1d229I6oEs2ho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247979715358-nc6tp0rer9mb8dfr9colrn3ln1hbf8fq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
