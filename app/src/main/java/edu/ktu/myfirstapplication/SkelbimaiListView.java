@@ -127,8 +127,8 @@ public class SkelbimaiListView extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.appbarmenu, menu);
 
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) searchItem.getActionView();
+       // MenuItem searchItem = menu.findItem(R.id.action_search);
+       // SearchView searchView = (SearchView) searchItem.getActionView();
 
         // Configure the search info and add any event listeners...
 

@@ -152,9 +152,9 @@ public class Skelbimai extends AppCompatActivity{
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.appbarmenu, menu);
 
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) searchItem.getActionView();
-        searchView.setIconified(false);
+        //MenuItem searchItem = menu.findItem(R.id.action_search);
+       // SearchView searchView = (SearchView) searchItem.getActionView();
+       // searchView.setIconified(false);
 
         /*searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
