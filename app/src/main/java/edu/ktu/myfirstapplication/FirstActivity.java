@@ -70,7 +70,7 @@ public class FirstActivity extends AppCompatActivity {
 
 
     public void runSecondActivity(boolean flag) {
-        Intent intent = new Intent(context, SecondActivity.class);
+        Intent intent = new Intent(context, SkelbimaiListView.class);
         intent.putExtra("flag", flag);
         context.startActivity(intent);
     }

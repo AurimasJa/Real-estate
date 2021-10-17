@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Namu pardavimai</string>
     <string name="buttonSkelbimai">Skelbimai</string>
-    <string name="second_activity_button">Second Activity</string>
+    <string name="second_activity_button">Namų pardavimai (db)</string>
     <string name="Namo_skelbimai">Namų skelbimai</string>
     <string name="textview">TextView</string>
     <string name="textview1">Textviewas</string>
