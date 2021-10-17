@@ -22,4 +22,12 @@
     <string name="action_share">Dalintis</string>
     <string name="appbarMainPage">Pagrindinis puslapis</string>
     <string name="appbarSkelbimai">Skelbimai</string>
+
+    <string name="Title">Pavadinimas</string>
+    <string name="Price">Kaina</string>
+    <string name="Description">Aprašymas</string>
+    <string name="RoomCount">Kambarių skaičius</string>
+    <string name="PhoneNumber">Telefono numeris</string>
+    <string name="CreatedBy">Skelbimo kūrėjo vardas</string>
+    <string name="ImageID">Paveikslėlio ID</string>
 </resources>

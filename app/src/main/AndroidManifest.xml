@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.ktu.myfirstapplication">
 
@@ -8,18 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity
-            android:name=".MainPageLoginRegister">
+        <activity android:name=".Skelbimo_pridejimas"></activity>
+        <activity android:name=".MainPageLoginRegister">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".FirstActivity"
+        <activity
+            android:name=".FirstActivity"
             android:label="@string/appbarMainPage"
-            android:parentActivityName=".MainPageLoginRegister" >
+            android:parentActivityName=".MainPageLoginRegister">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
@@ -28,24 +29,25 @@
         </activity>
         <activity android:name=".RegisterPage" />
         <activity android:name=".SecondActivity" />
-        <activity android:name=".Skelbimai"
+        <activity
+            android:name=".Skelbimai"
             android:label="@string/appbarSkelbimai"
-            android:parentActivityName=".FirstActivity" >
-
+            android:parentActivityName=".FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainPageLoginRegister" />
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainPageLoginRegister" />
         </activity>
         <activity android:name=".LoginPage" />
         <activity android:name=".FourthActivity" />
         <activity android:name=".Settings" />
         <activity android:name=".SkelbimaiListView" />
-
     </application>
+
 </manifest>

@@ -58,6 +58,7 @@ public class FirstActivity extends AppCompatActivity {
             myTextView.setText(text);
         }
     };*/
+
     View.OnClickListener skelbimaiClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {

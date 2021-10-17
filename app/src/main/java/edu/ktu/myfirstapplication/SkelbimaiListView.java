@@ -1,10 +1,12 @@
 package edu.ktu.myfirstapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -21,12 +23,13 @@ import java.util.List;
 
 public class SkelbimaiListView extends AppCompatActivity {
     private ListView myListView;
-
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reff;
     ArrayList<SkelbimaiList> list;
     SkelbimaiListAdapter adapter;
     SkelbimaiList skelbimaiList;
+    Button add_item;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,7 @@ public class SkelbimaiListView extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Skelbimai");
         list = new ArrayList<>();
+        add_item = (Button) findViewById(R.id.btn_add_item);
 
         adapter = new SkelbimaiListAdapter(this, list);
         reff.addValueEventListener(new ValueEventListener() {
@@ -68,5 +72,17 @@ public class SkelbimaiListView extends AppCompatActivity {
             }
         });
 
+        add_item.setOnClickListener(start_add_item_activity);
+
     }
+
+    View.OnClickListener start_add_item_activity = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(getApplicationContext(), Skelbimo_pridejimas.class);
+            intent.putExtra("flag", true);
+            startActivity(intent);
+        }
+    };
+
 }

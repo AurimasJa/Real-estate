@@ -4,6 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/btn_add_item"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:text="Pridėti skelbimą" />
+
     <ListView
         android:id="@+id/skelbimulistview"
         android:layout_width="match_parent"
