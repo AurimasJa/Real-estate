@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,7 +27,8 @@ import java.util.List;
 
 public class SkelbimaiListView extends AppCompatActivity {
     private ListView myListView;
-    private Button sortASC,sortDES,sortPriceB, sortPriceS;
+    private Button sortASC,sortDES,sortPriceB, sortPriceS, filterbutton;
+    private EditText filterprice1, filterprice2;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reff;
@@ -48,6 +51,9 @@ public class SkelbimaiListView extends AppCompatActivity {
         sortDES = (Button) findViewById(R.id.button4);
         sortPriceB = (Button) findViewById(R.id.button5);
         sortPriceS = (Button) findViewById(R.id.button6);
+        filterbutton = (Button) findViewById(R.id.button7);
+        filterprice1 = (EditText) findViewById(R.id.editFilterPrice1);
+        filterprice2 = (EditText) findViewById(R.id.editFilterPrice2);
 
         reff.addValueEventListener(new ValueEventListener() {
             @Override
@@ -82,7 +88,7 @@ public class SkelbimaiListView extends AppCompatActivity {
         sortDesList();
         sortPriceSmall();
         sortPriceBig();
-
+        Filter();
     }
     private void sortAscList(){
         sortASC.setOnClickListener(new View.OnClickListener() {
@@ -145,6 +151,35 @@ public class SkelbimaiListView extends AppCompatActivity {
                 });
                 Collections.reverse(list);
                 adapter.notifyDataSetChanged();
+            }
+        });
+    }
+
+    private void Filter(){
+
+        filterbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ArrayList<SkelbimaiList> filteredList = new ArrayList<>();
+                if(filterprice1.getText().toString().isEmpty() || filterprice2.getText().toString().isEmpty()){
+                    filterprice1.setError("Privalo būti įvestas kažkoks skaičius.");
+                    filterprice2.setError("Privalo būti įvestas kažkoks skaičius.");
+                    return;
+                }else{
+                    float price1 = Float.valueOf(filterprice1.getText().toString());
+                    float price2 = Float.valueOf(filterprice2.getText().toString());
+
+                    for (SkelbimaiList listas : list){
+
+                        //Toast.makeText(SkelbimaiListView.this, listas.getPrice() + "   -   " + price1, Toast.LENGTH_LONG ).show();
+                        if(listas.getPrice() > price1 && listas.getPrice() < price2){
+                            filteredList.add(listas);
+                            //Toast.makeText(SkelbimaiListView.this, listas.getPrice() + "   -   " + price1, Toast.LENGTH_LONG ).show();
+                        }
+                    }
+                    adapter = new SkelbimaiListAdapter(SkelbimaiListView.this, filteredList);
+                    myListView.setAdapter(adapter);
+                }
             }
         });
     }
