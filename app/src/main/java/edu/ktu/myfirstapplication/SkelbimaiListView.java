@@ -57,9 +57,6 @@ public class SkelbimaiListView extends AppCompatActivity {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                List<ListItem> things = new ArrayList<>();
-//                Toast.makeText(getApplicationContext(),fruitNames[i],Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(),FourthActivity.class);
                 intent.putExtra("pavadinimas", list.get(i).getTitle());
                 intent.putExtra("kaina", list.get(i).getPrice());
@@ -68,7 +65,6 @@ public class SkelbimaiListView extends AppCompatActivity {
                 intent.putExtra("kambariai", list.get(i).getRoom_count());
                 intent.putExtra("numeris", list.get(i).getPhoneNum());
                 startActivity(intent);
-
             }
         });
 
