@@ -1,5 +1,6 @@
 package edu.ktu.myfirstapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,6 +26,7 @@ public class FourthActivity extends AppCompatActivity {
 
     TextView num;
     private Toolbar myToolbar;
+    private Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,10 @@ public class FourthActivity extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             onBackPressed();
         }
+        if (item.getItemId() == R.id.action_settings) {
+            Intent intent = new Intent(context, Settings.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
     @Override
@@ -76,8 +82,7 @@ public class FourthActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.appbarmenu, menu);
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView =
-                (SearchView) searchItem.getActionView();
+        SearchView searchView = (SearchView) searchItem.getActionView();
 
         // Configure the search info and add any event listeners...
 

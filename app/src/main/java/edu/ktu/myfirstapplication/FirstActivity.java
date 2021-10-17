@@ -23,6 +23,7 @@ public class FirstActivity extends AppCompatActivity {
     private Toolbar myToolbar;
     private TextView link, username;
     private Button secondActivityButton;
+    private Button logout;
     private Context context = this;
 
     @Override
@@ -32,6 +33,7 @@ public class FirstActivity extends AppCompatActivity {
         Intent intent = getIntent();
         skelbimai = (Button) findViewById(R.id.button);
         secondActivityButton = (Button) findViewById(R.id.secondActivityButton);
+        logout = (Button) findViewById(R.id.logoutButton);
         myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         username = (TextView) findViewById(R.id.usernameCall);
@@ -46,6 +48,7 @@ public class FirstActivity extends AppCompatActivity {
         skelbimai.setOnClickListener(skelbimaiClick);
         secondActivityButton.setOnClickListener(startSecondActivity);
         secondActivityButton.setOnLongClickListener(startSecondActivityLong);
+        logout.setOnClickListener(logoutClick);
     }
 
   /*  View.OnClickListener myButtonClick = new View.OnClickListener() {
@@ -66,8 +69,6 @@ public class FirstActivity extends AppCompatActivity {
         intent.putExtra("flag", flag);
         context.startActivity(intent);
     }
-
-
 
     public void runSecondActivity(boolean flag) {
         Intent intent = new Intent(context, SecondActivity.class);
@@ -90,11 +91,24 @@ public class FirstActivity extends AppCompatActivity {
         }
     };
 
+    View.OnClickListener logoutClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            runLogoutActivity(true);
+        }
+    };
+    public void runLogoutActivity(boolean flag) {
+        Intent intent = new Intent(context, MainPageLoginRegister.class);
+        intent.putExtra("flag", flag);
+        context.startActivity(intent);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                // User chose the "Settings" item, show the app settings UI...
+                Intent intent = new Intent(context, Settings.class);
+                startActivity(intent);
                 return true;
 
             case R.id.action_favorite:

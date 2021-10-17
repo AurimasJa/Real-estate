@@ -32,13 +32,19 @@
             android:label="@string/appbarSkelbimai"
             android:parentActivityName=".FirstActivity" >
 
-        <!-- Parent activity meta-data to support 4.0 and lower -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainPageLoginRegister" />
         </activity>
         <activity android:name=".LoginPage" />
         <activity android:name=".FourthActivity" />
+        <activity android:name=".Settings" />
 
     </application>
 </manifest>
