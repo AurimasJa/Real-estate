@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/toolbar" />
 
     <Button
         android:id="@+id/button3"
@@ -51,7 +50,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Button" />
-
     <ListView
         android:id="@+id/skelbimulistview"
         android:layout_width="match_parent"
