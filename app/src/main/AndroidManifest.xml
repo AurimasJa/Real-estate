@@ -45,7 +45,8 @@
         <activity android:name=".LoginPage" />
         <activity android:name=".FourthActivity" />
         <activity android:name=".Settings" />
-        <activity android:name=".SkelbimaiListView" />
+        <activity android:name=".SkelbimaiListView"
+            android:parentActivityName=".FirstActivity"/>
 
     </application>
 </manifest>

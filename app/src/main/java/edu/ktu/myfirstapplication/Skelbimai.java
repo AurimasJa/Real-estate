@@ -136,9 +136,8 @@ public class Skelbimai extends AppCompatActivity{
                 startActivity(intent);
                 return true;
 
-            case R.id.action_favorite:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
+            case android.R.id.home:
+                finish();
                 return true;
 
             default:
