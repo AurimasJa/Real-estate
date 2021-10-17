@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,11 @@ public class Skelbimai extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
+        /*ImageView[] images = new ImageView[1];
+        ImageView defaultimage;
+        defaultimage.setImageResource(R.drawable.house);
+        images[0] = defaultimage;*/
+
         final List<SkelbimaiList> items = new ArrayList<>();
 
         Intent intent = getIntent();
@@ -54,7 +60,8 @@ public class Skelbimai extends AppCompatActivity {
             items.add(new SkelbimaiList("Butassubalkonu", R.drawable.baseline_account_box_black_48dp, "Didelis butas prie juros be garazo", 1000000, 7, "+37000000008"));
             items.add(new SkelbimaiList("Namaspriejurosbegarazo", R.drawable.baseline_accessibility_black_48dp, "Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo ", 123123, 4, "+37000000000"));
         } else {
-            items.add(new SkelbimaiList(
+            return;
+            /*items.add(new SkelbimaiList(
                     "Mathematics",
                     R.drawable.baseline_3d_rotation_black_48dp,
                     "Mathematics is the study of topics such as quantity, structure, space and change.",
@@ -88,7 +95,7 @@ public class Skelbimai extends AppCompatActivity {
                     "Geography is a field of science devoted to the study of the lands, the features, the inhabitants, and the phenomena of Earth.",
                     123123,
                     123, "123"
-            ));
+            ));*/
         }
         adapter = new SkelbimaiListAdapter(this, items);
         myListView.setAdapter(adapter);
