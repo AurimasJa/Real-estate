@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,14 +23,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Skelbimai extends AppCompatActivity {
+public class Skelbimai extends AppCompatActivity{
     private ListView myListView;
     private SkelbimaiListAdapter adapter;
-
     private Toolbar myToolbar;
+    private Context context = this;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.skelbimaidesign);
         myListView = (ListView) findViewById(R.id.skelbimulistas);
@@ -131,7 +132,8 @@ public class Skelbimai extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                // User chose the "Settings" item, show the app settings UI...
+                Intent intent = new Intent(context, Settings.class);
+                startActivity(intent);
                 return true;
 
             case R.id.action_favorite:
@@ -152,11 +154,38 @@ public class Skelbimai extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.appbarmenu, menu);
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView =
-                (SearchView) searchItem.getActionView();
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setIconified(false);
 
+        /*searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // Toast like print
+                //UserFeedback.show( "SearchOnQueryTextSubmit: " + query);
+                if( ! searchView.isIconified()) {
+                    searchView.setIconified(true);
+                }
+                searchItem.collapseActionView();
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String s) {
+                // UserFeedback.show( "SearchOnQueryTextChanged: " + s);
+                return false;
+            }
+        });*/
+        /*SearchManager searchManager = (SearchManager) Skelbimai.this.getSystemService(Context.SEARCH_SERVICE);
+
+        SearchView searchView = null;
+        if (searchItem != null) {
+            searchView = (SearchView) searchItem.getActionView();
+        }
+        if (searchView != null) {
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(Skelbimai.this.getComponentName()));
+        }*/
         // Configure the search info and add any event listeners...
 
-        return super.onCreateOptionsMenu(menu);
+        return true;
+        //return super.onCreateOptionsMenu(menu);
     }
 }
