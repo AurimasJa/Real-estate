@@ -125,11 +125,7 @@ public class SkelbimaiListView extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.appbarmenu, menu);
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
-        sortAscList();
-        sortDesList();
-        sortPriceSmall();
-        sortPriceBig();
-        Filter();
+        return super.onCreateOptionsMenu(menu);
     }
     private void sortAscList(){
         sortASC.setOnClickListener(new View.OnClickListener() {
