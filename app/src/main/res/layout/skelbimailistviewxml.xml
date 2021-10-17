@@ -68,12 +68,12 @@
         android:inputType="numberDecimal|numberSigned"
         android:hint="Kainos maximumas"/>
 
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editFilterPrice2"
-            android:text="Filtruoti" />
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editFilterPrice2"
+        android:text="Button" />
     </RelativeLayout>
     <ListView
         android:id="@+id/skelbimulistview"
