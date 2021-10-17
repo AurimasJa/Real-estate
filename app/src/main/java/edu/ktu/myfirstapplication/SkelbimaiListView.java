@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -17,16 +18,21 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class SkelbimaiListView extends AppCompatActivity {
     private ListView myListView;
+    private Button sortASC,sortDES,sortPriceB, sortPriceS;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reff;
     ArrayList<SkelbimaiList> list;
     SkelbimaiListAdapter adapter;
     SkelbimaiList skelbimaiList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +44,11 @@ public class SkelbimaiListView extends AppCompatActivity {
         list = new ArrayList<>();
 
         adapter = new SkelbimaiListAdapter(this, list);
+        sortASC = (Button) findViewById(R.id.button3);
+        sortDES = (Button) findViewById(R.id.button4);
+        sortPriceB = (Button) findViewById(R.id.button5);
+        sortPriceS = (Button) findViewById(R.id.button6);
+
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -67,6 +78,75 @@ public class SkelbimaiListView extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        sortAscList();
+        sortDesList();
+        sortPriceSmall();
+        sortPriceBig();
 
     }
+    private void sortAscList(){
+        sortASC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Collections.sort(list, new Comparator<SkelbimaiList>() {
+                    @Override
+                    public int compare(SkelbimaiList skelbimaiList, SkelbimaiList t1) {
+                        return skelbimaiList.getTitle().compareTo(t1.getTitle());
+                    }
+                });
+                adapter.notifyDataSetChanged();
+            }
+        });
+    }
+    private void sortDesList(){
+        sortDES.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Collections.sort(list, new Comparator<SkelbimaiList>() {
+                    @Override
+                    public int compare(SkelbimaiList skelbimaiList, SkelbimaiList t1) {
+                        return skelbimaiList.getTitle().compareTo(t1.getTitle());
+                    }
+                });
+                Collections.reverse(list);
+                adapter.notifyDataSetChanged();
+            }
+        });
+    }
+    private void sortPriceSmall(){
+        sortPriceS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Collections.sort(list, new Comparator<SkelbimaiList>() {
+                    @Override
+                    public int compare(SkelbimaiList skelbimaiList, SkelbimaiList t1) {
+                        float price1 = skelbimaiList.getPrice();
+                        float price2 = t1.getPrice();
+
+                        return Float.compare(price1, price2);
+                    }
+                });
+                adapter.notifyDataSetChanged();
+            }
+        });
+    }
+    private void sortPriceBig(){
+        sortPriceB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Collections.sort(list, new Comparator<SkelbimaiList>() {
+                    @Override
+                    public int compare(SkelbimaiList skelbimaiList, SkelbimaiList t1) {
+                        float price1 = skelbimaiList.getPrice();
+                        float price2 = t1.getPrice();
+
+                        return Float.compare(price1, price2);
+                    }
+                });
+                Collections.reverse(list);
+                adapter.notifyDataSetChanged();
+            }
+        });
+    }
 }
+
