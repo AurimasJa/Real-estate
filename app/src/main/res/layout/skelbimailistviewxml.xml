@@ -73,7 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editFilterPrice2"
-        android:text="Button" />
+        android:text="Filtruoti" />
     </RelativeLayout>
     <ListView
         android:id="@+id/skelbimulistview"
