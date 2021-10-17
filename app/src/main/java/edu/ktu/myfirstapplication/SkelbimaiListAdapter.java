@@ -41,8 +41,8 @@ public class SkelbimaiListAdapter extends ArrayAdapter<SkelbimaiList> {
         title.setText(item.getTitle());
         description.setText(item.getDescription());
         //image.setImageResource(item.getImageId());
-        price.setText(1000+"");
-        room_count.setText(1000+"");
+        price.setText(item.getPrice()+"");
+        room_count.setText(item.getRoom_count()+"");
 
         return view;
     }

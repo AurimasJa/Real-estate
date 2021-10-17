@@ -48,17 +48,17 @@ public class Skelbimai extends AppCompatActivity {
 
         Intent intent = getIntent();
         if (intent.getBooleanExtra("flag", true)) {
-            items.add(new SkelbimaiList("Dviaukstis", R.drawable.baseline_3d_rotation_black_48dp, "Dviaukstis namas su visais patogumais", 50000, 3, "+37000000000"));
+            items.add(new SkelbimaiList("Dviaukstis", R.drawable.baseline_3d_rotation_black_48dp, "Dviaukstis namas su visais patogumais", 50000, 3, "+37000000000",""));
             //items.add(new SkelbimaiList("Dviaukstis", R.drawable.house, "Dviaukstis namas su visais patogumais", 50000, 3));
-            items.add(new SkelbimaiList("Butas", R.drawable.baseline_announcement_black_48dp, "Butas Kauno centre", 4312312, 6, "+37000000001"));
-            items.add(new SkelbimaiList("Butas", R.drawable.baseline_alarm_black_48dp, "Butas Kauno centre",233123,143, "+37000000002"));
-            items.add(new SkelbimaiList("Butassubalkonu", R.drawable.baseline_account_box_black_48dp, "Butas su balkonu tiesiog",1231231,123, "+37000000003"));
-            items.add(new SkelbimaiList("Namasprieuros", R.drawable.baseline_accessibility_black_48dp, "Namas prie juros su visais patogumais",9999999, 2, "+37000000004"));
-            items.add(new SkelbimaiList("Dviaukstisnuosavasnamas", R.drawable.baseline_3d_rotation_black_48dp, "Dviaukstis nuosavas namas uz Kauno",77726,99, "+37000000005"));
-            items.add(new SkelbimaiList("Butasbebalkono", R.drawable.baseline_announcement_black_48dp, "Butas be balkono",21322,1, "+37000000006"));
-            items.add(new SkelbimaiList("Butassunuosavugarazu", R.drawable.baseline_alarm_black_48dp, "Didelis butas su garazo",312113,32, "+37000000007"));
-            items.add(new SkelbimaiList("Butassubalkonu", R.drawable.baseline_account_box_black_48dp, "Didelis butas prie juros be garazo", 1000000, 7, "+37000000008"));
-            items.add(new SkelbimaiList("Namaspriejurosbegarazo", R.drawable.baseline_accessibility_black_48dp, "Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo ", 123123, 4, "+37000000000"));
+            items.add(new SkelbimaiList("Butas", R.drawable.baseline_announcement_black_48dp, "Butas Kauno centre", 4312312, 6, "+37000000001",""));
+            items.add(new SkelbimaiList("Butas", R.drawable.baseline_alarm_black_48dp, "Butas Kauno centre",233123,143, "+37000000002",""));
+            items.add(new SkelbimaiList("Butassubalkonu", R.drawable.baseline_account_box_black_48dp, "Butas su balkonu tiesiog",1231231,123, "+37000000003",""));
+            items.add(new SkelbimaiList("Namasprieuros", R.drawable.baseline_accessibility_black_48dp, "Namas prie juros su visais patogumais",9999999, 2, "+37000000004",""));
+            items.add(new SkelbimaiList("Dviaukstisnuosavasnamas", R.drawable.baseline_3d_rotation_black_48dp, "Dviaukstis nuosavas namas uz Kauno",77726,99, "+37000000005",""));
+            items.add(new SkelbimaiList("Butasbebalkono", R.drawable.baseline_announcement_black_48dp, "Butas be balkono",21322,1, "+37000000006",""));
+            items.add(new SkelbimaiList("Butassunuosavugarazu", R.drawable.baseline_alarm_black_48dp, "Didelis butas su garazo",312113,32, "+37000000007",""));
+            items.add(new SkelbimaiList("Butassubalkonu", R.drawable.baseline_account_box_black_48dp, "Didelis butas prie juros be garazo", 1000000, 7, "+37000000008",""));
+            items.add(new SkelbimaiList("Namaspriejurosbegarazo", R.drawable.baseline_accessibility_black_48dp, "Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo ", 123123, 4, "+37000000000",""));
         } else {
             return;
             /*items.add(new SkelbimaiList(
