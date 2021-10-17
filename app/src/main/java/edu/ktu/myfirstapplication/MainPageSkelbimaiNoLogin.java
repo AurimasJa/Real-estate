@@ -31,9 +31,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class SkelbimaiListView extends AppCompatActivity {
+public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
     private ListView myListView;
-    private Button sortASC,sortDES,sortPriceB, sortPriceS, filterbutton;
+    private Button sortASC, sortDES, sortPriceB, sortPriceS, filterbutton;
     private Button add_item;
     private EditText filterprice1, filterprice2;
     private Toolbar myToolbar;
@@ -60,6 +60,7 @@ public class SkelbimaiListView extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
         add_item = (Button) findViewById(R.id.button8);
+        add_item.setVisibility(View.GONE);
         adapter = new SkelbimaiListAdapter(this, list);
         sortASC = (Button) findViewById(R.id.button3);
         sortDES = (Button) findViewById(R.id.button4);
@@ -72,7 +73,7 @@ public class SkelbimaiListView extends AppCompatActivity {
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     skelbimaiList = dataSnapshot.getValue(SkelbimaiList.class);
                     list.add(skelbimaiList);
                 }
@@ -88,7 +89,7 @@ public class SkelbimaiListView extends AppCompatActivity {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getApplicationContext(),FourthActivity.class);
+                Intent intent = new Intent(getApplicationContext(), FourthActivity.class);
                 intent.putExtra("pavadinimas", list.get(i).getTitle());
                 intent.putExtra("kaina", list.get(i).getPrice());
                 intent.putExtra("descriptionas", list.get(i).getDescription());
@@ -103,16 +104,8 @@ public class SkelbimaiListView extends AppCompatActivity {
         sortPriceSmall();
         sortPriceBig();
         Filter();
-        add_item.setOnClickListener(start_add_item_activity);
     }
-    View.OnClickListener start_add_item_activity = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent intent = new Intent(getApplicationContext(), Skelbimo_pridejimas.class);
-            intent.putExtra("flag", true);
-            startActivity(intent);
-        }
-    };
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -136,15 +129,15 @@ public class SkelbimaiListView extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.appbarmenu, menu);
 
-       // MenuItem searchItem = menu.findItem(R.id.action_search);
-       // SearchView searchView = (SearchView) searchItem.getActionView();
+        // MenuItem searchItem = menu.findItem(R.id.action_search);
+        // SearchView searchView = (SearchView) searchItem.getActionView();
 
         // Configure the search info and add any event listeners...
 
         return super.onCreateOptionsMenu(menu);
     }
 
-    private void sortAscList(){
+    private void sortAscList() {
         sortASC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -158,7 +151,8 @@ public class SkelbimaiListView extends AppCompatActivity {
             }
         });
     }
-    private void sortDesList(){
+
+    private void sortDesList() {
         sortDES.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -173,7 +167,8 @@ public class SkelbimaiListView extends AppCompatActivity {
             }
         });
     }
-    private void sortPriceSmall(){
+
+    private void sortPriceSmall() {
         sortPriceS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -190,7 +185,8 @@ public class SkelbimaiListView extends AppCompatActivity {
             }
         });
     }
-    private void sortPriceBig(){
+
+    private void sortPriceBig() {
         sortPriceB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -209,33 +205,34 @@ public class SkelbimaiListView extends AppCompatActivity {
         });
     }
 
-    private void Filter(){
+    private void Filter() {
 
         filterbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ArrayList<SkelbimaiList> filteredList = new ArrayList<>();
-                if(filterprice1.getText().toString().isEmpty() || filterprice2.getText().toString().isEmpty()){
+                if (filterprice1.getText().toString().isEmpty() || filterprice2.getText().toString().isEmpty()) {
                     filterprice1.setError("Privalo būti įvestas kažkoks skaičius.");
                     filterprice2.setError("Privalo būti įvestas kažkoks skaičius.");
                     return;
-                }else{
+                } else {
                     float price1 = Float.valueOf(filterprice1.getText().toString());
                     float price2 = Float.valueOf(filterprice2.getText().toString());
 
-                    for (SkelbimaiList listas : list){
+                    for (SkelbimaiList listas : list) {
 
                         //Toast.makeText(SkelbimaiListView.this, listas.getPrice() + "   -   " + price1, Toast.LENGTH_LONG ).show();
-                        if(listas.getPrice() > price1 && listas.getPrice() < price2){
+                        if (listas.getPrice() > price1 && listas.getPrice() < price2) {
                             filteredList.add(listas);
                             //Toast.makeText(SkelbimaiListView.this, listas.getPrice() + "   -   " + price1, Toast.LENGTH_LONG ).show();
                         }
                     }
-                    adapter = new SkelbimaiListAdapter(SkelbimaiListView.this, filteredList);
+                    adapter = new SkelbimaiListAdapter(MainPageSkelbimaiNoLogin.this, filteredList);
                     myListView.setAdapter(adapter);
                 }
             }
         });
     }
+
 }
 

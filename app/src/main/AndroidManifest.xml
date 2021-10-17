@@ -51,5 +51,8 @@
             android:label="@string/appbarSkelbimai"
             android:parentActivityName=".FirstActivity"/>
 
+        <activity android:name=".Skelbimo_pridejimas"></activity>
+        <activity android:name=".MainPageSkelbimaiNoLogin"></activity>
+
     </application>
 </manifest>
