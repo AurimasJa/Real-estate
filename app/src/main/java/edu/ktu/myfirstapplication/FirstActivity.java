@@ -119,7 +119,7 @@ public class FirstActivity extends AppCompatActivity {
         }
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.appbarmenu, menu);
 
@@ -130,7 +130,7 @@ public class FirstActivity extends AppCompatActivity {
         // Configure the search info and add any event listeners...
 
         return super.onCreateOptionsMenu(menu);
-    }
+    }*/
 }
 
 
