@@ -27,7 +27,7 @@
                 android:value=".MainPageLoginRegister" />
         </activity>
         <activity android:name=".RegisterPage" />
-        <activity android:name=".SecondActivity" />
+        <activity android:name=".SecondActivity"/>
         <activity android:name=".Skelbimai"
             android:label="@string/appbarSkelbimai"
             android:parentActivityName=".FirstActivity" >
@@ -43,9 +43,12 @@
             android:value=".MainPageLoginRegister" />
         </activity>
         <activity android:name=".LoginPage" />
-        <activity android:name=".FourthActivity" />
-        <activity android:name=".Settings" />
+        <activity android:name=".FourthActivity"
+            android:label="Skelbimas"/>
+        <activity android:name=".Settings"
+            android:label="Nustatymai"/>
         <activity android:name=".SkelbimaiListView"
+            android:label="@string/appbarSkelbimai"
             android:parentActivityName=".FirstActivity"/>
 
     </application>
