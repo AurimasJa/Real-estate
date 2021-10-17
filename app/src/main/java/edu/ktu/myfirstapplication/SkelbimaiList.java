@@ -1,21 +1,27 @@
 package edu.ktu.myfirstapplication;
 
+import android.widget.ImageView;
+
 public class SkelbimaiList {
     private String title;
     private int imageId;
     private String description;
     private float price;
     private int room_count;
+    private String phoneNum;
+    //private ImageView[] images;
 
     public SkelbimaiList() {
     }
 
-    public SkelbimaiList(String title, int imageId, String description, float price, int room_count) {
+    public SkelbimaiList(String title, int imageId, String description, float price, int room_count, String phoneNum) {
         this.title = title;
         this.imageId = imageId;
         this.description = description;
         this.price = price;
         this.room_count = room_count;
+        this.phoneNum = phoneNum;
+        //this.images = images;
     }
 
     public String getTitle() { return title; }
@@ -55,4 +61,16 @@ public class SkelbimaiList {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
+    }
+
+    //public ImageView[] getImages() { return images; }
+
+    //public void setImages(ImageView[] images) { this.images = images; }
 }

@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/button_login_main"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:backgroundTint="@color/colorPrimaryDark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="230dp"
         android:layout_marginRight="100dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:background="@drawable/rounded_corner"
         android:text="@string/Prisijungimas"
         android:textAllCaps="false"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button_register_main"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:backgroundTint="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="100dp"
         android:layout_marginRight="100dp"
+        android:backgroundTint="@color/colorAccent"
+        android:background="@drawable/rounded_corner"
         android:text="@string/Registracija"
         android:textAllCaps="false"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 </LinearLayout>
