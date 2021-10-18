@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,11 +34,14 @@ import java.util.List;
 
 public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
     private ListView myListView;
-    private Button sortASC, sortDES, sortPriceB, sortPriceS, filterbutton;
+    private Button sortASC,sortDES,sortPriceB, sortPriceS, filterbutton;
     private Button add_item;
+    private Button hide;
+    private Button show;
     private EditText filterprice1, filterprice2;
     private Toolbar myToolbar;
     private Context context = this;
+    private TextView vienas, du;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reff;
@@ -69,7 +73,20 @@ public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
         filterbutton = (Button) findViewById(R.id.button7);
         filterprice1 = (EditText) findViewById(R.id.editFilterPrice1);
         filterprice2 = (EditText) findViewById(R.id.editFilterPrice2);
+        hide = (Button) findViewById(R.id.button9);
+        show = (Button) findViewById(R.id.button10);
+        vienas = (TextView) findViewById(R.id.filtertext);
+        du = (TextView) findViewById(R.id.sorttext);
 
+        sortASC.setVisibility(View.GONE);
+        sortDES.setVisibility(View.GONE);
+        sortPriceB.setVisibility(View.GONE);
+        sortPriceS.setVisibility(View.GONE);
+        filterbutton.setVisibility(View.GONE);
+        filterprice1.setVisibility(View.GONE);
+        filterprice2.setVisibility(View.GONE);
+        vienas.setVisibility(View.GONE);
+        du.setVisibility(View.GONE);
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -104,8 +121,41 @@ public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
         sortPriceSmall();
         sortPriceBig();
         Filter();
+        HideButtons();
+        ShowButtons();
     }
-
+    private void HideButtons(){
+        hide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sortASC.setVisibility(View.GONE);
+                sortDES.setVisibility(View.GONE);
+                sortPriceB.setVisibility(View.GONE);
+                sortPriceS.setVisibility(View.GONE);
+                filterbutton.setVisibility(View.GONE);
+                filterprice1.setVisibility(View.GONE);
+                filterprice2.setVisibility(View.GONE);
+                vienas.setVisibility(View.GONE);
+                du.setVisibility(View.GONE);
+            }
+        });
+    }
+    private void ShowButtons(){
+        show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sortASC.setVisibility(View.VISIBLE);
+                sortDES.setVisibility(View.VISIBLE);
+                sortPriceB.setVisibility(View.VISIBLE);
+                sortPriceS.setVisibility(View.VISIBLE);
+                filterbutton.setVisibility(View.VISIBLE);
+                filterprice1.setVisibility(View.VISIBLE);
+                filterprice2.setVisibility(View.VISIBLE);
+                vienas.setVisibility(View.VISIBLE);
+                du.setVisibility(View.VISIBLE);
+            }
+        });
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
