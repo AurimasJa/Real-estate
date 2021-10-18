@@ -35,6 +35,8 @@ public class SkelbimaiListView extends AppCompatActivity {
     private ListView myListView;
     private Button sortASC,sortDES,sortPriceB, sortPriceS, filterbutton;
     private Button add_item;
+    private Button hide;
+    private Button show;
     private EditText filterprice1, filterprice2;
     private Toolbar myToolbar;
     private Context context = this;
@@ -54,7 +56,8 @@ public class SkelbimaiListView extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Skelbimai");
         list = new ArrayList<>();
-
+        hide = (Button) findViewById(R.id.button9);
+        show = (Button) findViewById(R.id.button10);
         myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
@@ -103,6 +106,8 @@ public class SkelbimaiListView extends AppCompatActivity {
         sortPriceSmall();
         sortPriceBig();
         Filter();
+        HideButtons();
+        ShowButtons();
         add_item.setOnClickListener(start_add_item_activity);
     }
     View.OnClickListener start_add_item_activity = new View.OnClickListener() {
@@ -142,6 +147,32 @@ public class SkelbimaiListView extends AppCompatActivity {
         // Configure the search info and add any event listeners...
 
         return super.onCreateOptionsMenu(menu);
+    }
+
+
+    private void HideButtons(){
+        hide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sortASC.setVisibility(View.GONE);
+                sortDES.setVisibility(View.GONE);
+                sortPriceB.setVisibility(View.GONE);
+                sortPriceS.setVisibility(View.GONE);
+                filterbutton.setVisibility(View.GONE);
+            }
+        });
+    }
+    private void ShowButtons(){
+        show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sortASC.setVisibility(View.VISIBLE);
+                sortDES.setVisibility(View.VISIBLE);
+                sortPriceB.setVisibility(View.VISIBLE);
+                sortPriceS.setVisibility(View.VISIBLE);
+                filterbutton.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     private void sortAscList(){
