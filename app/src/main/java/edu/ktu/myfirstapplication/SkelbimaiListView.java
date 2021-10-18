@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -40,6 +41,7 @@ public class SkelbimaiListView extends AppCompatActivity {
     private EditText filterprice1, filterprice2;
     private Toolbar myToolbar;
     private Context context = this;
+    private TextView vienas, du;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reff;
@@ -58,6 +60,8 @@ public class SkelbimaiListView extends AppCompatActivity {
         list = new ArrayList<>();
         hide = (Button) findViewById(R.id.button9);
         show = (Button) findViewById(R.id.button10);
+        vienas = (TextView) findViewById(R.id.filtertext);
+        du = (TextView) findViewById(R.id.sorttext);
         myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
@@ -71,7 +75,15 @@ public class SkelbimaiListView extends AppCompatActivity {
         filterbutton = (Button) findViewById(R.id.button7);
         filterprice1 = (EditText) findViewById(R.id.editFilterPrice1);
         filterprice2 = (EditText) findViewById(R.id.editFilterPrice2);
-
+        sortASC.setVisibility(View.GONE);
+        sortDES.setVisibility(View.GONE);
+        sortPriceB.setVisibility(View.GONE);
+        sortPriceS.setVisibility(View.GONE);
+        filterbutton.setVisibility(View.GONE);
+        filterprice1.setVisibility(View.GONE);
+        filterprice2.setVisibility(View.GONE);
+        vienas.setVisibility(View.GONE);
+        du.setVisibility(View.GONE);
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -159,6 +171,10 @@ public class SkelbimaiListView extends AppCompatActivity {
                 sortPriceB.setVisibility(View.GONE);
                 sortPriceS.setVisibility(View.GONE);
                 filterbutton.setVisibility(View.GONE);
+                filterprice1.setVisibility(View.GONE);
+                filterprice2.setVisibility(View.GONE);
+                vienas.setVisibility(View.GONE);
+                du.setVisibility(View.GONE);
             }
         });
     }
@@ -171,6 +187,10 @@ public class SkelbimaiListView extends AppCompatActivity {
                 sortPriceB.setVisibility(View.VISIBLE);
                 sortPriceS.setVisibility(View.VISIBLE);
                 filterbutton.setVisibility(View.VISIBLE);
+                filterprice1.setVisibility(View.VISIBLE);
+                filterprice2.setVisibility(View.VISIBLE);
+                vienas.setVisibility(View.VISIBLE);
+                du.setVisibility(View.VISIBLE);
             }
         });
     }

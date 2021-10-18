@@ -13,6 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sorttext"
+            android:layout_below="@+id/button9"
             android:text="Rikiavimas"/>
         <Button
             android:id="@+id/button3"
@@ -45,11 +46,11 @@
 
 
         <TextView
+            android:id="@+id/filtertext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/filtertext"
             android:layout_below="@id/button6"
-            android:text="Filtravimas:"/>
+            android:text="Filtravimas:" />
 
         <EditText
             android:id="@+id/editFilterPrice1"
@@ -87,14 +88,14 @@
             android:id="@+id/button9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Paslėpti filtrus" />
 
         <Button
             android:id="@+id/button10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/button9"
-            android:text="Button" />
+            android:layout_toRightOf="@id/button9"
+            android:text="Rodyti filtrus" />
 
     </RelativeLayout>
     <ListView
