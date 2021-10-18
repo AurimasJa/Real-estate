@@ -59,10 +59,10 @@ public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
         reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Skelbimai");
         list = new ArrayList<>();
 
-        myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
-        ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(true);
+        //myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        //setSupportActionBar(myToolbar);
+        //ActionBar ab = getSupportActionBar();
+        //ab.setDisplayHomeAsUpEnabled(true);
         add_item = (Button) findViewById(R.id.button8);
         add_item.setVisibility(View.GONE);
         adapter = new SkelbimaiListAdapter(this, list);

@@ -62,10 +62,10 @@ public class SkelbimaiListView extends AppCompatActivity {
         show = (Button) findViewById(R.id.button10);
         vienas = (TextView) findViewById(R.id.filtertext);
         du = (TextView) findViewById(R.id.sorttext);
-        myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
-        ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(true);
+        //myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        //setSupportActionBar(myToolbar);
+        //ActionBar ab = getSupportActionBar();
+        //ab.setDisplayHomeAsUpEnabled(true);
         add_item = (Button) findViewById(R.id.button8);
         adapter = new SkelbimaiListAdapter(this, list);
         sortASC = (Button) findViewById(R.id.button3);
@@ -130,7 +130,7 @@ public class SkelbimaiListView extends AppCompatActivity {
             startActivity(intent);
         }
     };
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
@@ -159,7 +159,7 @@ public class SkelbimaiListView extends AppCompatActivity {
         // Configure the search info and add any event listeners...
 
         return super.onCreateOptionsMenu(menu);
-    }
+    }*/
 
 
     private void HideButtons(){
