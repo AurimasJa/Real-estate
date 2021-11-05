@@ -14,13 +14,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/sorttext"
             android:layout_below="@+id/button9"
-            android:text="Rikiavimas"/>
+            android:text="@string/Rikiavimas"/>
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/sorttext"
-            android:text="Pavadinimas A-Z" />
+            android:text="@string/PavadinimasA_Z" />
 
         <Button
             android:id="@+id/button4"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button3"
             android:layout_below="@id/sorttext"
-            android:text="Pavadinimas Z-A" />
+            android:text="@string/PavadinimasZ_A" />
 
         <Button
             android:id="@+id/button5"
@@ -36,13 +36,13 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/button6"
             android:layout_below="@id/button3"
-            android:text="KAINA 9-0" />
+            android:text="@string/KAINA9_0" />
         <Button
             android:id="@+id/button6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/button3"
-            android:text="KAINA 0-9" />
+            android:text="@string/KAINA0_9" />
 
 
         <TextView
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/button6"
-            android:text="Filtravimas:" />
+            android:text="@string/Filtravimas" />
 
         <EditText
             android:id="@+id/editFilterPrice1"
@@ -59,7 +59,7 @@
             android:ems="10"
             android:layout_below="@id/filtertext"
             android:inputType="numberDecimal|numberSigned"
-            android:hint="Kainos minimumas"/>
+            android:hint="@string/KainosMinimumas"/>
 
         <EditText
             android:id="@+id/editFilterPrice2"
@@ -68,34 +68,34 @@
             android:ems="10"
             android:layout_below="@id/editFilterPrice1"
             android:inputType="numberDecimal|numberSigned"
-            android:hint="Kainos maximumas"/>
+            android:hint="@string/KainosMaximumas"/>
 
         <Button
             android:id="@+id/button7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/editFilterPrice2"
-            android:text="Filtruoti" />
+            android:text="@string/Filtruoti" />
 
         <Button
             android:id="@+id/button8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/button7"
-            android:text="Pridėti skelbimą" />
+            android:text="@string/Pridėtiskelbimą" />
 
         <Button
             android:id="@+id/button9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Paslėpti filtrus" />
+            android:text="@string/Paslėptifiltrus" />
 
         <Button
             android:id="@+id/button10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button9"
-            android:text="Rodyti filtrus" />
+            android:text="@string/Rodytifiltrus" />
 
     </RelativeLayout>
     <ListView
