@@ -74,8 +74,19 @@
             android:textStyle="italic"
             android:padding="15dp"
             android:gravity="center"
-            android:layout_alignParentBottom="true"
+            android:layout_above="@+id/bottomNavFirst"
             android:text="TextView" />
+        
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomNavFirst"
+            app:itemBackground="@color/colorPrimary"
+            app:itemTextColor="@drawable/selector"
+            app:itemIconTint="@drawable/selector"
+            app:menu="@menu/menu_navigation"
+            android:layout_alignParentBottom="true"
+            />
     </RelativeLayout>
 
 </LinearLayout>

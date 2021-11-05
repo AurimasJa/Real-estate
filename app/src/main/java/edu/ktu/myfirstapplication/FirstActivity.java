@@ -1,5 +1,6 @@
 package edu.ktu.myfirstapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,6 +17,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.view.MenuItem;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class FirstActivity extends AppCompatActivity {
 
     private Button myButton;
@@ -30,6 +33,32 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.firstactivitydesign);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavFirst);
+        bottomNavigationView.setSelectedItemId(R.id.mainpage);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.mainpage:
+                        return true;
+                    case R.id.settings:
+                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.logout:
+                        startActivity(new Intent(getApplicationContext(), MainPageLoginRegister.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.adv:
+                        startActivity(new Intent(getApplicationContext(), SkelbimaiListView.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
         Intent intent = getIntent();
         skelbimai = (Button) findViewById(R.id.button);
         secondActivityButton = (Button) findViewById(R.id.secondActivityButton);
