@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class SkelbimaiListAdapter extends ArrayAdapter<SkelbimaiList> {
@@ -32,7 +34,7 @@ public class SkelbimaiListAdapter extends ArrayAdapter<SkelbimaiList> {
 
         TextView title = (TextView) view.findViewById(R.id.title);
         TextView description = (TextView) view.findViewById(R.id.description);
-        //ImageView image = (ImageView) view.findViewById(R.id.imageView);
+        ImageView image = (ImageView) view.findViewById(R.id.imageView);
         TextView price = (TextView) view.findViewById(R.id.price);
         TextView room_count = (TextView) view.findViewById(R.id.room_count);
 
@@ -43,6 +45,7 @@ public class SkelbimaiListAdapter extends ArrayAdapter<SkelbimaiList> {
         //image.setImageResource(item.getImageId());
         price.setText(item.getPrice()+"");
         room_count.setText(item.getRoom_count()+"");
+        Picasso.get().load(item.getImage().toString()).into(image);
 
         return view;
     }

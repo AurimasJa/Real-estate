@@ -12,11 +12,11 @@
         android:layout_marginLeft="100dp"
         android:layout_marginTop="100dp"
         android:layout_marginRight="100dp"
-        android:autofillHints=""
         android:ems="10"
         android:gravity="center"
         android:hint="@string/LoginPageUsernameInput"
-        android:inputType="textPersonName"/>
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/editPasswordLogin"
@@ -28,7 +28,8 @@
         android:ems="10"
         android:gravity="center"
         android:hint="@string/LoginPagePasswordInput"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:minHeight="48dp" />
 
     <Button
         android:id="@+id/login_login_enter"

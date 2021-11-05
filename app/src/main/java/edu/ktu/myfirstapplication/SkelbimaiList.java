@@ -11,11 +11,12 @@ public class SkelbimaiList {
     private String phoneNum;
     private String createdBy;
     //private ImageView[] images;
+    private String Image;
 
     public SkelbimaiList() {
     }
 
-    public SkelbimaiList(String title, int imageId, String description, float price, int room_count, String phoneNum, String createdBy) {
+    public SkelbimaiList(String title, int imageId, String description, float price, int room_count, String phoneNum, String createdBy, String image) {
         this.title = title;
         this.imageId = imageId;
         this.description = description;
@@ -24,8 +25,16 @@ public class SkelbimaiList {
         this.phoneNum = phoneNum;
         this.createdBy = createdBy;
         //this.images = images;
+        this.Image = image;
     }
 
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
+    }
     public String getCreatedBy() {
         return createdBy;
     }
