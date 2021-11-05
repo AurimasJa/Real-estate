@@ -54,7 +54,7 @@ public class MainPageLoginRegister extends AppCompatActivity{
 
     private void showChangeLang()
     {
-        String[] listItems = {"Lietuva", "English", "France"};
+        String[] listItems = {"Lietuva", "US", "France"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(context);
         //mBuilder.setTitle("Pasirinkite kalbą...");
         mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
