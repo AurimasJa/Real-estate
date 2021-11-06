@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -84,6 +86,33 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
             }
         });
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavFirst);
+        bottomNavigationView.setSelectedItemId(R.id.adv);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.mainpage:
+                        startActivity(new Intent(getApplicationContext(), FirstActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.settings:
+                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.logout:
+                        startActivity(new Intent(getApplicationContext(), MainPageLoginRegister.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.adv:
+                        startActivity(new Intent(getApplicationContext(), SkelbimaiListView.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
     private void openFileChooser() {

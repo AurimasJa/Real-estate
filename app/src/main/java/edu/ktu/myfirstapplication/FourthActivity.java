@@ -9,10 +9,13 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +59,34 @@ public class FourthActivity extends AppCompatActivity {
         kamb.setText(room+"");
         String numb = intent.getStringExtra("numeris");
         num.setText(numb);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavFirst);
+        bottomNavigationView.setSelectedItemId(R.id.adv);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.mainpage:
+                        startActivity(new Intent(getApplicationContext(), FirstActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.settings:
+                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.logout:
+                        startActivity(new Intent(getApplicationContext(), MainPageLoginRegister.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.adv:
+                        startActivity(new Intent(getApplicationContext(), SkelbimaiListView.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
         //enable back Button
      //   getSupportActionBar().setDisplayHomeAsUpEnabled(true);

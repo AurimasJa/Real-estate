@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -123,6 +124,32 @@ public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
         Filter();
         HideButtons();
         ShowButtons();
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavFirst);
+        bottomNavigationView.setSelectedItemId(R.id.adv);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.mainpage:
+                        startActivity(new Intent(getApplicationContext(), MainPageLoginRegister.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.settings:
+                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.logout:
+                        startActivity(new Intent(getApplicationContext(), MainPageLoginRegister.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.adv:
+                        return true;
+                }
+                return false;
+            }
+        });
     }
     private void HideButtons(){
         hide.setOnClickListener(new View.OnClickListener() {
