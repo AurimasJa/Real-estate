@@ -51,6 +51,9 @@
             android:name=".FourthActivity"
             android:label="Skelbimas" />
         <activity
+            android:name=".FourthActivityNoLogin"
+            android:label="Skelbimas" />
+        <activity
             android:name=".Settings"
             android:label="Nustatymai" />
         <activity

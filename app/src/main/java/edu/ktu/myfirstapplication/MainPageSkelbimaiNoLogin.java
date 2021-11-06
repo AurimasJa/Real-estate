@@ -53,7 +53,7 @@ public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.skelbimailistviewxml);
+        setContentView(R.layout.skelbimailistviewnologin);
         myListView = (ListView) findViewById(R.id.skelbimulistview);
         skelbimaiList = new SkelbimaiList();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -107,7 +107,7 @@ public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getApplicationContext(), FourthActivity.class);
+                Intent intent = new Intent(getApplicationContext(), FourthActivityNoLogin.class);
                 intent.putExtra("pavadinimas", list.get(i).getTitle());
                 intent.putExtra("kaina", list.get(i).getPrice());
                 intent.putExtra("descriptionas", list.get(i).getDescription());
@@ -124,32 +124,6 @@ public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
         Filter();
         HideButtons();
         ShowButtons();
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavFirst);
-        bottomNavigationView.setSelectedItemId(R.id.adv);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.mainpage:
-                        startActivity(new Intent(getApplicationContext(), MainPageLoginRegister.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(), Settings.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.logout:
-                        startActivity(new Intent(getApplicationContext(), MainPageLoginRegister.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.adv:
-                        return true;
-                }
-                return false;
-            }
-        });
     }
     private void HideButtons(){
         hide.setOnClickListener(new View.OnClickListener() {
@@ -202,7 +176,7 @@ public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
         }
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.appbarmenu, menu);
 
@@ -212,7 +186,7 @@ public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
         // Configure the search info and add any event listeners...
 
         return super.onCreateOptionsMenu(menu);
-    }
+    }*/
 
     private void sortAscList() {
         sortASC.setOnClickListener(new View.OnClickListener() {
