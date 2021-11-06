@@ -119,7 +119,6 @@ public class Skelbimai extends AppCompatActivity{
                 intent.putExtra("pavadinimas", items.get(i).getTitle());
                 intent.putExtra("kaina", items.get(i).getPrice());
                 intent.putExtra("descriptionas", items.get(i).getDescription());
-                intent.putExtra("nuotrauka", items.get(i).getImageId());
                 intent.putExtra("kambariai", items.get(i).getRoom_count());
                 intent.putExtra("numeris", items.get(i).getPhoneNum());
                 startActivity(intent);
