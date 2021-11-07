@@ -56,7 +56,6 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
         setContentView(R.layout.activity_skelbimo_pridejimas);
 
         add_btn = (Button) findViewById(R.id.btn_add_item);
-        add_pht = (Button) findViewById(R.id.btn_add_photo);
         choose_image = (Button) findViewById(R.id.btn_choose_img);
         imageView = (ImageView) findViewById(R.id.imageView2);
         edit_Title = (EditText) findViewById(R.id.edit_Title);
@@ -141,47 +140,47 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
         if (mImageUri != null) {
             StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()+ "." + getFileExtension(mImageUri));
             mUploadTask = fileReference.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            if (taskSnapshot.getMetadata() != null) {
-                                if (taskSnapshot.getMetadata().getReference() != null) {
-                                    Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
-                                    result.addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                        @Override
-                                        public void onSuccess(Uri uri) {
-                                            String imageUrl = uri.toString();
-                                            Toast.makeText(Skelbimo_pridejimas.this, imageUrl, Toast.LENGTH_LONG).show();
-                                            String Title = edit_Title.getText().toString().trim();
-                                            float Price = Float.parseFloat(edit_Price.getText().toString().trim());
-                                            String Desc = edit_Desc.getText().toString().trim();
-                                            int roomCount = Integer.parseInt(edit_RoomCount.getText().toString().trim());
-                                            String PhoneNumber = edit_PhoneNumber.getText().toString().trim();
-                                            String CreatedBy = edit_CreatedBy.getText().toString().trim();
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    if (taskSnapshot.getMetadata() != null) {
+                        if (taskSnapshot.getMetadata().getReference() != null) {
+                            Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
+                            result.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String imageUrl = uri.toString();
+                                    Toast.makeText(Skelbimo_pridejimas.this, imageUrl, Toast.LENGTH_LONG).show();
+                                    String Title = edit_Title.getText().toString().trim();
+                                    float Price = Float.parseFloat(edit_Price.getText().toString().trim());
+                                    String Desc = edit_Desc.getText().toString().trim();
+                                    int roomCount = Integer.parseInt(edit_RoomCount.getText().toString().trim());
+                                    String PhoneNumber = edit_PhoneNumber.getText().toString().trim();
+                                    String CreatedBy = edit_CreatedBy.getText().toString().trim();
 
-                                            skelbimas.setTitle(Title);
-                                            skelbimas.setPrice(Price);
-                                            skelbimas.setDescription(Desc);
-                                            skelbimas.setRoom_count(roomCount);
-                                            skelbimas.setPhoneNum(PhoneNumber);
-                                            skelbimas.setCreatedBy(CreatedBy);
-                                            skelbimas.setImage(imageUrl);
+                                    skelbimas.setTitle(Title);
+                                    skelbimas.setPrice(Price);
+                                    skelbimas.setDescription(Desc);
+                                    skelbimas.setRoom_count(roomCount);
+                                    skelbimas.setPhoneNum(PhoneNumber);
+                                    skelbimas.setCreatedBy(CreatedBy);
+                                    skelbimas.setImage(imageUrl);
 
-                                            reff.child(Title).setValue(skelbimas);
-                                            Intent intent = new Intent(context, SkelbimaiListView.class);
-                                            //intent.putExtra("flag", true);
-                                            startActivity(intent);
-                                        }
-                                    });
+                                    reff.child(Title).setValue(skelbimas);
+                                    Intent intent = new Intent(context, SkelbimaiListView.class);
+                                    //intent.putExtra("flag", true);
+                                    startActivity(intent);
                                 }
-                            }
+                            });
                         }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Skelbimo_pridejimas.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                    }
+                }
+            })
+            .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(Skelbimo_pridejimas.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
         } else {
             Toast.makeText(this, "No file selected", Toast.LENGTH_SHORT).show();
         }
