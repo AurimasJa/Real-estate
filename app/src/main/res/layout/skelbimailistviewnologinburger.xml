@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".skelbimailistviewnologinburger"
+    tools:openDrawer="start">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include layout="@layout/toolbar" />
+
+        <ListView
+            android:id="@+id/skelbimulistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/sorttext"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@+id/button9"-->
+    <!--            android:text="@string/Rikiavimas" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/button3"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/sorttext"-->
+    <!--            android:text="@string/PavadinimasA_Z" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/button4"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/sorttext"-->
+    <!--            android:layout_toRightOf="@id/button3"-->
+    <!--            android:text="@string/PavadinimasZ_A" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/button5"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/button3"-->
+    <!--            android:layout_toEndOf="@id/button6"-->
+    <!--            android:text="@string/KAINA9_0" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/button6"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/button3"-->
+    <!--            android:text="@string/KAINA0_9" />-->
+
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/filtertext"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/button6"-->
+    <!--            android:text="@string/Filtravimas" />-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/editFilterPrice1"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/filtertext"-->
+    <!--            android:ems="10"-->
+    <!--            android:hint="@string/KainosMinimumas"-->
+    <!--            android:inputType="numberDecimal|numberSigned" />-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/editFilterPrice2"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/editFilterPrice1"-->
+    <!--            android:ems="10"-->
+    <!--            android:hint="@string/KainosMaximumas"-->
+    <!--            android:inputType="numberDecimal|numberSigned" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/button7"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/editFilterPrice2"-->
+    <!--            android:text="@string/Filtruoti" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/button8"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/button7"-->
+    <!--            android:text="@string/Pridėtiskelbimą" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/button9"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="@string/Paslėptifiltrus" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/button10"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_toRightOf="@id/button9"-->
+    <!--            android:text="@string/Rodytifiltrus" />-->
+    <!--    </RelativeLayout>-->

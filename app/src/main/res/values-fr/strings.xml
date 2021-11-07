@@ -44,4 +44,6 @@
     <string name="username">Nom dutilisateur</string>
     <string name="password">Mot de passe</string>
     <string name="repeat_password">Répéter le mot de passe</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

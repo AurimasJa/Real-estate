@@ -31,6 +31,8 @@
         </activity>
         <activity android:name=".RegisterPage" />
         <activity android:name=".SecondActivity" />
+        <activity android:name=".skelbimailistviewnologinburger"/>
+        <activity android:name=".SkelbimaiListViewBurger"/>
         <activity
             android:name=".Skelbimai"
             android:label="@string/appbarSkelbimai"

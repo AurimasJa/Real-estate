@@ -42,4 +42,6 @@
     <string name="username">Vartotojo vardas</string>
     <string name="password">Slaptažodis</string>
     <string name="repeat_password">Pakartoti slaptažodį</string>
+    <string name="navigation_drawer_open">Atidaryti nav bara</string>
+    <string name="navigation_drawer_close">Uzdaryti nav bara</string>
 </resources>
