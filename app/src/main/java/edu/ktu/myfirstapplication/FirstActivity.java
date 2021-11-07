@@ -34,19 +34,13 @@ import java.util.Collections;
 
 public class FirstActivity extends AppCompatActivity {
 
-    private Button myButton;
-    private Button skelbimai;
     private Toolbar myToolbar;
-    private TextView link, username;
-    private Button secondActivityButton;
-    private Button logout;
     private Context context = this;
     TextView name;
     TextView price;
     TextView desc;
     TextView kamb;
 
-    SkelbimaiListAdapter adapter;
     TextView num;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reff;
