@@ -5,41 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:layout_height="300dp">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            tools:srcCompat="@tools:sample/avatars"
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:padding="5dp" />
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="100dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="20dp"
+            android:textSize="22sp" />
 
         <TextView
-            android:id="@+id/description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp" />
-        <TextView
             android:id="@+id/price"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp" />
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="70dp"
+            android:textSize="20sp"
+            android:layout_marginStart="20dp"
+            android:textColor="#FFD700"/>
+
         <TextView
             android:id="@+id/room_count"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp" />
-    </LinearLayout>
+            android:layout_gravity="right"
+            android:textColor="#000000"
+            android:background="@drawable/rounded_corner"
+            android:drawableLeft="@drawable/ic_info"
+            android:padding="3dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:text="4 kambariai"
+            android:textSize="15sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
 
 </LinearLayout>

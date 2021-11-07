@@ -114,8 +114,6 @@ public class FirstActivity extends AppCompatActivity {
                     num.setVisibility(View.GONE);
                     kamb.setVisibility(View.GONE);
                 }
-
-                //Toast.makeText(FirstActivity.this, list.size(), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -124,14 +122,6 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
-        adapter = new SkelbimaiListAdapter(this, list);
-       // adapter.addAll(list);
-        //adapter.addAll(list);
-        //showRandomAdv();
-
-        //Toast.makeText(FirstActivity.this, adapter.getCount(), Toast.LENGTH_LONG).show();
-
-       // name.setText(""+list.size());
     }
 
 
