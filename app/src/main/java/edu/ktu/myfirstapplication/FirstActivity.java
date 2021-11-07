@@ -143,6 +143,23 @@ public class FirstActivity extends AppCompatActivity {
         price.setText(list.get(0).getPrice()+"");
         num.setText(list.get(0).getPhoneNum());
         kamb.setText(list.get(0).getRoom_count()+"");
+
+        Button buttonas = (Button) findViewById(R.id.but);
+        buttonas.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),FourthActivity.class);
+                intent.putExtra("pavadinimas", list.get(0).getTitle());
+                intent.putExtra("kaina", list.get(0).getPrice());
+                intent.putExtra("descriptionas", list.get(0).getDescription());
+                //intent.putExtra("nuotrauka", list.get(i).getImageId());
+                intent.putExtra("kambariai", list.get(0).getRoom_count());
+                intent.putExtra("numeris", list.get(0).getPhoneNum());
+                startActivity(intent);
+                //runLoginEnterActivity(true);
+            }
+        });
+
+
         //Toast.makeText(FirstActivity.this, a, Toast.LENGTH_LONG).show();
     }
 
