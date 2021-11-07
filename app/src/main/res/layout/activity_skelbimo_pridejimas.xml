@@ -19,6 +19,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/edit_Title"
                 tools:srcCompat="@tools:sample/avatars" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/btn_choose_img"
                 android:layout_width="fill_parent"

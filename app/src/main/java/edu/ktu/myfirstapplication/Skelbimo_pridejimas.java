@@ -15,6 +15,7 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -41,6 +42,8 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     EditText edit_PhoneNumber;
     EditText edit_CreatedBy;
     ImageView imageView;
+
+    private ProgressBar mProgressBar;
     Button add_pht, choose_image;
     private Uri mImageUri;
     FirebaseDatabase firebaseDatabase;
@@ -66,6 +69,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
         edit_CreatedBy = (EditText) findViewById(R.id.edit_CreatedBy);
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
         firebaseDatabase = FirebaseDatabase.getInstance();
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Skelbimai");
 
         choose_image.setOnClickListener(new View.OnClickListener() {
@@ -149,7 +153,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     String imageUrl = uri.toString();
-                                    Toast.makeText(Skelbimo_pridejimas.this, imageUrl, Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(Skelbimo_pridejimas.this, imageUrl, Toast.LENGTH_LONG).show();
                                     String Title = edit_Title.getText().toString().trim();
                                     float Price = Float.parseFloat(edit_Price.getText().toString().trim());
                                     String Desc = edit_Desc.getText().toString().trim();
@@ -180,7 +184,13 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                 public void onFailure(@NonNull Exception e) {
                     Toast.makeText(Skelbimo_pridejimas.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-            });
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                            double progress = (100.0 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
+                            mProgressBar.setProgress((int) progress);
+                        }
+                    });
         } else {
             Toast.makeText(this, getText(R.string.nofile), Toast.LENGTH_SHORT).show();
         }
