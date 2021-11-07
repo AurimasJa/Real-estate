@@ -21,6 +21,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,7 +37,8 @@ import java.util.List;
 public class SkelbimaiListView extends AppCompatActivity {
     private ListView myListView;
     private Button sortASC,sortDES,sortPriceB, sortPriceS, filterbutton;
-    private Button add_item;
+    //private Button add_item;
+    private FloatingActionButton add_item;
     private Button hide;
     private Button show;
     private EditText filterprice1, filterprice2;
@@ -92,7 +94,7 @@ public class SkelbimaiListView extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-        add_item = (Button) findViewById(R.id.button8);
+        add_item = (FloatingActionButton) findViewById(R.id.button8);
         adapter = new SkelbimaiListAdapter(this, list);
         sortASC = (Button) findViewById(R.id.button3);
         sortDES = (Button) findViewById(R.id.button4);

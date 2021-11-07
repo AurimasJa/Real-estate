@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/ic_info.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/ic_info_white.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/ic_menu_addas.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/rounded_corner.xml" value="0.3828125" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/rounded_corner_textview.xml" value="0.3828125" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/selector.xml" value="0.3828125" />
@@ -26,9 +27,10 @@
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimaidesign.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistdesign.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistviewnologin.xml" value="0.23385416666666667" />
-        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistviewxml.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistviewxml.xml" value="0.25" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/toolbar.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/menu/appbarmenu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/mipmap-anydpi-v26/team.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/Auris/Downloads/labs-master/labs-master/lab 1/MyFirstApplication/app/src/main/res/layout/firstactivitydesign.xml" value="0.31521739130434784" />
         <entry key="..\:/Users/Auris/Downloads/labs-master/labs-master/lab 1/MyFirstApplication/app/src/main/res/layout/skelbimaidesign.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />

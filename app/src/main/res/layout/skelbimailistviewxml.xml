@@ -83,13 +83,6 @@
             android:text="@string/Filtruoti" />
 
         <Button
-            android:id="@+id/button8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/button7"
-            android:text="@string/Pridėtiskelbimą" />
-
-        <Button
             android:id="@+id/button9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,26 +97,44 @@
 
 
     </RelativeLayout>
-    <ListView
-        android:id="@+id/skelbimulistview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-    </ListView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavFirst"
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/skelbimulistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="55dp">
+        </ListView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="bottom|end"
+            android:src="@drawable/ic_menu_addas"/>
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            app:itemBackground="@color/colorPrimary"
-            app:itemIconTint="@drawable/selector"
-            app:itemTextColor="@drawable/selector"
-            app:menu="@menu/menu_navigation" />
-    </LinearLayout>
+            android:layout_gravity="bottom">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavFirst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                app:itemBackground="@color/colorPrimary"
+                app:itemIconTint="@drawable/selector"
+                app:itemTextColor="@drawable/selector"
+                app:menu="@menu/menu_navigation" />
+        </LinearLayout>
+    </FrameLayout>
 </LinearLayout>
