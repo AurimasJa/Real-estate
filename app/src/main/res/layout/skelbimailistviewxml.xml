@@ -101,6 +101,8 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/button9"
             android:text="@string/Rodytifiltrus" />
+
+
     </RelativeLayout>
     <ListView
         android:id="@+id/skelbimulistview"

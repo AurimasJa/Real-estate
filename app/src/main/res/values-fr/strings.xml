@@ -47,4 +47,16 @@
     <string name="HomePageAd">Voir l\'annonce</string>
     <string name="Namai">Accueil</string>
     <string name="Skelbimai">Annonces</string>
+    <string name="NoUser">L\'utilisateur n\'existe pas</string>
+    <string name="incorrectPassword">Mot de passe incorrect</string>
+    <string name="loginSuc">"Connexion réussie "</string>
+    <string name="empty">"Le champ ne peut pas être vide "</string>
+    <string name="upload">"Le téléchargement est en cours "</string>
+    <string name="nofile">"Le fichier n'a pas été sélectionné "</string>
+    <string name="succ">"Enregistré avec succès maintenant, vous pouvez vous connecter "</string>
+    <string name="small">Nom d\'utilisateur trop long</string>
+    <string name="inc">" Adresse e-mail incorrecte"</string>
+    <string name="pswnot">"Le mot de passe ne correspond pas "</string>
+    <string name="longps">Le mot de passe est trop court ou trop long</string>
+    <string name="add">Ajouter</string>
 </resources>

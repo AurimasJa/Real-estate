@@ -47,4 +47,16 @@
     <string name="HomePageAd">View ad</string>
     <string name="Namai">Home</string>
     <string name="Skelbimai">Advertisements</string>
+    <string name="NoUser">User does not exist</string>
+    <string name="incorrectPassword">Incorrect password</string>
+    <string name="loginSuc">Log in successful</string>
+    <string name="empty">Field can not be empty</string>
+    <string name="upload">Upload is in progress</string>
+    <string name="nofile">File was not selected</string>
+    <string name="succ">Registered successfully now you can log in</string>
+    <string name="pswnot">Password does not match</string>
+    <string name="inc">Incorrect email address</string>
+    <string name="small">Too long username</string>
+    <string name="longps">Password is too short or long</string>
+    <string name="add">Add</string>
 </resources>

@@ -15,16 +15,6 @@
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-    <TextView
-        android:id="@+id/usernameCall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textStyle="italic"
-        android:padding="15dp"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:text="TextView" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -72,12 +62,12 @@
             android:layout_gravity="right"
             android:textColor="#000000"
             android:background="@drawable/rounded_corner"
-            android:drawableLeft="@drawable/ic_info"
             android:padding="3dp"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:text="4 kambariai"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            app:drawableLeftCompat="@drawable/ic_info" />
 
     </androidx.cardview.widget.CardView>
 
@@ -89,7 +79,7 @@
             android:id="@+id/button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="125dp"
+            android:layout_marginStart="125dp"
             android:text="@string/HomePageAd"
             android:textStyle="bold" />
     </RelativeLayout>

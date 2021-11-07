@@ -77,32 +77,32 @@ public class LoginPage extends AppCompatActivity{
                             intent.putExtra("usernameAS", usernameDB);
                             intent.putExtra("emailAS", emailDB);
 
-                            Toast.makeText(LoginPage.this, "Sėkmingai prisijungėte", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginPage.this, getText(R.string.loginSuc), Toast.LENGTH_SHORT).show();
 
                             startActivity(intent);
                         }
                         else{
-                            etPassword.setError("Neteisingas slaptažodis");
+                            etPassword.setError(getText(R.string.incorrectPassword));
                         }
                     }else {
-                        etUsername.setError("Tokio vartotojo nėra");
+                        etUsername.setError(getText(R.string.NoUser));
                     }
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(LoginPage.this, "Atsitiko klaida: " + error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginPage.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private Boolean validate(String username, String password){
         if(username.isEmpty()){
-            etUsername.setError("Laukelis negali būti tuščias.");
+            etUsername.setError(getText(R.string.empty));
             return false;
         }else if(password.isEmpty()){
-            etPassword.setError("Laukelis negali būti tuščias.");
+            etPassword.setError(getText(R.string.empty));
             return false;
         }else{
             return true;

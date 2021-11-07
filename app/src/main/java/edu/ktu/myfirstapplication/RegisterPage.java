@@ -64,7 +64,7 @@ public class RegisterPage extends AppCompatActivity{
                     //reff.child(String.valueOf(id+1)).setValue(user); //kiekviena karta suras kiek yra child parent klasei ir prides + 1 ir prides duomenis....
                     reff.child(username).setValue(user); //kiekviena karta suras kiek yra child parent klasei ir prides + 1 ir prides duomenis....
 
-                    Toast.makeText(RegisterPage.this, "Sėkmingai užsiregistravote, dabar galite prisijungti.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterPage.this, getText(R.string.succ), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, LoginPage.class);
                     intent.putExtra("flag", true);
                     context.startActivity(intent);
@@ -89,33 +89,33 @@ public class RegisterPage extends AppCompatActivity{
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 //jei data nebuvo prideta arba buvo atsaukta ismes fail teksta
-                Toast.makeText(RegisterPage.this, "Kazkas ne taip " + error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterPage.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private Boolean validate(String username, String password, String repeatedPassword, String email){
         if(username.isEmpty()){
-            etUsername.setError("Laukelis negali būti tuščias.");
+            etUsername.setError(getText(R.string.empty));
             return false;
         }else if (username.length() >= 15){
-            etUsername.setError("Vartotojo vardas negali būti ilgesnis nei 15 simbolių.");
+            etUsername.setError(getText(R.string.small));
             return false;
         }else if(password.isEmpty()){
-            etPassword.setError("Laukelis negali būti tuščias.");
+            etPassword.setError(getText(R.string.empty));
             return false;
         }else if (password.length() >= 25 && password.length() <= 4){
-            etPassword.setError("Slaptažodis negali būti ilgesnis nei 15 simbolių ir trumpesnis nei 4 simbolių.");
+            etPassword.setError(getText(R.string.longps));
             return false;
         }else if(password.compareTo(repeatedPassword) != 0){
-            etPassword.setError("Slaptažodžiai nesutampa.");
-            etRepeatPsw.setError("Slaptažodžiai nesutampa.");
+            etPassword.setError(getText(R.string.pswnot));
+            etRepeatPsw.setError(getText(R.string.pswnot));
             return false;
         }else if (email.isEmpty()){
-            etEmail.setError("El. paštas negali būti tuščias.");
+            etEmail.setError(getText(R.string.empty));
             return false;
         }else if (!email.contains("@")){
-            etEmail.setError("El. paštas neteisingas.");
+            etEmail.setError(getText(R.string.inc));
             return false;
         }else{
             return true;

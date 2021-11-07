@@ -78,7 +78,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mUploadTask != null && mUploadTask.isInProgress()) {
-                    Toast.makeText(Skelbimo_pridejimas.this, "Upload in progress", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Skelbimo_pridejimas.this, getText(R.string.upload), Toast.LENGTH_SHORT).show();
                 } else {
                     uploadFile();
                 }
@@ -182,7 +182,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                 }
             });
         } else {
-            Toast.makeText(this, "No file selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getText(R.string.nofile), Toast.LENGTH_SHORT).show();
         }
     }
 }

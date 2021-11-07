@@ -45,4 +45,16 @@
     <string name="HomePageAd">Peržiūrėti skelbimą</string>
     <string name="Namai">Namai</string>
     <string name="Skelbimai">Skelbimai</string>
+    <string name="NoUser">Toks vartotojas neegzistuoja</string>
+    <string name="incorrectPassword">Neteisingas slaptažodis</string>
+    <string name="loginSuc">Sėkmingai prisijungėte</string>
+    <string name="empty">Negali būti tuščias laukelis</string>
+    <string name="upload">Įkėlimas vykdomas</string>
+    <string name="nofile">Nebuvo pasirinktas failas</string>
+    <string name="succ">Sėkmingai užsiregistravote, dabar galite prisijungti.</string>
+    <string name="pswnot">Nesutampa slaptažodžiai</string>
+    <string name="inc">E. paštas neteisingas</string>
+    <string name="small">Per ilgas vartotojo vardas</string>
+    <string name="longps">Slaptažodis per ilgas arba per trumpas</string>
+    <string name="add">Pridėti</string>
 </resources>
