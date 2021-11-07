@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/mainpage"
-        android:title="Namai"
+        android:title="@string/Namai"
         android:icon="@drawable/ic_home"/>
     <item
         android:id="@+id/adv"
-        android:title="Skelbimai"
+        android:title="@string/Skelbimai"
         android:icon="@drawable/ads"/>
     <item
         android:id="@+id/settings"
-        android:title="Nustatymai"
+        android:title="@string/action_settings"
         android:icon="@drawable/settings"/>
     <item
         android:id="@+id/logout"
-        android:title="Atsijungti"
+        android:title="@string/Atsijungti"
         android:icon="@drawable/logout"/>
 </menu>
