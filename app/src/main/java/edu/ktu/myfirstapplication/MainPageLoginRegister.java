@@ -71,7 +71,7 @@ public class MainPageLoginRegister extends AppCompatActivity{
         }
     };
     public void runSkelbimaiActivity(boolean flag) {
-        Intent intent = new Intent(context, MainPageSkelbimaiNoLogin.class);
+        Intent intent = new Intent(context, skelbimailistviewnologinburger.class);
         intent.putExtra("flag", flag);
         context.startActivity(intent);
     }

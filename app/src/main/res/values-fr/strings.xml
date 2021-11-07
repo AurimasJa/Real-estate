@@ -61,4 +61,6 @@
     <string name="add">Ajouter</string>
     <string name="whoweare">Nous sommes une équipe de construction solide qui est prête à vous aider à obtenir la meilleure offre sur l\'immobilier neuf avec le meilleur prix et la meilleure sélection de qualité!</string>
     <string name="weareteam">Qui nous sommes?</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

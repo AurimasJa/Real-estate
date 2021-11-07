@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_filterByName1"
+            android:title="A-Z"
+            android:icon="@drawable/sort_by_name_a_z" />
+        <item
+            android:id="@+id/nav_filterByName2"
+            android:title="Z-A"
+            android:icon="@drawable/sort_by_name_z_a" />
+        <item
+            android:id="@+id/nav_filterByNumb1"
+            android:title="1-9"
+            android:icon="@drawable/sort_by_number_1_9" />
+        <item
+            android:id="@+id/nav_filterByNumb2"
+            android:title="9-1"
+            android:icon="@drawable/sort_by_number_9_1" />
+        <item
+            android:id="@+id/nav_text1"
+            android:icon="@drawable/ic_search_black_24dp"
+            android:title="Nuo"
+            app:actionViewClass="android.widget.EditText"/>
+        <item
+            android:id="@+id/nav_text2"
+            android:icon="@drawable/ic_search_black_24dp"
+            android:title="Iki"
+            app:actionViewClass="android.widget.EditText"/>
+        <item
+            android:id="@+id/nav_filter"
+            android:title="OUT"
+            android:icon="@drawable/filter_done_icon" />
+    </group>
+
+</menu>

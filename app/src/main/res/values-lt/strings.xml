@@ -59,4 +59,6 @@
     <string name="add">Pridėti</string>
     <string name="whoweare">Esame stipri komanda, kuri pasiruošusi padėti Jums gauti geriausią pasiūlymą naujam nekilnojamam turtui su geriausios kainos ir kokybės pasirinkimu!</string>
     <string name="weareteam">Kas mes?</string>
+    <string name="navigation_drawer_open">Atidaryti nav bara</string>
+    <string name="navigation_drawer_close">Uzdaryti nav bara</string>
 </resources>

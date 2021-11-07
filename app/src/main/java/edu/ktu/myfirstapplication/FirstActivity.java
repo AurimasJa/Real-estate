@@ -36,6 +36,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+//skelbimai isiminti, filtruoti, paieska
+
 public class FirstActivity extends AppCompatActivity {
 
     private CardView myCardView;
@@ -71,7 +73,7 @@ public class FirstActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.adv:
-                        startActivity(new Intent(getApplicationContext(), SkelbimaiListView.class));
+                        startActivity(new Intent(getApplicationContext(), SkelbimaiListViewBurger.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

@@ -8,18 +8,20 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="250dp">
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            tools:srcCompat="@tools:sample/avatars"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_marginStart="20dp"
             android:layout_marginBottom="100dp"
             android:textColor="#FFFFFF"
             android:layout_marginStart="20dp"
@@ -28,13 +30,17 @@
             android:shadowDx="1.2"
             android:shadowDy="1.2"
             android:shadowRadius="1.2"/>
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_marginStart="20dp"
             android:layout_marginBottom="70dp"
+            android:textColor="#FFD700"
+            android:textSize="20sp" />
             android:textSize="20sp"
             android:layout_marginStart="20dp"
             android:textColor="#FFD700"
@@ -48,20 +54,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:textColor="#000000"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/rounded_corner"
             android:drawableLeft="@drawable/ic_info"
             android:padding="3dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
             android:text="4 kambariai"
+            android:textColor="#000000"
+            android:textSize="15sp" />
             android:textSize="15sp"/>
 
     </androidx.cardview.widget.CardView>
-
-
-
-
 
 
 </LinearLayout>

@@ -19,8 +19,10 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -49,6 +51,8 @@ public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
     ArrayList<SkelbimaiList> list;
     SkelbimaiListAdapter adapter;
     SkelbimaiList skelbimaiList;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,7 +126,7 @@ public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
         sortPriceSmall();
         sortPriceBig();
         Filter();
-        HideButtons();
+      //  HideButtons();
         ShowButtons();
     }
     private void HideButtons(){
