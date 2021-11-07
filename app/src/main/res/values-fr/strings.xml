@@ -59,4 +59,6 @@
     <string name="pswnot">"Le mot de passe ne correspond pas "</string>
     <string name="longps">Le mot de passe est trop court ou trop long</string>
     <string name="add">Ajouter</string>
+    <string name="whoweare">Nous sommes une équipe de construction solide qui est prête à vous aider à obtenir la meilleure offre sur l\'immobilier neuf avec le meilleur prix et la meilleure sélection de qualité!</string>
+    <string name="weareteam">Qui nous sommes?</string>
 </resources>

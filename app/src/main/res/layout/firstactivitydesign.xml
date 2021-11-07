@@ -75,6 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1">
+
         <Button
             android:id="@+id/button"
             android:layout_width="150dp"
@@ -82,6 +83,23 @@
             android:layout_marginStart="125dp"
             android:text="@string/HomePageAd"
             android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/asdasd"
+            android:text="@string/whoweare"
+            android:textColor="#000000" />
+        <TextView
+            android:id="@+id/asdasd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="138dp"
+            android:textColor="#000000"
+            android:textAlignment="center"
+            android:text="@string/weareteam" />
+
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
