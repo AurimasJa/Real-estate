@@ -170,7 +170,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                                     skelbimas.setImage(imageUrl);
 
                                     reff.child(Title).setValue(skelbimas);
-                                    Intent intent = new Intent(context, SkelbimaiListView.class);
+                                    Intent intent = new Intent(context, SkelbimaiListViewBurger.class);
                                     //intent.putExtra("flag", true);
                                     startActivity(intent);
                                 }
