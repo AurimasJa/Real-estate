@@ -42,4 +42,5 @@
     <string name="username">Vartotojo vardas</string>
     <string name="password">Slaptažodis</string>
     <string name="repeat_password">Pakartoti slaptažodį</string>
+    <string name="HomePageAd">Peržiūrėti skelbimą</string>
 </resources>

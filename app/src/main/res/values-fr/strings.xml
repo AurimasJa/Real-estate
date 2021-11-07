@@ -44,4 +44,5 @@
     <string name="username">Nom dutilisateur</string>
     <string name="password">Mot de passe</string>
     <string name="repeat_password">Répéter le mot de passe</string>
+    <string name="HomePageAd">Voir l\'annonce</string>
 </resources>
