@@ -44,4 +44,6 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="repeat_password">Repeat password</string>
+    <string name="Namai">Home</string>
+    <string name="Skelbimai">Advertisements</string>
 </resources>

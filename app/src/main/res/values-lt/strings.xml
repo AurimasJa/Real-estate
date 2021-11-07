@@ -42,4 +42,6 @@
     <string name="username">Vartotojo vardas</string>
     <string name="password">Slaptažodis</string>
     <string name="repeat_password">Pakartoti slaptažodį</string>
+    <string name="Namai">Namai</string>
+    <string name="Skelbimai">Skelbimai</string>
 </resources>
