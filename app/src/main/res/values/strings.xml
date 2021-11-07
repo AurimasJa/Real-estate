@@ -1,25 +1,47 @@
 <resources>
-    <string name="app_name">Namu pardavimai</string>
-    <string name="buttonSkelbimai">Skelbimai</string>
-    <string name="second_activity_button">Namų pardavimai (db)</string>
-    <string name="Namo_skelbimai">Namų skelbimai</string>
+    <string name="app_name">Home sales</string>
+    <string name="buttonSkelbimai">Advertising</string>
+    <string name="second_activity_button">Home sales (db)</string>
+    <string name="Namo_skelbimai">Home ads</string>
     <string name="textview">TextView</string>
-    <string name="textview1">Textviewas</string>
-
-    <string name="skelbimaitext">Skelbimai:</string>
-    <string name="Prisijungimas">Prisijungimas</string>
-
-    <string name="LoginPageButton">Prisijungti</string>
-    <string name="Registracija">Registracija</string>
-    <string name="Registruotis">Registruotis</string>
-
-    <string name="LoginPageUsernameInput">Vartotojo vardas</string>
-    <string name="LoginPagePasswordInput">Slaptažodis</string>
-
-    <string name="action_settings">Nustatymai</string>
-    <string name="action_favorite">Įsiminti</string>
-    <string name="action_search">Paieška</string>
-    <string name="action_share">Dalintis</string>
-    <string name="appbarMainPage">Pagrindinis puslapis</string>
-    <string name="appbarSkelbimai">Skelbimai</string>
+    <string name="textview1">Textviews</string>
+    <string name="skelbimaitext">Advertising:</string>
+    <string name="Prisijungimas">Login</string>
+    <string name="LoginPageButton">Log in</string>
+    <string name="Registracija">Registration</string>
+    <string name="Registruotis">Register</string>
+    <string name="LoginPageUsernameInput">User name</string>
+    <string name="LoginPagePasswordInput">Password</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_favorite">Save</string>
+    <string name="action_search">Search</string>
+    <string name="action_share">Share</string>
+    <string name="Rikiavimas">Sorting</string>
+    <string name="PavadinimasA_Z">Sort by name A-Z</string>
+    <string name="PavadinimasZ_A">Sort by name Z-A</string>
+    <string name="KAINA0_9">Sort by price 0-9</string>
+    <string name="KAINA9_0">Sort by price 9-0</string>
+    <string name="Filtravimas">Filter:</string>
+    <string name="KainosMinimumas">Min price</string>
+    <string name="KainosMaximumas">Max price</string>
+    <string name="Filtruoti">Filter</string>
+    <string name="Pridėtiskelbimą">Add</string>
+    <string name="Paslėptifiltrus">Hide filters</string>
+    <string name="Rodytifiltrus">Show filters</string>
+    <string name="appbarMainPage" translatable="false">Main page</string>
+    <string name="appbarSkelbimai" translatable="false">Advertisements</string>
+    <string name="Title">Title</string>
+    <string name="Price">Price</string>
+    <string name="Description">Description</string>
+    <string name="RoomCount">Room count</string>
+    <string name="PhoneNumber">Phone number</string>
+    <string name="CreatedBy">Created by</string>
+    <string name="ImageID">Image ID</string>
+    <string name="ChangeLang">Change language</string>
+    <string name="Advertisements">Advertisements for not registered users</string>
+    <string name="Atsijungti">Log out</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat password</string>
 </resources>

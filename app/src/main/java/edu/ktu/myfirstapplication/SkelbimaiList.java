@@ -4,28 +4,35 @@ import android.widget.ImageView;
 
 public class SkelbimaiList {
     private String title;
-    private int imageId;
     private String description;
     private float price;
     private int room_count;
     private String phoneNum;
     private String createdBy;
     //private ImageView[] images;
+    private String Image;
 
     public SkelbimaiList() {
     }
 
-    public SkelbimaiList(String title, int imageId, String description, float price, int room_count, String phoneNum, String createdBy) {
+    public SkelbimaiList(String title, String description, float price, int room_count, String phoneNum, String createdBy, String image) {
         this.title = title;
-        this.imageId = imageId;
         this.description = description;
         this.price = price;
         this.room_count = room_count;
         this.phoneNum = phoneNum;
         this.createdBy = createdBy;
         //this.images = images;
+        this.Image = image;
     }
 
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
+    }
     public String getCreatedBy() {
         return createdBy;
     }
@@ -38,14 +45,6 @@ public class SkelbimaiList {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public int getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
     }
 
     public float getPrice() {

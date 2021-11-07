@@ -49,7 +49,7 @@ public class Skelbimai extends AppCompatActivity{
 
         Intent intent = getIntent();
         if (intent.getBooleanExtra("flag", true)) {
-            items.add(new SkelbimaiList("Dviaukstis", R.drawable.baseline_3d_rotation_black_48dp, "Dviaukstis namas su visais patogumais", 50000, 3, "+37000000000",""));
+           /* items.add(new SkelbimaiList("Dviaukstis", R.drawable.baseline_3d_rotation_black_48dp, "Dviaukstis namas su visais patogumais", 50000, 3, "+37000000000",""));
             //items.add(new SkelbimaiList("Dviaukstis", R.drawable.house, "Dviaukstis namas su visais patogumais", 50000, 3));
             items.add(new SkelbimaiList("Butas", R.drawable.baseline_announcement_black_48dp, "Butas Kauno centre", 4312312, 6, "+37000000001",""));
             items.add(new SkelbimaiList("Butas", R.drawable.baseline_alarm_black_48dp, "Butas Kauno centre",233123,143, "+37000000002",""));
@@ -60,7 +60,7 @@ public class Skelbimai extends AppCompatActivity{
             items.add(new SkelbimaiList("Butassunuosavugarazu", R.drawable.baseline_alarm_black_48dp, "Didelis butas su garazo",312113,32, "+37000000007",""));
             items.add(new SkelbimaiList("Butassubalkonu", R.drawable.baseline_account_box_black_48dp, "Didelis butas prie juros be garazo", 1000000, 7, "+37000000008",""));
             items.add(new SkelbimaiList("Namaspriejurosbegarazo", R.drawable.baseline_accessibility_black_48dp, "Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo Didelis namas prie juros be garazo ", 123123, 4, "+37000000000",""));
-        } else {
+       */ } else {
             return;
             /*items.add(new SkelbimaiList(
                     "Mathematics",
@@ -119,7 +119,6 @@ public class Skelbimai extends AppCompatActivity{
                 intent.putExtra("pavadinimas", items.get(i).getTitle());
                 intent.putExtra("kaina", items.get(i).getPrice());
                 intent.putExtra("descriptionas", items.get(i).getDescription());
-                intent.putExtra("nuotrauka", items.get(i).getImageId());
                 intent.putExtra("kambariai", items.get(i).getRoom_count());
                 intent.putExtra("numeris", items.get(i).getPhoneNum());
                 startActivity(intent);
@@ -152,9 +151,9 @@ public class Skelbimai extends AppCompatActivity{
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.appbarmenu, menu);
 
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) searchItem.getActionView();
-        searchView.setIconified(false);
+        //MenuItem searchItem = menu.findItem(R.id.action_search);
+       // SearchView searchView = (SearchView) searchItem.getActionView();
+       // searchView.setIconified(false);
 
         /*searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

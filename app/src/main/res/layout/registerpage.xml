@@ -14,7 +14,7 @@
         android:layout_marginRight="100dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="El. paštas"
+        android:hint="@string/email"
         android:inputType="textPersonName" />
 
     <EditText
@@ -26,7 +26,7 @@
         android:layout_marginRight="100dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Vartotojo vardas"
+        android:hint="@string/username"
         android:inputType="textPersonName" />
 
     <EditText
@@ -49,7 +49,7 @@
         android:layout_marginRight="100dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Pakartoti slaptažodį"
+        android:hint="@string/repeat_password"
         android:inputType="textPassword" />
 
     <Button
