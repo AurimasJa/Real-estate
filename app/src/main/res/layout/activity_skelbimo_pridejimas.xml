@@ -20,16 +20,6 @@
                 android:layout_below="@+id/edit_Title"
                 tools:srcCompat="@tools:sample/avatars" />
             <Button
-                android:id="@+id/btn_add_photo"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="100dp"
-                android:gravity="center|left"
-                android:text="prideti nuotrauka"
-                android:textAlignment="center"/>
-            <Button
                 android:id="@+id/btn_choose_img"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
