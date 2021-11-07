@@ -43,7 +43,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     EditText edit_CreatedBy;
     ImageView imageView;
 
-    private ProgressBar mProgressBar;
+    //private ProgressBar mProgressBar;
     Button add_pht, choose_image;
     private Uri mImageUri;
     FirebaseDatabase firebaseDatabase;
@@ -69,7 +69,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
         edit_CreatedBy = (EditText) findViewById(R.id.edit_CreatedBy);
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
         firebaseDatabase = FirebaseDatabase.getInstance();
-        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+        //mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Skelbimai");
 
         choose_image.setOnClickListener(new View.OnClickListener() {
@@ -184,13 +184,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                 public void onFailure(@NonNull Exception e) {
                     Toast.makeText(Skelbimo_pridejimas.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
-            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                            double progress = (100.0 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
-                            mProgressBar.setProgress((int) progress);
-                        }
-                    });
+            });
         } else {
             Toast.makeText(this, getText(R.string.nofile), Toast.LENGTH_SHORT).show();
         }
