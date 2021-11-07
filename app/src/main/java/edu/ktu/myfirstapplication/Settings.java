@@ -59,7 +59,7 @@ public class Settings extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.adv:
-                        startActivity(new Intent(getApplicationContext(), SkelbimaiListView.class));
+                        startActivity(new Intent(getApplicationContext(), SkelbimaiListViewBurger.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

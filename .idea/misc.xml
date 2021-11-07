@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/ads.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/ic_info.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/ic_info_white.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/ic_menu_addas.xml" value="0.2604166666666667" />
@@ -14,19 +15,29 @@
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/activity_splash_screen.xml" value="0.2803442028985507" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/bandau.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/firstactivitydesign.xml" value="0.2140625" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/header.xml" value="0.24427083333333333" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/list_item.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/listitemdesign.xml" value="0.2140625" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/loginpage.xml" value="0.18" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/mainloginpage.xml" value="0.2328125" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/receiveractivitydesign.xml" value="0.2328125" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/receiveractivitydesignnologin.xml" value="0.2803442028985507" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/registerpage.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/secondactivitydesign.xml" value="0.23324275362318841" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/settingspage.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimai_info.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimaidesign.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistdesign.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistviewburger.xml" value="0.24427083333333333" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistviewnologin.xml" value="0.23385416666666667" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistviewnologinburger.xml" value="0.24427083333333333" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistviewxml.xml" value="0.25" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimulistview.xml" value="0.24427083333333333" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/toolbar.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/menu/appbarmenu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/menu/main_menu.xml" value="0.24427083333333333" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/mipmap-anydpi-v26/team.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/mipmap-anydpi-v26/team_round.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/Auris/Downloads/labs-master/labs-master/lab 1/MyFirstApplication/app/src/main/res/layout/firstactivitydesign.xml" value="0.31521739130434784" />
         <entry key="..\:/Users/Auris/Downloads/labs-master/labs-master/lab 1/MyFirstApplication/app/src/main/res/layout/skelbimaidesign.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
@@ -48,31 +59,13 @@
         <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/layout/skelbimailistviewxml.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/layout/toolbar.xml" value="0.302536231884058" />
         <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/menu/appbarmenu.xml" value="0.3287037037037037" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/filter_done_icon.xml" value="0.278125" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/sort_by_name_a_z.xml" value="0.278125" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/activity_skelbimo_pridejimas.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/activity_splash_screen.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/array.xml" value="0.34692028985507245" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/firstactivitydesign.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/header.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/listitemdesign.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/loginpage.xml" value="0.20260416666666667" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/mainloginpage.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/receiveractivitydesign.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/receiveractivitydesignnologin.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/registerpage.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/secondactivitydesign.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/settingspage.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimai_info.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimaidesign.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistdesign.xml" value="0.24365942028985507" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistviewburger.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistviewnologin.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistviewnologinburger.xml" value="0.20260416666666667" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimailistviewxml.xml" value="0.24365942028985507" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/skelbimulistview.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/layout/toolbar.xml" value="0.19895833333333332" />
-        <entry key="..\:/Users/pauli/AndroidStudioProjects/Real-estate/app/src/main/res/menu/main_menu.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/liudv/Desktop/Real-estate/app/src/main/res/layout/activity_skelbimo_pridejimas.xml" value="0.9395161290322581" />
+        <entry key="..\:/Users/liudv/Desktop/Real-estate/app/src/main/res/layout/firstactivitydesign.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/liudv/Desktop/Real-estate/app/src/main/res/layout/listitemdesign.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/liudv/Desktop/Real-estate/app/src/main/res/layout/mainloginpage.xml" value="0.264" />
+        <entry key="..\:/Users/liudv/Desktop/Real-estate/app/src/main/res/layout/registerpage.xml" value="0.14260385005065856" />
+        <entry key="..\:/Users/liudv/Desktop/Real-estate/app/src/main/res/layout/skelbimailistdesign.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/liudv/Desktop/Real-estate/app/src/main/res/layout/skelbimailistviewxml.xml" value="0.264" />
       </map>
     </option>
   </component>

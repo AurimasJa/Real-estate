@@ -25,6 +25,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -42,7 +43,7 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
 
     private ListView myListView;
     private Button sortASC,sortDES,sortPriceB, sortPriceS, filterbutton;
-    private Button add_item;
+    private FloatingActionButton add_item;
     private Toolbar myToolbar;
     private Context context = this;
     private TextView vienas, du;
@@ -82,6 +83,31 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
 
             }
         });
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavFirst);
+        bottomNavigationView.setSelectedItemId(R.id.adv);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.mainpage:
+                        startActivity(new Intent(getApplicationContext(), FirstActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.settings:
+                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.logout:
+                        startActivity(new Intent(getApplicationContext(), MainPageLoginRegister.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.adv:
+                        return true;
+                }
+                return false;
+            }
+        });
         //hooks
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -112,7 +138,17 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
                 startActivity(intent);
             }
         });
+        add_item = (FloatingActionButton) findViewById(R.id.button8);
+        add_item.setOnClickListener(start_add_item_activity);
     }
+    View.OnClickListener start_add_item_activity = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(getApplicationContext(), Skelbimo_pridejimas.class);
+            intent.putExtra("flag", true);
+            startActivity(intent);
+        }
+    };
     @Override
     public void onBackPressed() {
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
