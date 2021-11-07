@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.view.menu.MenuView;
+import androidx.cardview.widget.CardView;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,24 +29,24 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
 public class FirstActivity extends AppCompatActivity {
 
+    private CardView myCardView;
+    private ListView myListView;
     private Toolbar myToolbar;
     private Context context = this;
-    TextView name;
-    TextView price;
-    TextView desc;
-    TextView kamb;
 
-    TextView num;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reff;
     ArrayList<SkelbimaiList> list;
+    SkelbimaiListAdapter adapter;
     SkelbimaiList skelbimaiList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,21 +79,17 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
-        name = findViewById(R.id.textView3);
-        price = findViewById(R.id.textView4);
-        desc = findViewById(R.id.textView5);
-        kamb = findViewById(R.id.textView6);
-        num = findViewById(R.id.textViewNum);
+        myCardView = (CardView) findViewById(R.id.cardView);
+        myListView = (ListView) findViewById(R.id.skelbimulistview);
+        skelbimaiList = new SkelbimaiList();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Skelbimai");
+        list = new ArrayList<>();
         myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-        skelbimaiList = new SkelbimaiList();
-
-        list = new ArrayList<>();
-
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Skelbimai");
+        adapter = new SkelbimaiListAdapter(this, list);
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -100,13 +98,17 @@ public class FirstActivity extends AppCompatActivity {
                     list.add(skelbimaiList);
                 }
                 if(!list.isEmpty()){
-                    showRandomAdv();
-                }else{
-                    name.setVisibility(View.GONE);
-                    price.setVisibility(View.GONE);
-                    desc.setVisibility(View.GONE);
-                    num.setVisibility(View.GONE);
-                    kamb.setVisibility(View.GONE);
+                    RandomiseList();
+
+                    TextView title = (TextView) myCardView.findViewById(R.id.title);
+                    ImageView image = (ImageView) myCardView.findViewById(R.id.imageView);
+                    TextView price = (TextView) myCardView.findViewById(R.id.price);
+                    TextView room_count = (TextView) myCardView.findViewById(R.id.room_count);
+
+                    title.setText(list.get(0).getTitle());
+                    price.setText(list.get(0).getPrice()+"€");
+                    room_count.setText(list.get(0).getRoom_count()+" kambariai");
+                    Picasso.get().load(list.get(0).getImage().toString()).into(image);
                 }
             }
 
@@ -116,9 +118,19 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 
+        Button buttonas = (Button) findViewById(R.id.button);
+        buttonas.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),FourthActivity.class);
+                intent.putExtra("pavadinimas", list.get(0).getTitle());
+                intent.putExtra("kaina", list.get(0).getPrice());
+                intent.putExtra("descriptionas", list.get(0).getDescription());
+                intent.putExtra("kambariai", list.get(0).getRoom_count());
+                intent.putExtra("numeris", list.get(0).getPhoneNum());
+                startActivity(intent);
+            }
+        });
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -136,38 +148,9 @@ public class FirstActivity extends AppCompatActivity {
         }
     }
 
-    public void showRandomAdv(){
-        RandomiseList();
-        name.setText(list.get(0).getTitle());
-        desc.setText(list.get(0).getDescription());
-        price.setText(list.get(0).getPrice()+"");
-        num.setText(list.get(0).getPhoneNum());
-        kamb.setText(list.get(0).getRoom_count()+"");
-
-        Button buttonas = (Button) findViewById(R.id.but);
-        buttonas.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),FourthActivity.class);
-                intent.putExtra("pavadinimas", list.get(0).getTitle());
-                intent.putExtra("kaina", list.get(0).getPrice());
-                intent.putExtra("descriptionas", list.get(0).getDescription());
-                //intent.putExtra("nuotrauka", list.get(i).getImageId());
-                intent.putExtra("kambariai", list.get(0).getRoom_count());
-                intent.putExtra("numeris", list.get(0).getPhoneNum());
-                startActivity(intent);
-                //runLoginEnterActivity(true);
-            }
-        });
-
-
-        //Toast.makeText(FirstActivity.this, a, Toast.LENGTH_LONG).show();
-    }
-
     public void RandomiseList(){
         Collections.shuffle(list);
     }
-
-
 }
 
 
