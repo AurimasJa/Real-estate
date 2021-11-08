@@ -123,7 +123,7 @@ public class FirstActivity extends AppCompatActivity {
         Button buttonas = (Button) findViewById(R.id.button);
         buttonas.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),FourthActivity.class);
+                Intent intent = new Intent(getApplicationContext(),FourthActivityNoLogin.class);
                 intent.putExtra("pavadinimas", list.get(0).getTitle());
                 intent.putExtra("kaina", list.get(0).getPrice());
                 intent.putExtra("descriptionas", list.get(0).getDescription());
