@@ -2,6 +2,7 @@ package edu.ktu.myfirstapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -71,6 +72,11 @@ public class FourthActivityNoLogin extends AppCompatActivity {
 
         //aaaaaaaaa
         imageView1 = (ImageView) findViewById(R.id.image1);
+        imageView1.setBackgroundResource(R.drawable.animation);
+        AnimationDrawable frameAnimation = (AnimationDrawable) imageView1.getBackground();
+        frameAnimation.start();
+
+
         imageView2 = (ImageView) findViewById(R.id.image2);
         imageView3 = (ImageView) findViewById(R.id.image3);
         myHScrollView = (HorizontalScrollView) findViewById(R.id.scrollView);
@@ -113,7 +119,7 @@ public class FourthActivityNoLogin extends AppCompatActivity {
                 //title.setText(list.get(0).getTitle());
                 //price.setText(list.get(0).getPrice()+"€");
                 //room_count.setText(list.get(0).getRoom_count()+" kambariai");
-                Picasso.get().load(list.get(0).getImage().toString()).into(imageView1);
+                //Picasso.get().load(list.get(0).getImage().toString()).into(imageView1);
                 Picasso.get().load(list.get(1).getImage().toString()).into(imageView2);
                 Picasso.get().load(list.get(2).getImage().toString()).into(imageView3);
             }
