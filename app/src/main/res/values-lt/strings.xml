@@ -61,4 +61,5 @@
     <string name="weareteam">Kas mes?</string>
     <string name="navigation_drawer_open">Atidaryti nav bara</string>
     <string name="navigation_drawer_close">Uzdaryti nav bara</string>
+    <string name="selectPhoto">Pasirinkti nuotrauką</string>
 </resources>
