@@ -132,7 +132,9 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
                 intent.putExtra("pavadinimas", list.get(i).getTitle());
                 intent.putExtra("kaina", list.get(i).getPrice());
                 intent.putExtra("descriptionas", list.get(i).getDescription());
-                //intent.putExtra("nuotrauka", list.get(i).getImageId());
+                //intent.putExtra("nuotrauka", list.get(0).getImage());
+                intent.putExtra("nuotrauka1", list.get(i).getImage());
+                //intent.putExtra("nuotrauka2", list.get(2).getImage());
                 intent.putExtra("kambariai", list.get(i).getRoom_count());
                 intent.putExtra("numeris", list.get(i).getPhoneNum());
                 startActivity(intent);

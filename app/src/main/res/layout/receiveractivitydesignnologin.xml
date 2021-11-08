@@ -22,12 +22,14 @@
             android:layout_height="match_parent">
             <ImageView
                 android:layout_width="410dp"
+                android:id="@+id/imageView10"
                 android:background="#c1c1c1"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/fall1"/>
             <ImageView
                 android:layout_width="410dp"
+                android:id="@+id/imageView11"
                 android:background="#c1c1c1"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -35,6 +37,7 @@
                 android:src="@drawable/fall2"/>
             <ImageView
                 android:layout_width="410dp"
+                android:id="@+id/imageView12"
                 android:background="#c1c1c1"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
