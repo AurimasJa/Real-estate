@@ -34,6 +34,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 
 public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
     private ListView myListView;
@@ -111,10 +112,18 @@ public class MainPageSkelbimaiNoLogin extends AppCompatActivity {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                int randomNum = list.size();
+                Random rn = new Random();
+                int q = rn.nextInt(randomNum);
+                int w = rn.nextInt(randomNum);
+                int e = rn.nextInt(randomNum);
                 Intent intent = new Intent(getApplicationContext(), FourthActivityNoLogin.class);
                 intent.putExtra("pavadinimas", list.get(i).getTitle());
                 intent.putExtra("kaina", list.get(i).getPrice());
                 intent.putExtra("descriptionas", list.get(i).getDescription());
+                intent.putExtra("nuotrauka0", list.get(q).getImage());
+                intent.putExtra("nuotrauka1", list.get(w).getImage());
+                intent.putExtra("nuotrauka2", list.get(e).getImage());
                 //intent.putExtra("nuotrauka", list.get(i).getImageId());
                 intent.putExtra("kambariai", list.get(i).getRoom_count());
                 intent.putExtra("numeris", list.get(i).getPhoneNum());

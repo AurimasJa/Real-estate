@@ -68,10 +68,10 @@ public class FourthActivityNoLogin extends AppCompatActivity {
         String image1url = intent.getStringExtra("nuotrauka1");
         Toast.makeText(FourthActivityNoLogin.this, image1url, Toast.LENGTH_LONG).show();
         Picasso.get().load(image1url.toString()).into(img);
-       /* String image2url = intent.getStringExtra("nuotrauka2");
+        String image2url = intent.getStringExtra("nuotrauka0");
         Picasso.get().load(image2url).into(img1);
-        String image3url = intent.getStringExtra("nuotrauka3");
-        Picasso.get().load(image3url).into(img2);*/
+        String image3url = intent.getStringExtra("nuotrauka2");
+        Picasso.get().load(image3url).into(img2);
 
     }
     @Override

@@ -35,6 +35,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Random;
 
 //skelbimai isiminti, filtruoti, paieska
 
@@ -128,6 +129,10 @@ public class FirstActivity extends AppCompatActivity {
                 intent.putExtra("kaina", list.get(0).getPrice());
                 intent.putExtra("descriptionas", list.get(0).getDescription());
                 intent.putExtra("kambariai", list.get(0).getRoom_count());
+
+                intent.putExtra("nuotrauka0", list.get(0).getImage());
+                intent.putExtra("nuotrauka1", list.get(1).getImage());
+                intent.putExtra("nuotrauka2", list.get(2).getImage());
                 intent.putExtra("numeris", list.get(0).getPhoneNum());
                 startActivity(intent);
             }
