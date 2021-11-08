@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -14,6 +15,15 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -27,9 +37,19 @@ public class FourthActivityNoLogin extends AppCompatActivity {
     TextView kamb;
     ImageView img;
 
+    //aaaaaaaaaa
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference reff;
+
     TextView num;
     private Toolbar myToolbar;
     private Context context = this;
+    //aaa
+    ArrayList<SkelbimaiList> list;
+    SkelbimaiListAdapter adapter;
+    SkelbimaiList skelbimaiList;
+    private HorizontalScrollView myHScrollView;
+    ImageView imageView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +67,12 @@ public class FourthActivityNoLogin extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
+        //aaaaaaaaa
+        imageView1 = (ImageView) findViewById(R.id.image1);
+        myHScrollView = (HorizontalScrollView) findViewById(R.id.scrollView);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Skelbimai");
+
         Intent intent = getIntent();
         String receivedName = intent.getStringExtra("pavadinimas");
         name.setText(receivedName);
@@ -60,6 +86,37 @@ public class FourthActivityNoLogin extends AppCompatActivity {
         String numb = intent.getStringExtra("numeris");
         num.setText(numb);
 
+        //aaaaaaaaa
+        skelbimaiList = new SkelbimaiList();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Skelbimai");
+        list = new ArrayList<>();
+        adapter = new SkelbimaiListAdapter(this, list);
+
+        reff.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    skelbimaiList = dataSnapshot.getValue(SkelbimaiList.class);
+                    list.add(skelbimaiList);
+                }
+                //TextView title = (TextView) myHScrollView.findViewById(R.id.title);
+                //ImageView image = (ImageView) myHScrollView.findViewById(R.id.imageView);
+                //TextView price = (TextView) myHScrollView.findViewById(R.id.price);
+                //TextView room_count = (TextView) myHScrollView.findViewById(R.id.room_count);
+                //ImageView image1 = (ImageView) myHScrollView.findViewById(R.id.image1);
+
+                //title.setText(list.get(0).getTitle());
+                //price.setText(list.get(0).getPrice()+"€");
+                //room_count.setText(list.get(0).getRoom_count()+" kambariai");
+                Picasso.get().load(list.get(0).getImage().toString()).into(imageView1);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
