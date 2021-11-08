@@ -50,6 +50,8 @@ public class FourthActivityNoLogin extends AppCompatActivity {
     SkelbimaiList skelbimaiList;
     private HorizontalScrollView myHScrollView;
     ImageView imageView1;
+    ImageView imageView2;
+    ImageView imageView3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,8 @@ public class FourthActivityNoLogin extends AppCompatActivity {
 
         //aaaaaaaaa
         imageView1 = (ImageView) findViewById(R.id.image1);
+        imageView2 = (ImageView) findViewById(R.id.image2);
+        imageView3 = (ImageView) findViewById(R.id.image3);
         myHScrollView = (HorizontalScrollView) findViewById(R.id.scrollView);
         firebaseDatabase = FirebaseDatabase.getInstance();
         reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Skelbimai");
@@ -110,6 +114,8 @@ public class FourthActivityNoLogin extends AppCompatActivity {
                 //price.setText(list.get(0).getPrice()+"€");
                 //room_count.setText(list.get(0).getRoom_count()+" kambariai");
                 Picasso.get().load(list.get(0).getImage().toString()).into(imageView1);
+                Picasso.get().load(list.get(1).getImage().toString()).into(imageView2);
+                Picasso.get().load(list.get(2).getImage().toString()).into(imageView3);
             }
 
             @Override

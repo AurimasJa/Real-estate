@@ -16,30 +16,31 @@
 
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="300dp"
+        android:id="@+id/scrollView">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
+                android:id="@+id/image1"
                 android:layout_width="410dp"
                 android:background="#c1c1c1"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/fall1"/>
+                android:scaleType="centerCrop"/>
             <ImageView
+                android:id="@+id/image2"
                 android:layout_width="410dp"
                 android:background="#c1c1c1"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:layout_marginLeft="30dp"
-                android:src="@drawable/fall2"/>
+                android:layout_marginLeft="30dp"/>
             <ImageView
+                android:id="@+id/image3"
                 android:layout_width="410dp"
                 android:background="#c1c1c1"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:layout_marginLeft="30dp"
-                android:src="@drawable/fall3"/>
+                android:layout_marginLeft="30dp"/>
         </LinearLayout>
     </HorizontalScrollView>
 
