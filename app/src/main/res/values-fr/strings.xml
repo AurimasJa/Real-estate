@@ -63,5 +63,8 @@
     <string name="weareteam">Qui nous sommes?</string>
     <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
     <string name="navigation_drawer_close">Fermer le tiroir de navigation</string>
-    <string name="selectPhoto">Sélectionnez une photo</string>
+    <string name="selectPhoto">"Sélectionnez une photo"</string>
+    <string name="FirstDesign">"Design moderne"</string>
+    <string name="SecondDesign">"Conception à l'ancienne"</string>
+    <string name="DefaultDesign">"Conception par défaut"</string>
 </resources>

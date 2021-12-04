@@ -33,6 +33,7 @@
         <activity android:name=".SecondActivity" />
         <activity android:name=".skelbimailistviewnologinburger"/>
         <activity android:name=".SkelbimaiListViewBurger"/>
+        <activity android:name=".Skelbimo_pridejimas_template_choose"/>
         <activity
             android:name=".Skelbimai"
             android:label="@string/appbarSkelbimai"

@@ -152,6 +152,9 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                             result.addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
+                                    Intent intent = getIntent();
+                                    int numb = intent.getIntExtra("templateIs",0);
+                                    Toast.makeText(Skelbimo_pridejimas.this, "Sitas yra nauudingas", Toast.LENGTH_LONG).show();
                                     String imageUrl = uri.toString();
                                     //Toast.makeText(Skelbimo_pridejimas.this, imageUrl, Toast.LENGTH_LONG).show();
                                     String Title = edit_Title.getText().toString().trim();
@@ -168,9 +171,10 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                                     skelbimas.setPhoneNum(PhoneNumber);
                                     skelbimas.setCreatedBy(CreatedBy);
                                     skelbimas.setImage(imageUrl);
+                                    skelbimas.setTemplate(numb);
 
                                     reff.child(Title).setValue(skelbimas);
-                                    Intent intent = new Intent(context, SkelbimaiListViewBurger.class);
+                                    intent = new Intent(context, SkelbimaiListViewBurger.class);
                                     //intent.putExtra("flag", true);
                                     startActivity(intent);
                                 }

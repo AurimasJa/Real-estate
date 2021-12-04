@@ -64,13 +64,13 @@ public class FourthActivityNoLogin extends AppCompatActivity {
         int template = intent.getIntExtra("template",0);
         if(template == 1){
             setContentView(R.layout.receiveractivitydesignnologin);
-            Toast.makeText(FourthActivityNoLogin.this, "Pirmas dizainas", Toast.LENGTH_LONG).show();
+            //Toast.makeText(FourthActivityNoLogin.this, "Pirmas dizainas", Toast.LENGTH_LONG).show();
         }else if(template == 2){
             setContentView(R.layout.receiveractivitydesignnologin2);
-            Toast.makeText(FourthActivityNoLogin.this, "Antras dizainas", Toast.LENGTH_LONG).show();
+            //Toast.makeText(FourthActivityNoLogin.this, "Antras dizainas", Toast.LENGTH_LONG).show();
         }else{
             setContentView(R.layout.receiveractivitydesignnologin3);
-            Toast.makeText(FourthActivityNoLogin.this, "Defaultinis dizainas", Toast.LENGTH_LONG).show();
+            //Toast.makeText(FourthActivityNoLogin.this, "Defaultinis dizainas", Toast.LENGTH_LONG).show();
         }
         //---------------------------------------------------------
         name = findViewById(R.id.textView3);

@@ -62,4 +62,7 @@
     <string name="navigation_drawer_open">Atidaryti nav bara</string>
     <string name="navigation_drawer_close">Uzdaryti nav bara</string>
     <string name="selectPhoto">Pasirinkti nuotrauką</string>
+    <string name="FirstDesign">Modernus dizainas</string>
+    <string name="SecondDesign">Paprastas (senos mados) dizainas</string>
+    <string name="DefaultDesign">Numatytasis dizainas</string>
 </resources>

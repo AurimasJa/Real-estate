@@ -150,7 +150,7 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
             //add template(1, 2, 3)
             //-------------------------------------------------------
             //-------------------------------------------------------
-            Intent intent = new Intent(getApplicationContext(), Skelbimo_pridejimas.class);
+            Intent intent = new Intent(getApplicationContext(), Skelbimo_pridejimas_template_choose.class);
             intent.putExtra("flag", true);
             startActivity(intent);
         }
