@@ -11,11 +11,12 @@ public class SkelbimaiList {
     private String createdBy;
     //private ImageView[] images;
     private String Image;
+    private int template;
 
     public SkelbimaiList() {
     }
 
-    public SkelbimaiList(String title, String description, float price, int room_count, String phoneNum, String createdBy, String image) {
+    public SkelbimaiList(String title, String description, float price, int room_count, String phoneNum, String createdBy, String image, int template) {
         this.title = title;
         this.description = description;
         this.price = price;
@@ -24,6 +25,15 @@ public class SkelbimaiList {
         this.createdBy = createdBy;
         //this.images = images;
         this.Image = image;
+        this.template = template;
+    }
+
+    public int getTemplate() {
+        return template;
+    }
+
+    public void setTemplate(int template) {
+        this.template = template;
     }
 
     public String getImage() {

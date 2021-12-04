@@ -10,6 +10,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -57,7 +58,21 @@ public class FourthActivityNoLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.receiveractivitydesignnologin);
+        Intent intent = getIntent();
+        //---------------------------------------------------------
+        //String receivedTemplate = intent.getStringExtra("template");
+        int template = intent.getIntExtra("template",0);
+        if(template == 1){
+            setContentView(R.layout.receiveractivitydesignnologin);
+            Toast.makeText(FourthActivityNoLogin.this, "Pirmas dizainas", Toast.LENGTH_LONG).show();
+        }else if(template == 2){
+            setContentView(R.layout.receiveractivitydesignnologin2);
+            Toast.makeText(FourthActivityNoLogin.this, "Antras dizainas", Toast.LENGTH_LONG).show();
+        }else{
+            setContentView(R.layout.receiveractivitydesignnologin3);
+            Toast.makeText(FourthActivityNoLogin.this, "Defaultinis dizainas", Toast.LENGTH_LONG).show();
+        }
+        //---------------------------------------------------------
         name = findViewById(R.id.textView3);
         price = findViewById(R.id.textView4);
         desc = findViewById(R.id.textView5);
@@ -81,7 +96,7 @@ public class FourthActivityNoLogin extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Skelbimai");
 
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
         String receivedName = intent.getStringExtra("pavadinimas");
         name.setText(receivedName);
         float kaina = intent.getFloatExtra("kaina",0);

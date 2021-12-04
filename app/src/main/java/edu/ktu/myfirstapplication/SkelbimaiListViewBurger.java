@@ -135,6 +135,7 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
                 //intent.putExtra("nuotrauka", list.get(i).getImageId());
                 intent.putExtra("kambariai", list.get(i).getRoom_count());
                 intent.putExtra("numeris", list.get(i).getPhoneNum());
+                intent.putExtra("template", list.get(i).getTemplate());
                 startActivity(intent);
             }
         });
@@ -144,6 +145,11 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
     View.OnClickListener start_add_item_activity = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            //-------------------------------------------------------
+            //-------------------------------------------------------
+            //add template(1, 2, 3)
+            //-------------------------------------------------------
+            //-------------------------------------------------------
             Intent intent = new Intent(getApplicationContext(), Skelbimo_pridejimas.class);
             intent.putExtra("flag", true);
             startActivity(intent);
