@@ -110,6 +110,7 @@ public class skelbimailistviewnologinburger extends AppCompatActivity implements
                 intent.putExtra("kambariai", list.get(i).getRoom_count());
                 intent.putExtra("numeris", list.get(i).getPhoneNum());
                 intent.putExtra("template", list.get(i).getTemplate());
+                intent.putExtra("pardavejas", list.get(i).getCreatedBy());
                 startActivity(intent);
             }
         });

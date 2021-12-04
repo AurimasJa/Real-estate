@@ -37,6 +37,7 @@ public class FourthActivityNoLogin extends AppCompatActivity {
     TextView price;
     TextView desc;
     TextView kamb;
+    TextView pardavejas;
     ImageView img;
 
     //aaaaaaaaaa
@@ -77,6 +78,7 @@ public class FourthActivityNoLogin extends AppCompatActivity {
         price = findViewById(R.id.textView4);
         desc = findViewById(R.id.textView5);
         kamb = findViewById(R.id.textView6);
+        pardavejas = findViewById(R.id.textViewPardavejas1);
         //img = findViewById(R.id.imageView2);
 
         num = findViewById(R.id.textViewNum);
@@ -103,6 +105,8 @@ public class FourthActivityNoLogin extends AppCompatActivity {
         price.setText(kaina+"");
         String descr = intent.getStringExtra("descriptionas");
         desc.setText(descr);
+        String pard = intent.getStringExtra("pardavejas");
+        pardavejas.setText(pard);
         //img.setImageResource(intent.getIntExtra("nuotrauka", 0));
         int room = intent.getIntExtra("kambariai",0);
         kamb.setText(room+"");
