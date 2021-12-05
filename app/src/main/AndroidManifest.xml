@@ -81,8 +81,7 @@
         <activity android:name=".Skelbimo_pridejimas" />
         <activity android:name=".MainPageSkelbimaiNoLogin" />
         <activity android:name=".UserProfile" />
-        <activity android:name=".DesignPreview"
-                  android:label="Skelbimas"/>
+        <activity android:name=".DesignPreview"/>
     </application>
 
 </manifest>
