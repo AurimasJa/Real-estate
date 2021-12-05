@@ -73,4 +73,5 @@
     <string name="MinCost">From</string>
     <string name="MaxCost">Till</string>
     <string name="BurgerOut">Out</string>
+    <string name="editProfile">Edit profile</string>
 </resources>

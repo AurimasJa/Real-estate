@@ -54,7 +54,10 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.firstactivitydesign);
+        Intent intent = getIntent();
 
+        String d = intent.getStringExtra("usernameAS");
+        Toast.makeText(FirstActivity.this, d, Toast.LENGTH_LONG).show();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavFirst);
         bottomNavigationView.setSelectedItemId(R.id.mainpage);
 
@@ -65,7 +68,9 @@ public class FirstActivity extends AppCompatActivity {
                     case R.id.mainpage:
                         return true;
                     case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        Intent inte = (new Intent(getApplicationContext(), Settings.class));
+                        inte.putExtra("usernameAS", d);
+                        startActivity(inte);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.logout:
@@ -73,7 +78,9 @@ public class FirstActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.adv:
-                        startActivity(new Intent(getApplicationContext(), SkelbimaiListViewBurger.class));
+                        Intent inte1 = (new Intent(getApplicationContext(), SkelbimaiListViewBurger.class));
+                        inte1.putExtra("usernameAS", d);
+                        startActivity(inte1);
                         overridePendingTransition(0,0);
                         return true;
                 }
