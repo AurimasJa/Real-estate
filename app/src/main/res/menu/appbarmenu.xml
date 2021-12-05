@@ -10,19 +10,19 @@
         app:showAsAction="ifRoom"/-->
 
     <!-- Settings, should always be in the overflow -->
-    <item android:id="@+id/action_settings"
+    <!--<item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         app:showAsAction="never"/>
 
-  <!--  <item android:id="@+id/action_search"
+    <item android:id="@+id/action_search"
         android:title="@string/action_search"
         android:icon="@drawable/ic_search"
         app:showAsAction="ifRoom|collapseActionView"
-        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+        app:actionViewClass="androidx.appcompat.widget.SearchView" /-->
 
-    item android:id="@+id/action_share"
+    <item android:id="@+id/action_share"
         android:title="@string/action_share"
         app:showAsAction="ifRoom"
-        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"/-->
+        android:icon="@drawable/ic_baseline_share_24"/>
 
 </menu>
