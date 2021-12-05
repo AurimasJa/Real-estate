@@ -74,4 +74,5 @@
     <string name="MaxCost">Till</string>
     <string name="BurgerOut">Out</string>
     <string name="editProfile">Edit profile</string>
+    <string name="save">Save</string>
 </resources>

@@ -32,7 +32,7 @@ public class UserProfile extends AppCompatActivity {
         editPass11 = (EditText) findViewById(R.id.editPass);
         editPass12 = (EditText) findViewById(R.id.editPass1);
         button = (Button) findViewById(R.id.button2);
-        Toast.makeText(UserProfile.this, d, Toast.LENGTH_LONG).show();
+        //Toast.makeText(UserProfile.this, d, Toast.LENGTH_LONG).show();
         firebaseDatabase = FirebaseDatabase.getInstance();
         reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("User");
 

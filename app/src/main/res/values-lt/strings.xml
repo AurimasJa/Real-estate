@@ -72,4 +72,5 @@
     <string name="MaxCost">Iki</string>
     <string name="BurgerOut">Išeiti</string>
     <string name="editProfile">Redaguoti profilį</string>
+    <string name="save">Išsaugoti</string>
 </resources>

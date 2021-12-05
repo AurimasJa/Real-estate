@@ -74,4 +74,5 @@
     <string name="MaxCost">Jusquà</string>
     <string name="BurgerOut">Dehors</string>
     <string name="editProfile">Editer le profil</string>
+    <string name="save">Enregistrer</string>
 </resources>

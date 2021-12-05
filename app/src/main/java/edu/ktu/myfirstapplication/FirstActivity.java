@@ -57,7 +57,7 @@ public class FirstActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         String d = intent.getStringExtra("usernameAS");
-        Toast.makeText(FirstActivity.this, d, Toast.LENGTH_LONG).show();
+        //Toast.makeText(FirstActivity.this, d, Toast.LENGTH_LONG).show();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavFirst);
         bottomNavigationView.setSelectedItemId(R.id.mainpage);
 
