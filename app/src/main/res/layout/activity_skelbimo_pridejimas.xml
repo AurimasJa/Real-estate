@@ -39,7 +39,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="100dp"
                 android:gravity="center|left"
-                android:text="@string/selectPhoto"
+                android:text="@string/selectCamarePhoto"
                 android:textAlignment="center"/>
             <EditText
                 android:id="@+id/edit_Title"
