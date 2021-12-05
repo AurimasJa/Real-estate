@@ -1,7 +1,10 @@
 package edu.ktu.myfirstapplication;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -16,11 +19,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -146,16 +151,12 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
     View.OnClickListener start_add_item_activity = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //-------------------------------------------------------
-            //-------------------------------------------------------
-            //add template(1, 2, 3)
-            //-------------------------------------------------------
-            //-------------------------------------------------------
             Intent intent = new Intent(getApplicationContext(), Skelbimo_pridejimas_template_choose.class);
             intent.putExtra("flag", true);
             startActivity(intent);
         }
     };
+
     @Override
     public void onBackPressed() {
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
@@ -240,5 +241,7 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
         }
         return true;
     }
+
+
 }
 

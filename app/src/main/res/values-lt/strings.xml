@@ -65,4 +65,6 @@
     <string name="FirstDesign">Modernus dizainas</string>
     <string name="SecondDesign">Paprastas (senos mados) dizainas</string>
     <string name="DefaultDesign">Numatytasis dizainas</string>
+    <string name="NotificationTitle">Skelbimas</string>
+    <string name="NotificationDescription">Naujas skelbimas </string>
 </resources>

@@ -2,11 +2,17 @@ package edu.ktu.myfirstapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -33,6 +39,7 @@ import com.squareup.picasso.Picasso;
 
 public class Skelbimo_pridejimas extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
+    private static final String CHANNEL_ID = "channelForNotification";
     Context context = this;
     Button add_btn;
     EditText edit_Title;
@@ -154,7 +161,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
                                     Intent intent = getIntent();
                                     int numb = intent.getIntExtra("templateIs",0);
-                                    Toast.makeText(Skelbimo_pridejimas.this, "Sitas yra nauudingas", Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(Skelbimo_pridejimas.this, "Sitas yra naudingas", Toast.LENGTH_LONG).show();
                                     String imageUrl = uri.toString();
                                     //Toast.makeText(Skelbimo_pridejimas.this, imageUrl, Toast.LENGTH_LONG).show();
                                     String Title = edit_Title.getText().toString().trim();
@@ -176,6 +183,19 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                                     reff.child(Title).setValue(skelbimas);
                                     intent = new Intent(context, SkelbimaiListViewBurger.class);
                                     //intent.putExtra("flag", true);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    PendingIntent pendingIntent = PendingIntent.getActivity(Skelbimo_pridejimas.this, 0, intent, 0);
+                                    createNotificationChannel();
+                                    NotificationCompat.Builder builder = new NotificationCompat.Builder(Skelbimo_pridejimas.this, CHANNEL_ID)
+                                            .setSmallIcon(R.drawable.ic_baseline_add_alert_24)
+                                            .setContentTitle(getText(R.string.NotificationTitle))
+                                            .setContentText(getText(R.string.NotificationDescription) + " " + Title)
+                                            .setContentIntent(pendingIntent)
+                                            .setAutoCancel(true)
+                                            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                                    NotificationManagerCompat notificationManager = NotificationManagerCompat.from(Skelbimo_pridejimas.this);
+
+                                    notificationManager.notify(0, builder.build());
                                     startActivity(intent);
                                 }
                             });
@@ -191,6 +211,23 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
             });
         } else {
             Toast.makeText(this, getText(R.string.nofile), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        //android sdk pvz
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getText(R.string.NotificationTitle);
+            String description = (String) getText(R.string.NotificationDescription);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
         }
     }
 }

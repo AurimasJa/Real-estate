@@ -67,4 +67,6 @@
     <string name="FirstDesign">Modern design</string>
     <string name="SecondDesign">Old fashion design</string>
     <string name="DefaultDesign">Default Design</string>
+    <string name="NotificationTitle">Advertisement</string>
+    <string name="NotificationDescription">New publish of advertisement </string>
 </resources>

@@ -53,7 +53,7 @@
                 android:ems="10"
                 android:gravity="center"
                 android:hint="@string/Price"
-                android:inputType="textPersonName"/>
+                android:inputType="numberDecimal"/>
 
             <EditText
                 android:id="@+id/edit_Description"
@@ -76,7 +76,7 @@
                 android:layout_marginRight="100dp"
                 android:gravity="center"
                 android:hint="@string/RoomCount"
-                android:inputType="textPersonName"/>
+                android:inputType="number"/>
 
             <EditText
                 android:id="@+id/edit_PhoneNumber"
@@ -87,7 +87,7 @@
                 android:layout_marginRight="100dp"
                 android:gravity="center"
                 android:hint="@string/PhoneNumber"
-                android:inputType="textPersonName"/>
+                android:inputType="number"/>
 
             <EditText
                 android:id="@+id/edit_CreatedBy"

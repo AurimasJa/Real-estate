@@ -67,4 +67,6 @@
     <string name="FirstDesign">"Design moderne"</string>
     <string name="SecondDesign">"Conception à l'ancienne"</string>
     <string name="DefaultDesign">"Conception par défaut"</string>
+    <string name="NotificationTitle">Publicité</string>
+    <string name="NotificationDescription">Nouvelle publication de publicité </string>
 </resources>
