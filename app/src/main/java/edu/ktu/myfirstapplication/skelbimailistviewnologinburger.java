@@ -183,8 +183,8 @@ public class skelbimailistviewnologinburger extends AppCompatActivity implements
 
                     for (SkelbimaiList listas : list) {
 
-                        Toast.makeText(skelbimailistviewnologinburger.this, listas.getPrice() + "   -   " + price1, Toast.LENGTH_LONG ).show();
-                        if (listas.getPrice() > price1 && listas.getPrice() < price2) {
+                    //    Toast.makeText(skelbimailistviewnologinburger.this, listas.getPrice() + "   -   " + price1, Toast.LENGTH_LONG ).show();
+                        if (listas.getPrice() >= price1 && listas.getPrice() <= price2) {
                             filteredList.add(listas);
                             //Toast.makeText(SkelbimaiListView.this, listas.getPrice() + "   -   " + price1, Toast.LENGTH_LONG ).show();
                         }
