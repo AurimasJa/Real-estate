@@ -72,13 +72,14 @@
             android:label="Skelbimas" />
         <activity
             android:name=".Settings"
-            android:label="Nustatymai" />
+            android:label="@string/action_settings" />
         <activity
             android:name=".SkelbimaiListView"
             android:label="@string/appbarSkelbimai"
             android:parentActivityName=".FirstActivity" />
         <activity android:name=".Skelbimo_pridejimas" />
         <activity android:name=".MainPageSkelbimaiNoLogin" />
+        <activity android:name=".UserProfile" />
     </application>
 
 </manifest>

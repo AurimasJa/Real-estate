@@ -63,7 +63,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     private static final String CHANNEL_ID = "channelForNotification";
     private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 101;
     private static final int MY_CAMERA_REQUEST_CODE = 100;
-
+    private int count = 0;
     String currentPhotoPath;
     Context context = this;
     Button add_btn;
@@ -90,7 +90,11 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skelbimo_pridejimas);
+        Intent intent = getIntent();
 
+        String d = intent.getStringExtra("usernameAS");
+
+        Toast.makeText(Skelbimo_pridejimas.this, d, Toast.LENGTH_LONG).show();
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_REQUEST_CODE);
         }
@@ -133,11 +137,15 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.mainpage:
-                        startActivity(new Intent(getApplicationContext(), FirstActivity.class));
+                        Intent inte2 = (new Intent(getApplicationContext(), FirstActivity.class));
+                        inte2.putExtra("usernameAS", d);
+                        startActivity(inte2);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        Intent inte = (new Intent(getApplicationContext(), Settings.class));
+                        inte.putExtra("usernameAS", d);
+                        startActivity(inte);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.logout:
@@ -145,7 +153,9 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.adv:
-                        startActivity(new Intent(getApplicationContext(), SkelbimaiListView.class));
+                        Intent inte1 = (new Intent(getApplicationContext(), SkelbimaiListViewBurger.class));
+                        inte1.putExtra("usernameAS", d);
+                        startActivity(inte1);
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -239,6 +249,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                 storageDir      /* directory */
         );
         currentPhotoPath = image.getAbsolutePath();
+        count++;
         return image;
     }
     private void openFileChooser() {
@@ -251,9 +262,13 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK) {
-            File f = new File(currentPhotoPath);
-            contentUri = Uri.fromFile(f);
-            mImageUri = data.getData();
+            if(count == 1){
+                File f = new File(currentPhotoPath);
+                contentUri = Uri.fromFile(f);
+            }else{
+                mImageUri = data.getData();
+            }
+
             if(mImageUri == null){
                 mImageUri = contentUri;
                 Picasso.get().load(contentUri).into(imageView);

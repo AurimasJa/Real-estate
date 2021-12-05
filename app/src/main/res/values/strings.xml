@@ -70,4 +70,5 @@
     <string name="NotificationTitle">Advertisement</string>
     <string name="NotificationDescription">New publish of advertisement </string>
     <string name="selectCamarePhoto">Take a photo</string>
+    <string name="editProfile">Edit profile</string>
 </resources>

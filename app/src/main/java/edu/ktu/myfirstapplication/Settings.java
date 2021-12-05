@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.FirebaseDatabase;
@@ -33,23 +34,33 @@ public class Settings extends AppCompatActivity {
 
     private Toolbar myToolbar;
     private Button changeLang;
+    private Button editProfile;
     private Context context = this;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loadLocale();
         setContentView(R.layout.settingspage);
+        Intent intent = getIntent();
+
+        String d = intent.getStringExtra("usernameAS");
+
+        //Toast.makeText(Settings.this, d, Toast.LENGTH_LONG).show();
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavFirst);
         bottomNavigationView.setSelectedItemId(R.id.settings);
         changeLang = (Button) findViewById(R.id.changeLang);
+        editProfile = (Button) findViewById(R.id.profileEdit);
         changeLang.setOnClickListener(changeLangOnClick);
+        editProfile.setOnClickListener(editProfile1);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.mainpage:
-                        startActivity(new Intent(getApplicationContext(), FirstActivity.class));
+                        Intent inte1 = (new Intent(getApplicationContext(), FirstActivity.class));
+                        inte1.putExtra("usernameAS", d);
+                        startActivity(inte1);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.settings:
@@ -59,7 +70,9 @@ public class Settings extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.adv:
-                        startActivity(new Intent(getApplicationContext(), SkelbimaiListViewBurger.class));
+                        Intent inte = (new Intent(getApplicationContext(), SkelbimaiListViewBurger.class));
+                        inte.putExtra("usernameAS", d);
+                        startActivity(inte);
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -72,7 +85,16 @@ public class Settings extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
     }
-
+    View.OnClickListener editProfile1 = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent inte1 = (new Intent(getApplicationContext(), UserProfile.class));
+            Intent intent = getIntent();
+            String d = intent.getStringExtra("usernameAS");
+            inte1.putExtra("usernameAS", d);
+            startActivity(inte1);
+        }
+    };
     View.OnClickListener changeLangOnClick = new View.OnClickListener() {
 
         @Override
