@@ -88,10 +88,16 @@ public class FourthActivityNoLogin extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
 
         //aaaaaaaaa
-        imageView1 = (ImageView) findViewById(R.id.image1);
-        imageView1.setBackgroundResource(R.drawable.animation);
-        AnimationDrawable frameAnimation = (AnimationDrawable) imageView1.getBackground();
-        frameAnimation.start();
+        if (template != 2){
+            imageView1 = (ImageView) findViewById(R.id.image1);
+            imageView1.setBackgroundResource(R.drawable.animation);
+            AnimationDrawable frameAnimation = (AnimationDrawable) imageView1.getBackground();
+            frameAnimation.start();
+        }
+        //imageView1 = (ImageView) findViewById(R.id.image1);
+        //imageView1.setBackgroundResource(R.drawable.animation);
+        //AnimationDrawable frameAnimation = (AnimationDrawable) imageView1.getBackground();
+        //frameAnimation.start();
 
 
         myHScrollView = (HorizontalScrollView) findViewById(R.id.scrollView);
