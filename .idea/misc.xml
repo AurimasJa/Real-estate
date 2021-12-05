@@ -12,7 +12,6 @@
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/drawable/selector.xml" value="0.3828125" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/activity_skelbimas.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/activity_skelbimo_pridejimas.xml" value="0.22" />
-        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/activity_skelbimo_pridejimas_template_choose.xml" value="0.2296875" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/activity_splash_screen.xml" value="0.2803442028985507" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/bandau.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/firstactivitydesign.xml" value="0.2140625" />
@@ -21,11 +20,8 @@
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/listitemdesign.xml" value="0.2140625" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/loginpage.xml" value="0.18" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/mainloginpage.xml" value="0.2328125" />
-        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/receiveactivitydesignnologin3.xml" value="0.2328125" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/receiveractivitydesign.xml" value="0.2328125" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/receiveractivitydesignnologin.xml" value="0.2803442028985507" />
-        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/receiveractivitydesignnologin2.xml" value="0.2328125" />
-        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/receiveractivitydesignnologin3.xml" value="0.2328125" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/registerpage.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/secondactivitydesign.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/settingspage.xml" value="0.23333333333333334" />
@@ -40,7 +36,6 @@
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/layout/toolbar.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/menu/appbarmenu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/menu/main_menu.xml" value="0.24427083333333333" />
-        <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/menu/menu_navigation.xml" value="0.24270833333333333" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/mipmap-anydpi-v26/team.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/Auris/AndroidStudioProjects/Real-estate/app/src/main/res/mipmap-anydpi-v26/team_round.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/Auris/Downloads/labs-master/labs-master/lab 1/MyFirstApplication/app/src/main/res/layout/firstactivitydesign.xml" value="0.31521739130434784" />
@@ -58,6 +53,8 @@
         <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/layout/mainloginpage.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/layout/receiveractivitydesign.xml" value="0.33" />
         <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/layout/receiveractivitydesignnologin.xml" value="0.33" />
+        <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/layout/receiveractivitydesignnologin2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/layout/receiveractivitydesignnologin3.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/layout/registerpage.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/layout/secondactivitydesign.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PC/Desktop/KTU/3/1/App/Real-estate/app/src/main/res/layout/settingspage.xml" value="0.36666666666666664" />

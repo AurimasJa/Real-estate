@@ -95,7 +95,37 @@
                 <View
                     android:layout_width="fill_parent"
                     android:layout_height="1dp"
-                    android:layout_above="@+id/textView5"
+                    android:layout_above="@+id/textViewPardavejas"
+                    android:layout_marginBottom="0dp"
+                    android:background="#808080" />
+
+                <TextView
+                    android:id="@+id/textViewPardavejas"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewkamb"
+                    android:ellipsize="end"
+                    android:padding="10dp"
+                    android:text="Pardavėjas:"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewPardavejas1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewkamb"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_toRightOf="@id/textViewPardavejas"
+                    android:padding="10dp"
+                    android:text="Pardavejas"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/textViewPardavejas"
                     android:layout_marginBottom="0dp"
                     android:background="#808080" />
 
@@ -103,7 +133,7 @@
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView6"
+                    android:layout_below="@+id/textViewPardavejas"
                     android:layout_marginTop="0dp"
                     android:padding="10dp"
                     android:text="Description" />

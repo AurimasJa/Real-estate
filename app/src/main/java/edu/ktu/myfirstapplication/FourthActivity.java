@@ -51,7 +51,7 @@ public class FourthActivity extends AppCompatActivity {
         String receivedName = intent.getStringExtra("pavadinimas");
         name.setText(receivedName);
         float kaina = intent.getFloatExtra("kaina",0);
-        price.setText(kaina+"");
+        price.setText(kaina+" €");
         String descr = intent.getStringExtra("descriptionas");
         desc.setText(descr);
         //img.setImageResource(intent.getIntExtra("nuotrauka", 0));
