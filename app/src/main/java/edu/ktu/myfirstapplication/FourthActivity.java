@@ -97,10 +97,6 @@ public class FourthActivity extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             onBackPressed();
         }
-        if (item.getItemId() == R.id.action_settings) {
-            Intent intent = new Intent(context, Settings.class);
-            startActivity(intent);
-        }
         return super.onOptionsItemSelected(item);
     }
     @Override

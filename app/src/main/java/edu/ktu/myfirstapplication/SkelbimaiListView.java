@@ -160,7 +160,11 @@ public class SkelbimaiListView extends AppCompatActivity {
     };
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
+        /*switch (item.getItemId()) {
             case R.id.action_settings:
                 Intent intent = new Intent(context, Settings.class);
                 startActivity(intent);
@@ -174,7 +178,7 @@ public class SkelbimaiListView extends AppCompatActivity {
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
-        }
+        }*/
     }
 
     /*@Override
