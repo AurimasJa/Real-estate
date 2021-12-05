@@ -2,16 +2,21 @@ package edu.ktu.myfirstapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class Skelbimo_pridejimas_template_choose extends AppCompatActivity {
 
     private Button template1, template2, template3;
     private String d;
+    private Toolbar myToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +35,11 @@ public class Skelbimo_pridejimas_template_choose extends AppCompatActivity {
         template1.setOnLongClickListener(start_first);
         template2.setOnLongClickListener(start_second);
         template3.setOnLongClickListener(start_third);
+
+        myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
 
     }
     View.OnClickListener start_first_design = new View.OnClickListener() {
@@ -94,4 +104,15 @@ public class Skelbimo_pridejimas_template_choose extends AppCompatActivity {
         }
     };
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return true;
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

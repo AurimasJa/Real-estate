@@ -84,6 +84,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     SkelbimaiList skelbimas = new SkelbimaiList();
     private StorageReference mStorageRef;
     private StorageTask mUploadTask;
+    private String d;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -92,7 +93,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
         setContentView(R.layout.activity_skelbimo_pridejimas);
         Intent intent = getIntent();
 
-        String d = intent.getStringExtra("usernameAS");
+        d = intent.getStringExtra("usernameAS");
 
         //Toast.makeText(Skelbimo_pridejimas.this, d, Toast.LENGTH_LONG).show();
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -298,7 +299,8 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
                                     Intent intent = getIntent();
                                     int numb = intent.getIntExtra("templateIs",0);
-                                    //Toast.makeText(Skelbimo_pridejimas.this, "Sitas yra naudingas", Toast.LENGTH_LONG).show();
+                                    String d = intent.getStringExtra("usernameAS");
+                                    intent.putExtra("usernameAS", d);
                                     String imageUrl = uri.toString();
                                     //Toast.makeText(Skelbimo_pridejimas.this, imageUrl, Toast.LENGTH_LONG).show();
                                     String Title = edit_Title.getText().toString().trim();
@@ -331,7 +333,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                                             .setAutoCancel(true)
                                             .setPriority(NotificationCompat.PRIORITY_DEFAULT);
                                     NotificationManagerCompat notificationManager = NotificationManagerCompat.from(Skelbimo_pridejimas.this);
-
+                                    intent.putExtra("usernameAS", d);
                                     notificationManager.notify(0, builder.build());
                                     startActivity(intent);
                                 }
