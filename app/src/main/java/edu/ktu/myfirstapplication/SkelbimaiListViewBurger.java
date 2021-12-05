@@ -4,6 +4,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -14,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -225,8 +227,8 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
 
                 for (SkelbimaiList listas : list) {
 
-                    Toast.makeText(SkelbimaiListViewBurger.this, listas.getPrice() + "   -   " + price1, Toast.LENGTH_LONG ).show();
-                    if (listas.getPrice() > price1 && listas.getPrice() < price2) {
+                //   Toast.makeText(SkelbimaiListViewBurger.this, price2 + "   -   " + price1, Toast.LENGTH_LONG ).show();
+                    if (listas.getPrice() >= price1 && listas.getPrice() <= price2) {
                         filteredList.add(listas);
                         //Toast.makeText(SkelbimaiListView.this, listas.getPrice() + "   -   " + price1, Toast.LENGTH_LONG ).show();
                     }

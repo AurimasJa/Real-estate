@@ -23,16 +23,16 @@
         <item
             android:id="@+id/nav_text1"
             android:icon="@drawable/ic_search_black_24dp"
-            android:title="Nuo"
+            android:title="@string/MinCost"
             app:actionViewClass="android.widget.EditText"/>
         <item
             android:id="@+id/nav_text2"
             android:icon="@drawable/ic_search_black_24dp"
-            android:title="Iki"
+            android:title="@string/MaxCost"
             app:actionViewClass="android.widget.EditText"/>
         <item
             android:id="@+id/nav_filter"
-            android:title="OUT"
+            android:title="@string/BurgerOut"
             android:icon="@drawable/filter_done_icon" />
     </group>
 

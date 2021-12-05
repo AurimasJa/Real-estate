@@ -63,9 +63,12 @@
     <string name="navigation_drawer_close">Uzdaryti nav bara</string>
     <string name="selectPhoto">Pasirinkti nuotrauką</string>
     <string name="FirstDesign">Modernus dizainas</string>
-    <string name="SecondDesign">Paprastas (senos mados) dizainas</string>
+    <string name="SecondDesign">Senas mados dizainas</string>
     <string name="DefaultDesign">Numatytasis dizainas</string>
     <string name="NotificationTitle">Skelbimas</string>
     <string name="NotificationDescription">Naujas skelbimas </string>
     <string name="selectCamarePhoto">Nufotografuok</string>
+    <string name="MinCost">Nuo</string>
+    <string name="MaxCost">Iki</string>
+    <string name="BurgerOut">Išeiti</string>
 </resources>

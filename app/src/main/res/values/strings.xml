@@ -70,4 +70,7 @@
     <string name="NotificationTitle">Advertisement</string>
     <string name="NotificationDescription">New publish of advertisement </string>
     <string name="selectCamarePhoto">Take a photo</string>
+    <string name="MinCost">From</string>
+    <string name="MaxCost">Till</string>
+    <string name="BurgerOut">Out</string>
 </resources>
