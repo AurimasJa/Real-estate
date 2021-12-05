@@ -4,12 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.database.FirebaseDatabase;
 
 public class Skelbimo_pridejimas_template_choose extends AppCompatActivity {
 
@@ -30,6 +27,10 @@ public class Skelbimo_pridejimas_template_choose extends AppCompatActivity {
         template1.setOnClickListener(start_first_design);
         template2.setOnClickListener(start_second_design);
         template3.setOnClickListener(start_third_design);
+        template1.setOnLongClickListener(start_first);
+        template2.setOnLongClickListener(start_second);
+        template3.setOnLongClickListener(start_third);
+
     }
     View.OnClickListener start_first_design = new View.OnClickListener() {
         @Override
@@ -62,4 +63,35 @@ public class Skelbimo_pridejimas_template_choose extends AppCompatActivity {
             startActivity(intent1);
         }
     };
+            View.OnLongClickListener start_first = new View.OnLongClickListener() {
+        public boolean onLongClick(View arg0) {
+            Intent intent1 = new Intent(getApplicationContext(), DesignPreview.class);
+            intent1.putExtra("flag", true);
+            intent1.putExtra("templateIs", 1);
+            intent1.putExtra("usernameAS", d);
+            startActivity(intent1);
+            return true;
+        }
+    };
+        View.OnLongClickListener start_second = new View.OnLongClickListener() {
+        public boolean onLongClick(View arg0) {
+            Intent intent1 = new Intent(getApplicationContext(), DesignPreview.class);
+            intent1.putExtra("flag", true);
+            intent1.putExtra("templateIs", 2);
+            intent1.putExtra("usernameAS", d);
+            startActivity(intent1);
+            return true;
+        }
+    };
+        View.OnLongClickListener start_third = new View.OnLongClickListener() {
+        public boolean onLongClick(View arg0) {
+            Intent intent1 = new Intent(getApplicationContext(), DesignPreview.class);
+            intent1.putExtra("flag", true);
+            intent1.putExtra("templateIs", 3);
+            intent1.putExtra("usernameAS", d);
+            startActivity(intent1);
+            return true;
+        }
+    };
+
 }
