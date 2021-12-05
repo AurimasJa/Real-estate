@@ -94,7 +94,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
 
         String d = intent.getStringExtra("usernameAS");
 
-        Toast.makeText(Skelbimo_pridejimas.this, d, Toast.LENGTH_LONG).show();
+        //Toast.makeText(Skelbimo_pridejimas.this, d, Toast.LENGTH_LONG).show();
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_REQUEST_CODE);
         }
@@ -168,9 +168,9 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == MY_CAMERA_REQUEST_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Camera permission granted", Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Camera permission denied", Toast.LENGTH_LONG).show();
             }
         }
     }

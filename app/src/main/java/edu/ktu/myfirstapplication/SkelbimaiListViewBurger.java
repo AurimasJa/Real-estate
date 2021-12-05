@@ -79,7 +79,7 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
 
         d = intent.getStringExtra("usernameAS");
 
-        Toast.makeText(SkelbimaiListViewBurger.this, d, Toast.LENGTH_LONG).show();
+        //Toast.makeText(SkelbimaiListViewBurger.this, d, Toast.LENGTH_LONG).show();
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

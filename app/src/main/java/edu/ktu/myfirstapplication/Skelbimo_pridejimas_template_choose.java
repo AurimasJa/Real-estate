@@ -22,7 +22,7 @@ public class Skelbimo_pridejimas_template_choose extends AppCompatActivity {
         Intent intent = getIntent();
 
         d = intent.getStringExtra("usernameAS");
-        Toast.makeText(Skelbimo_pridejimas_template_choose.this, d, Toast.LENGTH_LONG).show();
+        //Toast.makeText(Skelbimo_pridejimas_template_choose.this, d, Toast.LENGTH_LONG).show();
         template1 = (Button) findViewById(R.id.button11);
         template2 = (Button) findViewById(R.id.button12);
         template3 = (Button) findViewById(R.id.button13);
