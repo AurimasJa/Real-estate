@@ -211,10 +211,12 @@ public class FourthActivityNoLogin extends AppCompatActivity {
             onBackPressed();
         }
         if (item.getItemId() == R.id.action_share) {
+            Intent intent = getIntent();
             Intent sendIntent = new Intent();
+            String receivedName = intent.getStringExtra("pavadinimas");
             sendIntent.setAction(Intent.ACTION_SEND);
             sendIntent.setType("text/plain");
-            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "Dalinuosi skelbimu: " + receivedName);
 
             Intent shareIntent = Intent.createChooser(sendIntent, null);
             startActivity(shareIntent);
