@@ -67,4 +67,5 @@
     <string name="DefaultDesign">Numatytasis dizainas</string>
     <string name="NotificationTitle">Skelbimas</string>
     <string name="NotificationDescription">Naujas skelbimas </string>
+    <string name="selectCamarePhoto">Nufotografuok</string>
 </resources>

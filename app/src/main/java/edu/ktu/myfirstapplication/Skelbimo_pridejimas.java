@@ -1,20 +1,36 @@
 package edu.ktu.myfirstapplication;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 
+import android.Manifest;
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
@@ -37,9 +53,18 @@ import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Skelbimo_pridejimas extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
     private static final String CHANNEL_ID = "channelForNotification";
+    private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 101;
+    private static final int MY_CAMERA_REQUEST_CODE = 100;
+
+    String currentPhotoPath;
     Context context = this;
     Button add_btn;
     EditText edit_Title;
@@ -51,20 +76,24 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     ImageView imageView;
 
     //private ProgressBar mProgressBar;
-    Button add_pht, choose_image;
+    Button choose_image;
     private Uri mImageUri;
+    private Uri contentUri;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reff;
     SkelbimaiList skelbimas = new SkelbimaiList();
     private StorageReference mStorageRef;
-    private DatabaseReference mDatabaseRef;
     private StorageTask mUploadTask;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skelbimo_pridejimas);
 
+        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_REQUEST_CODE);
+        }
         add_btn = (Button) findViewById(R.id.btn_add_item);
         choose_image = (Button) findViewById(R.id.btn_choose_img);
         imageView = (ImageView) findViewById(R.id.imageView2);
@@ -124,7 +153,94 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == MY_CAMERA_REQUEST_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+    private void checkStoragePermission() {
+        if (ContextCompat.checkSelfPermission(Skelbimo_pridejimas.this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
 
+            if (ActivityCompat.shouldShowRequestPermissionRationale(Skelbimo_pridejimas.this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+
+                new AlertDialog.Builder(Skelbimo_pridejimas.this)
+                        .setTitle("Permission Required")
+                        .setMessage("Storage permission is required to save image")
+                        .setPositiveButton("ALLOW", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                //on click Allow we need request again
+                                dialogInterface.cancel();
+                                ActivityCompat.requestPermissions(Skelbimo_pridejimas.this,
+                                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                                        MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+                            }
+                        }).setNegativeButton("DENIED", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                }).show();
+            } else {
+                ActivityCompat.requestPermissions(Skelbimo_pridejimas.this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+
+            }
+        } else {
+            //Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+            //capture image when permission is granted
+            openCameraTocaptureImage();
+        }
+    }
+    private void openCameraTocaptureImage() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // Ensure that there's a camera activity to handle the intent
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            // Create the File where the photo should go
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                // Error occurred while creating the File
+            }
+            // Continue only if the File was successfully created
+            if (photoFile != null) {
+                Uri photoURI = FileProvider.getUriForFile(this,
+                        "edu.ktu.myfirstapplication",
+                        photoFile);
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                startActivityForResult(takePictureIntent, PICK_IMAGE_REQUEST);
+            }
+        }
+    }
+
+    public void getImage(View view){
+        checkStoragePermission();
+    }
+
+    private File createImageFile() throws IOException {
+        // failo pavadinimas is kameros fotkes
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+        currentPhotoPath = image.getAbsolutePath();
+        return image;
+    }
     private void openFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -134,10 +250,16 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
-                && data != null && data.getData() != null) {
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK) {
+            File f = new File(currentPhotoPath);
+            contentUri = Uri.fromFile(f);
             mImageUri = data.getData();
-            Picasso.get().load(mImageUri).into(imageView);
+            if(mImageUri == null){
+                mImageUri = contentUri;
+                Picasso.get().load(contentUri).into(imageView);
+            }else {
+                Picasso.get().load(mImageUri).into(imageView);
+            }
         }
     }
 
