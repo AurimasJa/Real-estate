@@ -31,6 +31,16 @@
                 android:gravity="center|left"
                 android:text="@string/selectPhoto"
                 android:textAlignment="center"/>
+            <Button
+                android:onClick="getImage"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="100dp"
+                android:gravity="center|left"
+                android:text="@string/selectPhoto"
+                android:textAlignment="center"/>
             <EditText
                 android:id="@+id/edit_Title"
                 android:layout_width="fill_parent"
