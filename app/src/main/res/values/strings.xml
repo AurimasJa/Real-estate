@@ -73,4 +73,5 @@
     <string name="title_activity_maps" translatable="false">MapsActivity</string>
     <string name="Location">Location</string>
     <string name="setLocation">Set location</string>
+    <string name="title_activity_maps_activity2new">MapsActivity2new</string>
 </resources>

@@ -63,6 +63,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     private static final String CHANNEL_ID = "channelForNotification";
     private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 101;
     private static final int MY_CAMERA_REQUEST_CODE = 100;
+    private int count = 0;
 
     String currentPhotoPath;
     Context context = this;
@@ -262,6 +263,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                 storageDir      /* directory */
         );
         currentPhotoPath = image.getAbsolutePath();
+        count++;
         return image;
     }
     private void openFileChooser() {
@@ -274,9 +276,12 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK) {
-            File f = new File(currentPhotoPath);
-            contentUri = Uri.fromFile(f);
-            mImageUri = data.getData();
+            if(count == 1){
+                File f = new File(currentPhotoPath);
+                contentUri = Uri.fromFile(f);
+            }else{
+                mImageUri = data.getData();
+            }
             if(mImageUri == null){
                 mImageUri = contentUri;
                 Picasso.get().load(contentUri).into(imageView);
@@ -315,9 +320,10 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                                     int roomCount = Integer.parseInt(edit_RoomCount.getText().toString().trim());
                                     String PhoneNumber = edit_PhoneNumber.getText().toString().trim();
                                     String CreatedBy = edit_CreatedBy.getText().toString().trim();
-
+                                    String location = edit_Location.getText().toString().trim();
                                     skelbimas.setTitle(Title);
                                     skelbimas.setPrice(Price);
+                                    skelbimas.setLocation(location);
                                     skelbimas.setDescription(Desc);
                                     skelbimas.setRoom_count(roomCount);
                                     skelbimas.setPhoneNum(PhoneNumber);

@@ -100,6 +100,14 @@
             android:textAlignment="center"
             android:text="@string/weareteam" />
 
+        <Button
+            android:id="@+id/maps2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:text="maps2"
+            android:textStyle="bold" />
+
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"

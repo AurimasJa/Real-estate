@@ -2,10 +2,13 @@ package edu.ktu.myfirstapplication;
 
 import android.widget.ImageView;
 
-public class SkelbimaiList {
+import java.io.Serializable;
+
+public class SkelbimaiList implements Serializable {
     private String title;
     private String description;
     private float price;
+    private String location;
     private int room_count;
     private String phoneNum;
     private String createdBy;
@@ -16,10 +19,11 @@ public class SkelbimaiList {
     public SkelbimaiList() {
     }
 
-    public SkelbimaiList(String title, String description, float price, int room_count, String phoneNum, String createdBy, String image, int template) {
+    public SkelbimaiList(String title, String Location, String description, float price, int room_count, String phoneNum, String createdBy, String image, int template) {
         this.title = title;
         this.description = description;
         this.price = price;
+        this.location = Location;
         this.room_count = room_count;
         this.phoneNum = phoneNum;
         this.createdBy = createdBy;
@@ -60,6 +64,10 @@ public class SkelbimaiList {
     public float getPrice() {
         return price;
     }
+
+    public String getLocation() { return location; }
+
+    public void setLocation(String location) { this.location = location; }
 
     public void setPrice(float price) {
         this.price = price;

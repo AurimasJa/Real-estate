@@ -6,6 +6,8 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -39,6 +41,7 @@ public class FourthActivityNoLogin extends AppCompatActivity {
     TextView kamb;
     TextView pardavejas;
     ImageView img;
+    Button twitter;
 
     //aaaaaaaaaa
     FirebaseDatabase firebaseDatabase;
@@ -62,6 +65,17 @@ public class FourthActivityNoLogin extends AppCompatActivity {
         Intent intent = getIntent();
         //---------------------------------------------------------
         //String receivedTemplate = intent.getStringExtra("template");
+
+        twitter = (Button) findViewById(R.id.twitter);
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FourthActivityNoLogin.this, Twitter.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
+
         int template = intent.getIntExtra("template",0);
         if(template == 1){
             setContentView(R.layout.receiveractivitydesignnologin);

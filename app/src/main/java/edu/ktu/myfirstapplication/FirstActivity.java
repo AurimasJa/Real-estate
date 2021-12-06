@@ -31,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,10 +45,11 @@ public class FirstActivity extends AppCompatActivity {
     private ListView myListView;
     private Toolbar myToolbar;
     private Context context = this;
+    Button maps2;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reff;
-    ArrayList<SkelbimaiList> list;
+    ArrayList<SkelbimaiList> list, temp;
     SkelbimaiListAdapter adapter;
     SkelbimaiList skelbimaiList;
     @Override
@@ -57,6 +59,9 @@ public class FirstActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavFirst);
         bottomNavigationView.setSelectedItemId(R.id.mainpage);
+
+        maps2 = (Button) findViewById(R.id.maps2);
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -99,6 +104,16 @@ public class FirstActivity extends AppCompatActivity {
                     skelbimaiList = dataSnapshot.getValue(SkelbimaiList.class);
                     list.add(skelbimaiList);
                 }
+                maps2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Intent intent = new Intent(FirstActivity.this, MapsActivity2new.class);
+                        intent.putExtra("flag", true);
+                        intent.putExtra("list", (Serializable) list);
+                        startActivity(intent);
+                    }
+                });
                 if(!list.isEmpty()){
                     RandomiseList();
 
@@ -133,6 +148,18 @@ public class FirstActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+//        Toast.makeText(FirstActivity.this, String(temp.size()), Toast.LENGTH_LONG).show();
+//        maps2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent = new Intent(FirstActivity.this, MapsActivity2new.class);
+//                intent.putExtra("flag", true);
+//                intent.putExtra("list", (Serializable) list);
+//                startActivity(intent);
+//            }
+//        });
+
     }
 
     @Override
