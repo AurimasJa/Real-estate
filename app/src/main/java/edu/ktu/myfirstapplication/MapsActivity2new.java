@@ -1,12 +1,12 @@
 package edu.ktu.myfirstapplication;
 
-import androidx.fragment.app.FragmentActivity;
-
 import android.content.Context;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.widget.Toast;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -15,7 +15,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,12 +37,12 @@ public class MapsActivity2new extends FragmentActivity implements OnMapReadyCall
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        }
+        Intent intent = getIntent();
+        list = intent.getParcelableArrayListExtra("list");
 
-//        Bundle extras = getIntent().getExtras();
-//        if(extras != null) {
-//            list = (ArrayList<SkelbimaiList>) getIntent().getSerializableExtra("list");
-//        }
     }
 
     /**
@@ -59,11 +58,13 @@ public class MapsActivity2new extends FragmentActivity implements OnMapReadyCall
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        //mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        for (int i = 0; i < list.size(); i++){
+            LatLng address = getLocationFromAddress(this, list.get(i).getLocation());
+            mMap.addMarker(new MarkerOptions().position(address).title(list.get(i).getTitle()));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(address));
+        }
 
-        LatLng address = getLocationFromAddress(this, "Kaunas");
-        mMap.addMarker(new MarkerOptions().position(address).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(address));
 
 //        try {
 //
@@ -98,7 +99,7 @@ public class MapsActivity2new extends FragmentActivity implements OnMapReadyCall
 
         try
         {
-            address = coder.getFromLocationName(strAddress, 5);
+            address = coder.getFromLocationName(strAddress, 1);
             if(address==null)
             {
                 return null;

@@ -1,10 +1,12 @@
 package edu.ktu.myfirstapplication;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.widget.ImageView;
 
 import java.io.Serializable;
 
-public class SkelbimaiList implements Serializable {
+public class SkelbimaiList implements Parcelable {
     private String title;
     private String description;
     private float price;
@@ -31,6 +33,48 @@ public class SkelbimaiList implements Serializable {
         this.Image = image;
         this.template = template;
     }
+
+    protected SkelbimaiList(Parcel in) {
+        title = in.readString();
+        description = in.readString();
+        price = in.readFloat();
+        location = in.readString();
+        room_count = in.readInt();
+        phoneNum = in.readString();
+        createdBy = in.readString();
+        Image = in.readString();
+        template = in.readInt();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(title);
+        dest.writeString(description);
+        dest.writeFloat(price);
+        dest.writeString(location);
+        dest.writeInt(room_count);
+        dest.writeString(phoneNum);
+        dest.writeString(createdBy);
+        dest.writeString(Image);
+        dest.writeInt(template);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<SkelbimaiList> CREATOR = new Creator<SkelbimaiList>() {
+        @Override
+        public SkelbimaiList createFromParcel(Parcel in) {
+            return new SkelbimaiList(in);
+        }
+
+        @Override
+        public SkelbimaiList[] newArray(int size) {
+            return new SkelbimaiList[size];
+        }
+    };
 
     public int getTemplate() {
         return template;
