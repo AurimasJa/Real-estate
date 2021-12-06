@@ -1,25 +1,10 @@
 package edu.ktu.myfirstapplication;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
-
 import android.Manifest;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -29,7 +14,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,8 +21,16 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -47,7 +39,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
@@ -76,7 +67,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     EditText edit_PhoneNumber;
     EditText edit_CreatedBy;
     ImageView imageView;
-
+    private int numb;
     //private ProgressBar mProgressBar;
     Button choose_image;
     private Uri mImageUri;
@@ -97,7 +88,8 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
         Intent intent = getIntent();
 
         d = intent.getStringExtra("usernameAS");
-
+        numb = intent.getIntExtra("templateIs",0);
+        Toast.makeText(Skelbimo_pridejimas.this, numb +" ", Toast.LENGTH_SHORT).show();
         //Toast.makeText(Skelbimo_pridejimas.this, d, Toast.LENGTH_LONG).show();
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_REQUEST_CODE);
@@ -172,8 +164,10 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
         getLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                startActivity(new Intent(Skelbimo_pridejimas.this, MapsActivity.class));
+                Intent intent = new Intent(Skelbimo_pridejimas.this, MapsActivity.class);
+                intent.putExtra("templateIs", numb);
+                intent.putExtra("flag", true);
+                startActivity(intent);
 
             }
         });
@@ -321,7 +315,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     Intent intent = getIntent();
-                                    int numb = intent.getIntExtra("templateIs",0);
+                                    numb = intent.getIntExtra("templateIs",0);
                                     String d = intent.getStringExtra("usernameAS");
                                     intent.putExtra("usernameAS", d);
                                     String imageUrl = uri.toString();

@@ -36,6 +36,7 @@ public class FourthActivityNoLogin extends AppCompatActivity {
     TextView desc;
     TextView kamb;
     TextView pardavejas;
+    TextView addressas;
     ImageView img;
     Button twitter;
 
@@ -88,6 +89,7 @@ public class FourthActivityNoLogin extends AppCompatActivity {
         desc = findViewById(R.id.textView5);
         kamb = findViewById(R.id.textView6);
         pardavejas = findViewById(R.id.textViewPardavejas1);
+        addressas = findViewById(R.id.textViewAddress1);
         //img = findViewById(R.id.imageView2);
 
         num = findViewById(R.id.textViewNum);
@@ -127,6 +129,8 @@ public class FourthActivityNoLogin extends AppCompatActivity {
         kamb.setText(room+"");
         String numb = intent.getStringExtra("numeris");
         num.setText(numb);
+        String address = intent.getStringExtra("adresas");
+        addressas.setText(address);
 
         //aaaaaaaaa
         skelbimaiList = new SkelbimaiList();
@@ -162,7 +166,7 @@ public class FourthActivityNoLogin extends AppCompatActivity {
             }
         });
 
-        if (template == 3){
+        if (template == 3 || template == 0){
             arrow.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

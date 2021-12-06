@@ -88,6 +88,7 @@
 
 
         <TextView
+            android:id="@+id/asdasd1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/asdasd"
@@ -106,8 +107,10 @@
             android:id="@+id/maps2"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="300dp"
-            android:text="maps2"
+            android:layout_below="@+id/asdasd1"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/locations"
             android:textStyle="bold" />
 
     </RelativeLayout>

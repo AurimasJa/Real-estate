@@ -1,19 +1,17 @@
 package edu.ktu.myfirstapplication;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
-
 import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -35,11 +33,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Geocoder geocoder;
     private String streetAddress;
     Button sendLocation;
-
+    private int numb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Intent intent = getIntent();
+
+
+
+        numb = intent.getIntExtra("templateIs",0);
+        Toast.makeText(MapsActivity.this, numb +" ", Toast.LENGTH_SHORT).show();
         sendLocation = (Button) findViewById(R.id.button);
 
         binding = ActivityGoogleMapsBinding.inflate(getLayoutInflater());
@@ -56,6 +60,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Intent intent = new Intent(MapsActivity.this, Skelbimo_pridejimas.class);
                 intent.putExtra("flag", true);
                 intent.putExtra("streetAddress", streetAddress);
+                intent.putExtra("templateIs", numb);
                 startActivity(intent);
             }
         });

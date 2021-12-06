@@ -3,28 +3,21 @@ package edu.ktu.myfirstapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,10 +26,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 public class skelbimailistviewnologinburger extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -110,6 +101,7 @@ public class skelbimailistviewnologinburger extends AppCompatActivity implements
                 intent.putExtra("kambariai", list.get(i).getRoom_count());
                 intent.putExtra("numeris", list.get(i).getPhoneNum());
                 intent.putExtra("template", list.get(i).getTemplate());
+                intent.putExtra("adresas", list.get(i).getLocation());
                 intent.putExtra("pardavejas", list.get(i).getCreatedBy());
                 startActivity(intent);
             }

@@ -78,4 +78,5 @@
     <string name="more">Plus</string>
     <string name="Location">Location</string>
     <string name="setLocation">Set location</string>
+    <string name="locations">Emplacements</string>
 </resources>
