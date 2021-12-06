@@ -141,6 +141,8 @@ public class FirstActivity extends AppCompatActivity {
                 intent.putExtra("descriptionas", list.get(0).getDescription());
                 intent.putExtra("kambariai", list.get(0).getRoom_count());
                 intent.putExtra("numeris", list.get(0).getPhoneNum());
+                intent.putExtra("pardavejas", list.get(0).getCreatedBy());
+                intent.putExtra("adresas", list.get(0).getLocation());
                 intent.putExtra("template", list.get(0).getTemplate());
                 startActivity(intent);
             }
