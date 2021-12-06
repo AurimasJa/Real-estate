@@ -50,10 +50,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         geocoder = new Geocoder(this);
-        sendLocation.setOnClickListener(new View.OnClickListener() {
+        binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MapsActivity.this, Skelbimo_pridejimas.class);
+                intent.putExtra("flag", true);
                 intent.putExtra("streetAddress", streetAddress);
                 startActivity(intent);
             }

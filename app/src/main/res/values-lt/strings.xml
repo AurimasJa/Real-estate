@@ -69,4 +69,5 @@
     <string name="NotificationDescription">Naujas skelbimas </string>
     <string name="selectCamarePhoto">Nufotografuok</string>
     <string name="Location">Location</string>
+    <string name="setLocation">Set location</string>
 </resources>
