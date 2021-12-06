@@ -86,6 +86,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     SkelbimaiList skelbimas = new SkelbimaiList();
     private StorageReference mStorageRef;
     private StorageTask mUploadTask;
+    private String d;
     private String streetAddress;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -93,7 +94,11 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skelbimo_pridejimas);
+        Intent intent = getIntent();
 
+        d = intent.getStringExtra("usernameAS");
+
+        //Toast.makeText(Skelbimo_pridejimas.this, d, Toast.LENGTH_LONG).show();
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_REQUEST_CODE);
         }
@@ -138,11 +143,15 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.mainpage:
-                        startActivity(new Intent(getApplicationContext(), FirstActivity.class));
+                        Intent inte2 = (new Intent(getApplicationContext(), FirstActivity.class));
+                        inte2.putExtra("usernameAS", d);
+                        startActivity(inte2);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        Intent inte = (new Intent(getApplicationContext(), Settings.class));
+                        inte.putExtra("usernameAS", d);
+                        startActivity(inte);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.logout:
@@ -150,7 +159,9 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.adv:
-                        startActivity(new Intent(getApplicationContext(), SkelbimaiListView.class));
+                        Intent inte1 = (new Intent(getApplicationContext(), SkelbimaiListViewBurger.class));
+                        inte1.putExtra("usernameAS", d);
+                        startActivity(inte1);
                         overridePendingTransition(0,0);
                         return true;
                 }
@@ -182,9 +193,9 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == MY_CAMERA_REQUEST_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "camera permission granted", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Camera permission granted", Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Camera permission denied", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -311,7 +322,8 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
                                     Intent intent = getIntent();
                                     int numb = intent.getIntExtra("templateIs",0);
-                                    //Toast.makeText(Skelbimo_pridejimas.this, "Sitas yra naudingas", Toast.LENGTH_LONG).show();
+                                    String d = intent.getStringExtra("usernameAS");
+                                    intent.putExtra("usernameAS", d);
                                     String imageUrl = uri.toString();
                                     //Toast.makeText(Skelbimo_pridejimas.this, imageUrl, Toast.LENGTH_LONG).show();
                                     String Title = edit_Title.getText().toString().trim();
@@ -345,7 +357,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                                             .setAutoCancel(true)
                                             .setPriority(NotificationCompat.PRIORITY_DEFAULT);
                                     NotificationManagerCompat notificationManager = NotificationManagerCompat.from(Skelbimo_pridejimas.this);
-
+                                    intent.putExtra("usernameAS", d);
                                     notificationManager.notify(0, builder.build());
                                     startActivity(intent);
                                 }

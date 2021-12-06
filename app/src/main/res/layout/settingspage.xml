@@ -7,22 +7,37 @@
 
     <include layout="@layout/toolbar" />
 
-    <Button
-        android:id="@+id/changeLang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ChangeLang"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="100dp"
-        android:backgroundTint="@color/colorAccent"
-        android:textAllCaps="false"
-        />
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
 
+        android:background="@drawable/blue">
+        <Button
+            android:id="@+id/changeLang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ChangeLang"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="100dp"
+            android:backgroundTint="@color/colorAccent"
+            android:textAllCaps="false"
+            />
+
+        <Button
+            android:id="@+id/profileEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/editProfile"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="100dp"
+            android:backgroundTint="@color/colorAccent"
+            android:textAllCaps="false"
+            />
         <com.google.android.material.bottomnavigation.BottomNavigationView
+
             android:id="@+id/bottomNavFirst"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

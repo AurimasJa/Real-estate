@@ -39,6 +39,7 @@
             android:shadowColor="#000000"
             android:shadowDx="1.2"
             android:shadowDy="1.2"
+            android:background="@android:drawable/dialog_frame"
             android:shadowRadius="1.2"/>
 
         <TextView
@@ -51,6 +52,7 @@
             android:layout_marginStart="20dp"
             android:textColor="#FFD700"
             android:shadowColor="#000000"
+            android:background="@android:drawable/dialog_frame"
             android:shadowDx="1.2"
             android:shadowDy="1.2"
             android:shadowRadius="1.2"/>

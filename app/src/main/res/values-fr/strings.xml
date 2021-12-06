@@ -70,6 +70,12 @@
     <string name="NotificationTitle">Publicité</string>
     <string name="NotificationDescription">Nouvelle publication de publicité </string>
     <string name="selectCamarePhoto">Prendre une photo</string>
+    <string name="MinCost">De</string>
+    <string name="MaxCost">Jusquà</string>
+    <string name="BurgerOut">Dehors</string>
+    <string name="editProfile">Editer le profil</string>
+    <string name="save">Enregistrer</string>
+    <string name="more">Plus</string>
     <string name="Location">Location</string>
     <string name="setLocation">Set location</string>
 </resources>

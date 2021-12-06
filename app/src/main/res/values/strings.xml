@@ -74,4 +74,10 @@
     <string name="Location">Location</string>
     <string name="setLocation">Set location</string>
     <string name="title_activity_maps_activity2new">MapsActivity2new</string>
+    <string name="MinCost">From</string>
+    <string name="MaxCost">Till</string>
+    <string name="BurgerOut">Out</string>
+    <string name="editProfile">Edit profile</string>
+    <string name="save">Save</string>
+    <string name="more">More</string>
 </resources>

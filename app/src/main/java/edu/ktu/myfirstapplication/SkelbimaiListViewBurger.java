@@ -4,6 +4,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -14,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,7 +55,7 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
     private Context context = this;
     private TextView vienas, du;
     private EditText filterprice1,filterprice2;
-
+    private String d;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reff;
     ArrayList<SkelbimaiList> list;
@@ -73,6 +75,11 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
         list = new ArrayList<>();
         adapter = new SkelbimaiListAdapter(this, list);
 
+        Intent intent = getIntent();
+
+        d = intent.getStringExtra("usernameAS");
+
+        //Toast.makeText(SkelbimaiListViewBurger.this, d, Toast.LENGTH_LONG).show();
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -96,11 +103,15 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.mainpage:
-                        startActivity(new Intent(getApplicationContext(), FirstActivity.class));
+                        Intent inte1 = (new Intent(getApplicationContext(), FirstActivity.class));
+                        inte1.putExtra("usernameAS", d);
+                        startActivity(inte1);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(), Settings.class));
+                        Intent inte = (new Intent(getApplicationContext(), Settings.class));
+                        inte.putExtra("usernameAS", d);
+                        startActivity(inte);
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.logout:
@@ -142,6 +153,7 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
                 intent.putExtra("numeris", list.get(i).getPhoneNum());
                 intent.putExtra("template", list.get(i).getTemplate());
                 intent.putExtra("pardavejas", list.get(i).getCreatedBy());
+                intent.putExtra("usernameAS", d);
                 startActivity(intent);
             }
         });
@@ -153,6 +165,7 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
         public void onClick(View view) {
             Intent intent = new Intent(getApplicationContext(), Skelbimo_pridejimas_template_choose.class);
             intent.putExtra("flag", true);
+            intent.putExtra("usernameAS", d);
             startActivity(intent);
         }
     };
@@ -225,8 +238,8 @@ public class SkelbimaiListViewBurger extends AppCompatActivity implements Naviga
 
                 for (SkelbimaiList listas : list) {
 
-                    Toast.makeText(SkelbimaiListViewBurger.this, listas.getPrice() + "   -   " + price1, Toast.LENGTH_LONG ).show();
-                    if (listas.getPrice() > price1 && listas.getPrice() < price2) {
+                //   Toast.makeText(SkelbimaiListViewBurger.this, price2 + "   -   " + price1, Toast.LENGTH_LONG ).show();
+                    if (listas.getPrice() >= price1 && listas.getPrice() <= price2) {
                         filteredList.add(listas);
                         //Toast.makeText(SkelbimaiListView.this, listas.getPrice() + "   -   " + price1, Toast.LENGTH_LONG ).show();
                     }

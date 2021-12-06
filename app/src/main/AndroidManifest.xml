@@ -54,6 +54,7 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".SplashScreen">
             <intent-filter>
+                android:networkSecurityConfig="@xml/network_security_config">
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -110,13 +111,15 @@
             android:label="Skelbimas" />
         <activity
             android:name=".Settings"
-            android:label="Nustatymai" />
+            android:label="@string/action_settings" />
         <activity
             android:name=".SkelbimaiListView"
             android:label="@string/appbarSkelbimai"
             android:parentActivityName=".FirstActivity" />
         <activity android:name=".Skelbimo_pridejimas" />
         <activity android:name=".MainPageSkelbimaiNoLogin" />
+        <activity android:name=".UserProfile" />
+        <activity android:name=".DesignPreview"/>
     </application>
 
 </manifest>

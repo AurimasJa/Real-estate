@@ -4,12 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.transition.AutoTransition;
+import android.transition.TransitionManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.view.View;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,6 +64,10 @@ public class FourthActivityNoLogin extends AppCompatActivity {
     ImageView imageView2;
     ImageView imageView3;
 
+    ImageButton arrow;
+    LinearLayout hiddenView;
+    CardView cardView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +97,10 @@ public class FourthActivityNoLogin extends AppCompatActivity {
             //Toast.makeText(FourthActivityNoLogin.this, "Defaultinis dizainas", Toast.LENGTH_LONG).show();
         }
         //---------------------------------------------------------
+        cardView = findViewById(R.id.base_cardview);
+        arrow = findViewById(R.id.arrow_button);
+        hiddenView = findViewById(R.id.hidden_view);
+
         name = findViewById(R.id.textView3);
         price = findViewById(R.id.textView4);
         desc = findViewById(R.id.textView5);
@@ -102,10 +115,16 @@ public class FourthActivityNoLogin extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
 
         //aaaaaaaaa
-        imageView1 = (ImageView) findViewById(R.id.image1);
-        imageView1.setBackgroundResource(R.drawable.animation);
-        AnimationDrawable frameAnimation = (AnimationDrawable) imageView1.getBackground();
-        frameAnimation.start();
+        if (template != 2){
+            imageView1 = (ImageView) findViewById(R.id.image1);
+            imageView1.setBackgroundResource(R.drawable.animation);
+            AnimationDrawable frameAnimation = (AnimationDrawable) imageView1.getBackground();
+            frameAnimation.start();
+        }
+        //imageView1 = (ImageView) findViewById(R.id.image1);
+        //imageView1.setBackgroundResource(R.drawable.animation);
+        //AnimationDrawable frameAnimation = (AnimationDrawable) imageView1.getBackground();
+        //frameAnimation.start();
 
 
         myHScrollView = (HorizontalScrollView) findViewById(R.id.scrollView);
@@ -160,6 +179,39 @@ public class FourthActivityNoLogin extends AppCompatActivity {
 
             }
         });
+
+        if (template == 3){
+            arrow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    // If the CardView is already expanded, set its visibility
+                    //  to gone and change the expand less icon to expand more.
+                    if (hiddenView.getVisibility() == View.VISIBLE) {
+
+                        // The transition of the hiddenView is carried out
+                        //  by the TransitionManager class.
+                        // Here we use an object of the AutoTransition
+                        // Class to create a default transition.
+                        TransitionManager.beginDelayedTransition(cardView,
+                                new AutoTransition());
+                        hiddenView.setVisibility(View.GONE);
+                        arrow.setImageResource(R.drawable.ic_baseline_expand_more_24);
+                    }
+
+                    // If the CardView is not expanded, set its visibility
+                    // to visible and change the expand more icon to expand less.
+                    else {
+
+                        TransitionManager.beginDelayedTransition(cardView,
+                                new AutoTransition());
+                        hiddenView.setVisibility(View.VISIBLE);
+                        arrow.setImageResource(R.drawable.ic_baseline_expand_less_24);
+                    }
+                }
+            });
+        }
+
     }
 
     @Override
@@ -173,10 +225,12 @@ public class FourthActivityNoLogin extends AppCompatActivity {
             onBackPressed();
         }
         if (item.getItemId() == R.id.action_share) {
+            Intent intent = getIntent();
             Intent sendIntent = new Intent();
+            String receivedName = intent.getStringExtra("pavadinimas");
             sendIntent.setAction(Intent.ACTION_SEND);
             sendIntent.setType("text/plain");
-            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "Dalinuosi skelbimu: " + receivedName);
 
             Intent shareIntent = Intent.createChooser(sendIntent, null);
             startActivity(shareIntent);

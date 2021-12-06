@@ -51,7 +51,6 @@ public class SkelbimaiListView extends AppCompatActivity {
     ArrayList<SkelbimaiList> list;
     SkelbimaiListAdapter adapter;
     SkelbimaiList skelbimaiList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
