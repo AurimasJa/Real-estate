@@ -66,9 +66,10 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
 
     String currentPhotoPath;
     Context context = this;
-    Button add_btn;
+    Button add_btn, getLocation;
     EditText edit_Title;
     EditText edit_Price;
+    EditText edit_Location;
     EditText edit_Desc;
     EditText edit_RoomCount;
     EditText edit_PhoneNumber;
@@ -84,6 +85,7 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
     SkelbimaiList skelbimas = new SkelbimaiList();
     private StorageReference mStorageRef;
     private StorageTask mUploadTask;
+    private String streetAddress;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -95,10 +97,12 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
             requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_REQUEST_CODE);
         }
         add_btn = (Button) findViewById(R.id.btn_add_item);
+        getLocation = (Button) findViewById(R.id.getLocation);
         choose_image = (Button) findViewById(R.id.btn_choose_img);
         imageView = (ImageView) findViewById(R.id.imageView2);
         edit_Title = (EditText) findViewById(R.id.edit_Title);
         edit_Price = (EditText) findViewById(R.id.edit_Price);
+        edit_Location = (EditText) findViewById(R.id.edit_location);
         edit_Desc = (EditText) findViewById(R.id.edit_Description);
         edit_RoomCount = (EditText) findViewById(R.id.edit_RoomCount);
         edit_PhoneNumber = (EditText) findViewById(R.id.edit_PhoneNumber);
@@ -152,7 +156,26 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
                 return false;
             }
         });
+
+        getLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(Skelbimo_pridejimas.this, MapsActivity.class));
+
+            }
+        });
+
+        Bundle extras = getIntent().getExtras();
+        if(extras != null) {
+            streetAddress = extras.getString("streetAddress");
+        }
+//        Toast.makeText(Skelbimo_pridejimas.this, streetAddress, Toast.LENGTH_SHORT).show();
+        edit_Location.setText(streetAddress);
     }
+
+
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

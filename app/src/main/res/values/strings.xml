@@ -70,4 +70,6 @@
     <string name="NotificationTitle">Advertisement</string>
     <string name="NotificationDescription">New publish of advertisement </string>
     <string name="selectCamarePhoto">Take a photo</string>
+    <string name="title_activity_maps" translatable="false">MapsActivity</string>
+    <string name="Location">Location</string>
 </resources>

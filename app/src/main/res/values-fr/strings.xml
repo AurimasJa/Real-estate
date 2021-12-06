@@ -70,4 +70,5 @@
     <string name="NotificationTitle">Publicité</string>
     <string name="NotificationDescription">Nouvelle publication de publicité </string>
     <string name="selectCamarePhoto">Prendre une photo</string>
+    <string name="Location">Location</string>
 </resources>

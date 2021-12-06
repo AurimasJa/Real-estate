@@ -41,12 +41,25 @@
                 android:gravity="center|left"
                 android:text="@string/selectCamarePhoto"
                 android:textAlignment="center"/>
+
+            <Button
+                android:id="@+id/getLocation"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="100dp"
+                android:ems="10"
+                android:gravity="center"
+                android:text="@string/Location"
+                android:inputType="text"/>
+
             <EditText
                 android:id="@+id/edit_Title"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="100dp"
                 android:ems="10"
                 android:gravity="center"
@@ -64,6 +77,18 @@
                 android:gravity="center"
                 android:hint="@string/Price"
                 android:inputType="numberDecimal"/>
+
+            <EditText
+                android:id="@+id/edit_location"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="100dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/Location"
+                android:inputType="text"/>
 
             <EditText
                 android:id="@+id/edit_Description"
@@ -121,6 +146,7 @@
                 android:gravity="center|left"
                 android:text="@string/add"
                 android:textAlignment="center"/>
+
         </LinearLayout>
     </ScrollView>
     <LinearLayout
