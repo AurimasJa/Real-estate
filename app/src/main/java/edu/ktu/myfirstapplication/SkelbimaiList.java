@@ -2,9 +2,6 @@ package edu.ktu.myfirstapplication;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.ImageView;
-
-import java.io.Serializable;
 
 public class SkelbimaiList implements Parcelable {
     private String title;
@@ -14,7 +11,6 @@ public class SkelbimaiList implements Parcelable {
     private int room_count;
     private String phoneNum;
     private String createdBy;
-    //private ImageView[] images;
     private String Image;
     private int template;
 
@@ -141,7 +137,4 @@ public class SkelbimaiList implements Parcelable {
         this.phoneNum = phoneNum;
     }
 
-    //public ImageView[] getImages() { return images; }
-
-    //public void setImages(ImageView[] images) { this.images = images; }
 }

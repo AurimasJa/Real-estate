@@ -107,7 +107,6 @@ public class Skelbimo_pridejimas extends AppCompatActivity {
         edit_CreatedBy = (EditText) findViewById(R.id.edit_CreatedBy);
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
         firebaseDatabase = FirebaseDatabase.getInstance();
-        //mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         reff = FirebaseDatabase.getInstance("https://real-estate-f6875-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Skelbimai");
 
         choose_image.setOnClickListener(new View.OnClickListener() {

@@ -64,9 +64,6 @@ public class FourthActivityNoLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        //---------------------------------------------------------
-        //String receivedTemplate = intent.getStringExtra("template");
-
 
         int template = intent.getIntExtra("template",0);
         if(template == 1){
@@ -105,11 +102,6 @@ public class FourthActivityNoLogin extends AppCompatActivity {
             AnimationDrawable frameAnimation = (AnimationDrawable) imageView1.getBackground();
             frameAnimation.start();
         }
-        //imageView1 = (ImageView) findViewById(R.id.image1);
-        //imageView1.setBackgroundResource(R.drawable.animation);
-        //AnimationDrawable frameAnimation = (AnimationDrawable) imageView1.getBackground();
-        //frameAnimation.start();
-
 
         myHScrollView = (HorizontalScrollView) findViewById(R.id.scrollView);
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -146,18 +138,6 @@ public class FourthActivityNoLogin extends AppCompatActivity {
                     skelbimaiList = dataSnapshot.getValue(SkelbimaiList.class);
                     list.add(skelbimaiList);
                 }
-                //TextView title = (TextView) myHScrollView.findViewById(R.id.title);
-                //ImageView image = (ImageView) myHScrollView.findViewById(R.id.imageView);
-                //TextView price = (TextView) myHScrollView.findViewById(R.id.price);
-                //TextView room_count = (TextView) myHScrollView.findViewById(R.id.room_count);
-                //ImageView image1 = (ImageView) myHScrollView.findViewById(R.id.image1);
-
-                //title.setText(list.get(0).getTitle());
-                //price.setText(list.get(0).getPrice()+"€");
-                //room_count.setText(list.get(0).getRoom_count()+" kambariai");
-                //Picasso.get().load(list.get(0).getImage().toString()).into(imageView1);
-               // Picasso.get().load(list.get(1).getImage().toString()).into(imageView2);
-               // Picasso.get().load(list.get(2).getImage().toString()).into(imageView3);
             }
 
             @Override

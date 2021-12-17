@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -50,9 +48,7 @@ public class UserProfile extends AppCompatActivity {
                     user.setUsername(d);
                     user.setId(0);
                     user.setRepeatPassword(repeatPsv);
-                    //TODO: change into ID from username
-                    //reff.child(String.valueOf(id+1)).setValue(user); //kiekviena karta suras kiek yra child parent klasei ir prides + 1 ir prides duomenis....
-                    reff.child(d).setValue(user); //kiekviena karta suras kiek yra child parent klasei ir prides + 1 ir prides duomenis....
+                    reff.child(d).setValue(user);
 
                     //Toast.makeText(UserProfile.this, getText(R.string.succ), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, FirstActivity.class);

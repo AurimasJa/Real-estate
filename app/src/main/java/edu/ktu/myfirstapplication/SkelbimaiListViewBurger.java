@@ -1,15 +1,12 @@
 package edu.ktu.myfirstapplication;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -34,12 +31,7 @@ import java.util.Comparator;
 public class SkelbimaiListViewBurger extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ListView myListView;
-    private Button sortASC,sortDES,sortPriceB, sortPriceS, filterbutton;
     private FloatingActionButton add_item;
-    private Toolbar myToolbar;
-    private Context context = this;
-    private TextView vienas, du;
-    private EditText filterprice1,filterprice2;
     private String d;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reff;

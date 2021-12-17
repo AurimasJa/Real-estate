@@ -148,17 +148,6 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
 //        Toast.makeText(FirstActivity.this, String(temp.size()), Toast.LENGTH_LONG).show();
-//        maps2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                Intent intent = new Intent(FirstActivity.this, MapsActivity2new.class);
-//                intent.putExtra("flag", true);
-//                intent.putExtra("list", (Serializable) list);
-//                startActivity(intent);
-//            }
-//        });
-
     }
 
     @Override
@@ -167,17 +156,6 @@ public class FirstActivity extends AppCompatActivity {
             onBackPressed();
         }
         return super.onOptionsItemSelected(item);
-        /*switch (item.getItemId()) {
-            case R.id.action_settings:
-                Intent intent = new Intent(context, Settings.class);
-                startActivity(intent);
-                return true;
-
-            default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
-        }*/
     }
 
     public void RandomiseList(){

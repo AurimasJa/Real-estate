@@ -65,31 +65,6 @@ public class MapsActivity2new extends FragmentActivity implements OnMapReadyCall
             mMap.moveCamera(CameraUpdateFactory.newLatLng(address));
         }
 
-
-//        try {
-//
-//            List<Address> addresses = geocoder.getFromLocationName("Kaunas", 1);
-//            Address address = addresses.get(0);
-//            LatLng point = new LatLng(address.getLatitude(), address.getLongitude());
-//            MarkerOptions markerOptions = new MarkerOptions().position(point).title(address.getLocality());
-//            mMap.addMarker(markerOptions);
-//            mMap.moveCamera(CameraUpdateFactory.newLatLng(point));
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-//        for(int i = 0; i < arrayList.size(); i++)
-//        {
-//            mMap.addMarker(new MarkerOptions().position(arrayList.get(i)).title("Marker"));
-//            mMap.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
-//            mMap.moveCamera(CameraUpdateFactory.newLatLng(arrayList.get(i)));
-//        }
-
-        // Add a marker in Sydney and move the camera
-//        LatLng sydney = new LatLng(-34, 151);
-//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
     public LatLng getLocationFromAddress(Context context, String strAddress)
     {

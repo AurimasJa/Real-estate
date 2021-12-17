@@ -1,17 +1,15 @@
 package edu.ktu.myfirstapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -60,10 +58,7 @@ public class RegisterPage extends AppCompatActivity{
                     user.setPassword(password);
                     user.setUsername(username);
                     user.setRepeatPassword(repeatPsv);
-                    //TODO: change into ID from username
-                    //reff.child(String.valueOf(id+1)).setValue(user); //kiekviena karta suras kiek yra child parent klasei ir prides + 1 ir prides duomenis....
-                    reff.child(username).setValue(user); //kiekviena karta suras kiek yra child parent klasei ir prides + 1 ir prides duomenis....
-
+                    reff.child(username).setValue(user);
                     Toast.makeText(RegisterPage.this, getText(R.string.succ), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, LoginPage.class);
                     intent.putExtra("flag", true);
